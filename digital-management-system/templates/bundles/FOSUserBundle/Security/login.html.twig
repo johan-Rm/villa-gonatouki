@@ -1,0 +1,58 @@
+{% extends 'layout_login.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+
+        <!-- <h1 class="h3 mb-3 font-weight-normal">Immobilière Essaouira</h1> -->
+        <img class="mb-4" src="{{ asset('build/images/logo_orange.png') }}" alt="" width="300" style="border-radius: .3rem;">
+        <p class="dms"><strong>D</strong>igital <strong>M</strong>anagement <strong>S</strong>ystem</p>
+
+        <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}"
+        required="required" autocomplete="username" class="form-control"
+        placeholder="{{ 'security.login.username'|trans }}"
+        />
+        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+        <input type="password" id="password" name="_password" required="required"
+        autocomplete="current-password" class="form-control"
+        placeholder="{{ 'security.login.password'|trans }}"
+        />
+
+
+        <!-- <label for="inputEmail" class="sr-only">{{ 'security.login.username'|trans }}</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+        class="form-control" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="inputPassword"
+        class="form-control" placeholder="Password" required> -->
+
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+
+        <div class="checkbox mb-3">
+            <label for="remember_me">
+                {{ 'security.login.remember_me'|trans }}
+            </label>
+            <input value="on" type="checkbox" id="remember_me" name="_remember_me">
+        </div>
+
+        <button id="_submit" class="btn btn-lg btn-primary btn-block" type="submit">
+            {{ 'security.login.submit'|trans }}
+        </button>
+
+    </form>
+{% endblock %}

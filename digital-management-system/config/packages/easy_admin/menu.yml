@@ -1,0 +1,77 @@
+easy_admin:
+    design:
+        menu:
+            - { label: '%menu.label.medias%', entity: 'MediaObject', icon: 'photo' }
+            - { label: '%menu.label.pages%', entity: 'WebPage', icon: 'file-text' }
+            - { label: '%label.articles%', entity: 'Article', icon: 'th-large', params: { iconfas: false } }
+            # - { label: '%menu.label.messages%', entity: 'Message', icon: 'envelope' }
+            - { label: '%menu.label.galleries%', entity: 'Gallery', icon: 'images' }
+
+            - { label: '%menu.label.booking%', type: 'divider' }
+            - { label: '%menu.label.rooms%', entity: 'Room', icon: 'bed', params: { iconfas: false } }
+            - { label: '%menu.label.price%', entity: 'HotelPrice', icon: 'credit-card', params: { iconfas: false } }
+            - { label: '%menu.label.messages%', entity: 'Message', icon: 'envelope' }
+            - { label: '%menu.label.people%', entity: 'Person', icon: 'address-book', params: { iconfas: false } }
+            - { label: '%label.events%', entity: 'Event', icon: 'list', params: { iconfas: false } }
+
+            # - { label: '%menu.label.details%', entity: 'Room', icon: 'bed', params: { iconfas: false } }
+            - { label: '%menu.label.stays%', entity: 'Stays', icon: 'list', default: true, params: { iconfas: false } }
+
+            ##ROOMS BLOC
+            - { label: '%menu.label.villa%', type: 'divider' }
+            - { label: '%label.hotel_amenity%', entity: 'HotelAmenity', icon: 'tv', params: { iconfas: false } }
+            - { label: '%label.hotel_service%', entity: 'HotelService', icon: 'concierge-bell', params: { iconfas: false } }
+            - { label: '%label.hotel_activity%', entity: 'HotelActivity', icon: 'running', params: { iconfas: false } }
+            - { label: '%label.hotel_typical_day%', entity: 'HotelTypicalDay', icon: 'umbrella-beach', params: { iconfas: false } }
+
+            ##ACCOMMODATIONS BLOC
+            # - { label: '%menu.label.real_estate%', type: 'divider' }
+            # - { label: '%menu.label.accommodation%', entity: 'Accommodation', icon: 'home', params: { iconfas: false } }
+            # - { label: '%menu.label.real_estate_agents%', entity: 'RealEstateAgent', route: 'coming_soon', icon: 'address-book' }
+            # - label: '%menu.label.metadata%'
+            #   icon: 'table'
+            #   params: { iconfas: false }
+            #   children:
+            #     - { label: '%label.type_of_property%', entity: 'AccommodationType', icon: 'list', params: { iconfas: false } }
+            #     - { label: '%label.place%', entity: 'AccommodationPlace', icon: 'list', params: { iconfas: false } }
+            #     - { label: '%label.amenities%', entity: 'AccommodationAmenity', icon: 'list', params: { iconfas: false } }
+            #     - { label: '%label.label%', entity: 'AccommodationLabel', icon: 'list', params: { iconfas: false } }
+            #     - { label: '%label.duration_of_location%', entity: 'AccommodationLocation', icon: 'list', params: { iconfas: false } }
+
+            ## CRM BLOC
+            # - { label: 'CRM', type: 'divider' }
+            # - label: '%menu.label.agenda%'
+            #   icon: 'comments'
+            #   children:
+            #     - { label: '%label.rental.upcoming%', entity: 'Rental', icon: 'list', default: true, params: { iconfas: false } }
+            #     - { label: '%label.rental.historical%', entity: 'RentalHistorical', icon: 'list', params: { iconfas: false } }
+            #     - { label: '%label.rental.type%', entity: 'RentalType', icon: 'list', params: { iconfas: false } }
+            # - label: '%menu.label.people%'
+            #   icon: 'address-book'
+            #   children:
+            #       - { label: '%menu.label.people_list%', entity: 'Person', icon: 'list', params: { iconfas: false } }
+            #       - { label: '%label.person_nature%', entity: 'PersonNature', icon: 'table', params: { iconfas: false } }
+            #       - { label: '%label.person_position%', entity: 'PersonPosition', icon: 'table', params: { iconfas: false } }
+            #       - { entity: 'Address', icon: 'table', params: { iconfas: false } }
+            # - label: '%menu.label.documents%'
+            #   icon: 'file-text'
+            #   children:
+            #       - { label: '%menu.label.documents_list%', entity: 'Document', icon: 'list', params: { iconfas: false } }
+            #       - { label: '%label.document_type%', entity: 'DocumentObjectType', icon: 'table', params: { iconfas: false } }
+
+            - { label: 'DATA & SEO', type: 'divider' }
+            - { label: '%menu.label.building_list%', entity: 'BuildRoute', icon: 'tools' }
+            # - { label: '%menu.label.pdf_check_list%', entity: 'PdfCheck', icon: 'file-pdf' }
+            - { label: '%menu.label.translations%', entity: 'Translation', icon: 'globe', params: { iconfas: false } }
+
+            ## PARAMETERS BLOC
+            - { label: '%menu.label.settings%', type: 'divider' }
+            - label: '%menu.label.general_of_site%'
+              icon: 'gear'
+              children:
+                - { label: '%menu.label.informations%', entity: 'Organization', params: { action: 'edit', id: 1 }, icon: 'file-text' }
+                - { label: '%menu.label.google_analytics%', entity: 'GoogleAnalytics', icon: 'bar-chart', params: { action: 'edit', id: 4 } }
+                - { label: '%menu.label.tags%', entity: 'Tag', icon: 'list', params: { iconfas: false } }
+
+            - { label: '%menu.label.social_network%', entity: 'SocialLinks', icon: 'share-alt' }
+            - { label: '%menu.label.users%', entity: 'User', icon: 'user' }

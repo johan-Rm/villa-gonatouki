@@ -1,0 +1,89 @@
+imports:
+    - { resource: organization.yaml }
+
+parameters:
+    cms.title: 'Villa Gonatouki CMS'
+    api.title: 'Villa Gonatouki API'
+    siteweb.title: "Villa Gonatouki"
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: 'contact@graines-digitales.online'
+    # mailer_developer: [ 'mohamed.hanini95@gmail.com', 'johan13.remy@gmail.com' ]
+    mailer_developer: 'developer@graines-digitales.online'
+    mailer_admin: 'developer@gmail.com'
+    mailer_password: null
+    locale: 'fr'
+
+    view.host:  '%env(URL_VIEW)%'
+    cdn.host:   '%env(URL_CDN)%' # = assets host
+    api.host:   '%env(URL_API)%'
+    view.project_dir: '%env(DIRECTORY_VIEW)%'
+    resources_demo_dir: '%env(RESOURCES_DEMO_DIR)%'
+    resources_dir: '%env(DIRECTORY_RESOURCES)%'
+    stamp_dir: '%env(STAMP_DIR)%'
+
+    assets.path: '%resources_dir%'
+    assets.pdf.path: '%assets.path%/pdf'
+
+    assets.uploads.media.folder: uploads/media/files
+    assets.uploads.pdf.folder: uploads/pdf/files
+    assets.uploads.document.folder: uploads/document/files
+    assets.cache_prefix: 'media/cache'
+
+    #service translator : voir si on peut mettre une url plutot ..
+    # /home/www/graines-digitales/immobiliere-essaouira/cms/src/Service/Translation/Translator.php
+    resources.translations.path: '%resources_dir%/translations'
+    view.translations.path: '%view.project_dir%/lang'
+    app.translations.path: '%kernel.project_dir%/translations'
+    app.data.path: '%kernel.project_dir%/data'
+    # view.lang.translations.slug.path: '%view.project_dir%/lang/translations/slug'
+    view.data.path: '%view.project_dir%/data'
+    view.content.path: '%view.project_dir%/content'
+
+    # /home/www/graines-digitales/immobiliere-essaouira/cms/src/Command/GenerateNuxtJsRoutesCommand.php
+    # /home/www/graines-digitales/immobiliere-essaouira/cms/src/Service/NuxtJS/Router.php
+    view.update_dir: '%view.project_dir%/update'
+    view.update.build_routes.path: '%view.update_dir%/build_routes'
+    view.update.pdf_files.path: '%view.update_dir%/pdf_files'
+    view.update.json_data.path: '%view.update_dir%/json_data'
+    view.update.media_images.path: '%view.update_dir%/media_images'
+
+    google_translator_key: '%env(GOOGLE_CLOUD_API_KEY)%'
+
+framework:
+    # description: 'a description test for my application'
+    secret: '%env(APP_SECRET)%'
+    default_locale: 'fr'
+
+    #csrf_protection: true
+    #http_method_override: true
+
+    # Enables session support. Note that the session will ONLY be started if you read or write from it.
+    # Remove or comment this section to explicitly disable session support.
+    session:
+        handler_id: ~
+        cookie_secure: auto
+        cookie_samesite: lax
+
+    esi: true
+    #fragments: true
+    php_errors:
+        log: true
+    assets:
+        packages:
+            medias:
+                base_urls: [ '%cdn.host%/%assets.uploads.media.folder%' ]
+            medias_thumb:
+                base_urls: [ '%cdn.host%/media/cache/mini_thumbnail/%assets.uploads.media.folder%' ]
+            medias_vertical_thumb:
+                base_urls: [ '%cdn.host%/media/cache/vertical_nostamp/%assets.uploads.media.folder%' ]
+            documents:
+                base_urls: [ '%cdn.host%/%assets.uploads.document.folder%' ]
+    templating:
+        engines: ['twig', 'php']
+    # translator:
+    #     fallbacks: ['en']
+
+moskalyovd_fcm:
+    server_key: '%env(FCM_SERVER_KEY)%'

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')|first|default('en') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="generator" content="EasyAdmin" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="953423502628-mlj0q31mf082asvpka7fja1crcj8ebcl.apps.googleusercontent.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0 auto;padding: 0;height: 100%;width: 100%; mso-line-height-rule: exactly;background-color: #f1f1f1;color: #000;font-family:Rajdhani, Arial">
+   <center style="width: 100%;background-color: rgba(0, 20, 41, 0.85);color: #000">
+      <div style="max-width: 600px; margin: 0 auto;background-color: #fff">
+         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <tr>
+               <td valign="top" style="background-color: #001429">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                     <tr>
+                        <td width="100%" class="logo" style="text-align: left;padding: 20px 30px;">
+                           <nav class="navbar" role="navigation" style="background-color: #001429;padding: 20px 30px;border-radius: 0;border: 0">
+                              <div id="header-logo">
+                               <span style="font-family:Rajdhani, Arial;color: #f4511e;text-transform:uppercase;font-size:2.5em;font-weight:700;">VILLA</span>&nbsp;<span style="color: #fff;text-transform:uppercase;font-size:2.5em;font-weight:700;">GONATOUKI</span>
+                              </div>
+                           </nav>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr>
+               <td class="bg_white">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                     <tr>
+                        <td class="bg_white email-section">
+                           <div class="heading-section" style="text-align: center; padding: 0 30px;">
+                              <h1 style="text-transform: uppercase;padding: 0 20px;font-size: 1.5em;">{{ title }}</h1>
+                              <p style="padding: 0 65px;">{{ subTitle }}</p>
+                              {% if selectedDates is not empty %}
+                              <p>
+                                Pour la période du {{ selectedDates.start }} au {{ selectedDates.end }}
+                              </p>
+                              <ul>
+                                  {% for room in rooms %}
+                                      <li>{{ room.name }}</li>
+                                  {% endfor %}
+                              </ul>
+
+                              <p>Pour un montat total de : {{ price }} €</p>
+                              {% endif %}
+                              <div style="margin-top: 50px;margin-bottom: 50px">
+                                 <p>{{ label }} : </p>
+                                 <blockquote style="color: rgba(0, 0, 0, .6);border-left: 3px solid #f4511e;line-height: 1.8">{{ message }}</blockquote>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </table>
+         <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <tr>
+               <td valign="middle" style="padding:1.5em;background-color: #001429">
+                  <table>
+                     <tr>
+                        <td valign="top" width="100%">
+                           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                 <td style="text-align: left; padding-right: 10px;">
+                                    <p style="color: #fff">&copy; {{ date }} Villa Gonatouki conçu par <a href="mailto:johan.remy@graines-digitales.online" style="color: #f4511e;text-decoration: none;">Graines Digitales</a>.</p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </center>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        CreativeWork:
+            class: App\Entity\CreativeWork
+            translatable: true
+            form:
+                fields:
+                    - { property: 'text', translatable: true }
+                    - { property: 'slug', translatable: true }

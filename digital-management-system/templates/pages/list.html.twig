@@ -1,0 +1,590 @@
+{% extends '@EasyAdmin/default/list.html.twig' %}
+
+{% set _entity_config = easyadmin_entity(app.request.query.get('entity')) %}
+{% trans_default_domain _entity_config.translation_domain %}
+{% set _trans_parameters = { '%entity_name%': _entity_config.name|trans, '%entity_label%': _entity_config.label|trans } %}
+
+
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="{{ asset('asset/css/jquery.datetimepicker.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" />
+    
+    <style>
+/*          #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+  #sortable tbody tr { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable tbody tr td { position: absolute; margin-left: -1.3em; }*/
+
+    </style>
+     <style>
+        [draggable] {
+          user-select: none;
+          -webkit-user-drag: element;
+          cursor: move;
+        }
+        table.sortable {
+          i.fa.fa-arrows {
+            color: #999;
+          }
+          tr.over {
+            border: 1px dashed #ccc;
+          }
+        }
+        
+        .list .actions .action-export
+        , .list .actions .action-download
+        , .list .actions .action-reorder 
+        , .list .actions .action-saveOrder 
+        {
+            display: none;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+
+{% block global_actions %}
+
+    {{ parent() }}
+    {% if easyadmin_action_is_enabled_for_list_view('saveOrder', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-save-order" href="#">
+                <i class="fa fa-save"></i>
+                {{ 'Save position'|trans({}) }}
+            </a>
+        </div>
+    {% endif %}
+    {% if easyadmin_action_is_enabled_for_list_view('reorder', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-reorder" href="{{ path('easyadmin', _request_parameters|merge({ action: 'reorder' })) }}">
+                <i class="fa fa-sort"></i>
+                Reset position
+            </a>
+        </div>
+    {% endif %}
+    {% if easyadmin_action_is_enabled_for_list_view('download', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-download" href="{{ path('easyadmin', _request_parameters|merge({ action: 'download' })) }}">
+                <i class="fa fa-download"></i>
+                Télécharger
+            </a>
+        </div>
+    {% endif %}
+    {% if easyadmin_action_is_enabled_for_list_view('export', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-export" href="{{ path('easyadmin', _request_parameters|merge({ action: 'export', params: { params1: 'params1', params2: 'params2' } })) }}">
+                <i class="fa fa-download"></i>
+                CSV export all
+            </a>
+        </div>
+    {% endif %}
+    {% if easyadmin_action_is_enabled_for_list_view('translate', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-translate" href="{{ path('easyadmin', _request_parameters|merge({ action: 'translate', params: { params1: 'params1', params2: 'params2' } })) }}">
+                <i class="fa fa-download"></i>
+                {{ 'Translate all channels'|trans({}) }}
+            </a>
+        </div>
+    {% endif %}
+
+    {% if _entity_config.list.reports is defined and easyadmin_action_is_enabled_for_list_view('export', _entity_config.name) %}
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-download"></i>
+                CSV export
+            </button>
+            <div class="dropdown-menu">
+                {% for report in _entity_config.list.reports %}
+                    <a class="dropdown-item" href="{{ path('easyadmin', _request_parameters|merge({ action: 'export', params: { slug: report }  })) }}">{{ report }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if easyadmin_action_is_enabled_for_list_view('import', _entity_config.name) %}
+        <div class="button-action">
+            <a class="btn btn-primary action-export" href="{{ path('easyadmin', _request_parameters|merge({ action: 'import' })) }}">
+                <i class="fa fa-download"></i>
+                CSV import
+            </a>
+        </div>
+    {% endif %}
+
+   
+{% endblock global_actions %}
+
+{% block main %}
+    {% set _fields_visible_by_user = fields|filter((metadata, field) => easyadmin_is_granted(metadata.permission)) %}
+    {% set _number_of_hidden_results = 0 %}
+    {% set _list_item_actions = easyadmin_get_actions_for_list_item(_entity_config.name) %}
+
+    <table class="table datagrid sortable">
+        <thead>
+        {% block table_head %}
+            <tr>
+                {% if _has_batch_actions %}
+                    <th width="1px"><span><input type="checkbox" class="form-batch-checkbox-all"></span></th>
+                {% endif %}
+
+                {% for field, metadata in _fields_visible_by_user %}
+                    {% set isSortingField = (metadata.property == app.request.get('sortField')) or ('association' == metadata.type and app.request.get('sortField') starts with metadata.property ~ '.') %}
+                    {% set nextSortDirection = isSortingField ? (app.request.get('sortDirection') == 'DESC' ? 'ASC' : 'DESC') : 'DESC' %}
+                    {% set _column_label = metadata.label|trans(_trans_parameters) %}
+                    {% set _column_icon = isSortingField ? (nextSortDirection == 'DESC' ? 'fa-arrow-up' : 'fa-arrow-down') : 'fa-sort' %}
+
+                    <th class="{{ isSortingField ? 'sorted' }} {{ metadata.virtual ? 'virtual' }} {{ metadata.dataType|lower }} {{ metadata.css_class }}" {{ easyadmin_config('design.rtl') ? 'dir="rtl"' }}>
+                        {% if metadata.sortable %}
+                            <a href="{{ path('easyadmin', _request_parameters|merge({ page: 1, sortField: metadata.property, sortDirection: nextSortDirection })) }}">
+                                {{ _column_label|raw }} <i class="fa fa-fw {{ _column_icon }}"></i>
+                            </a>
+                        {% else %}
+                            <span>{{ _column_label|raw }}</span>
+                        {% endif %}
+                    </th>
+                {% endfor %}
+
+                {% if _list_item_actions|length > 0 %}
+                    <th {% if _entity_config.list.collapse_actions %}width="10px"{% endif %} {{ easyadmin_config('design.rtl') ? 'dir="rtl"' }}>
+                        <span class="sr-only">{{ 'list.row_actions'|trans(_trans_parameters, 'EasyAdminBundle') }}</span>
+                    </th>
+                {% endif %}
+            </tr>
+        {% endblock table_head %}
+        </thead>
+
+        <tbody id="sortable">
+        {% block table_body %}
+            {% for item in paginator.currentPageResults %}
+                {% if not easyadmin_is_granted(_entity_config.list.item_permission, item) %}
+                    {% set _number_of_hidden_results = _number_of_hidden_results + 1 %}
+                {% else %}
+                    {# the empty string concatenation is needed when the primary key is an object (e.g. an Uuid object) #}
+                    {% set _item_id = '' ~ attribute(item, _entity_config.primary_key_field_name) %}
+                    <tr draggable="true" class="ui-state-default" data-id="{{ _item_id }}" >
+                        {% if _has_batch_actions %}
+                            <td><input type="checkbox" class="form-batch-checkbox" value="{{ _item_id }}"></td>
+                        {% endif %}
+
+                        {% for field, metadata in _fields_visible_by_user %}
+                            {% set isSortingField = metadata.property == app.request.get('sortField') %}
+                            {% set _column_label =  (metadata.label ?: field|humanize)|trans(_trans_parameters)  %}
+
+                            <td class="{{ isSortingField ? 'sorted' }} {{ metadata.dataType|lower }} {{ metadata.css_class }}" {{ easyadmin_config('design.rtl') ? 'dir="rtl"' }}>
+                                {{ easyadmin_render_field_for_list_view(_entity_config.name, item, metadata) }}
+                            </td>
+                        {% endfor %}
+
+                        {% if _list_item_actions|length > 0 %}
+                            {% set _column_label =  'list.row_actions'|trans(_trans_parameters, 'EasyAdminBundle') %}
+                            <td class="actions">
+                                {% block item_actions %}
+                                    {% set _actions_template = _entity_config.list.collapse_actions
+                                        ? '@EasyAdmin/default/includes/_actions_dropdown.html.twig'
+                                        : '@EasyAdmin/default/includes/_actions.html.twig'
+                                    %}
+                                    {{ include(_actions_template, {
+                                        actions: _list_item_actions,
+                                        entity_config: _entity_config,
+                                        request_parameters: _request_parameters,
+                                        translation_domain: _entity_config.translation_domain,
+                                        trans_parameters: _trans_parameters,
+                                        item_id: _item_id,
+                                        item: item
+                                    }, with_context = false) }}
+                                {% endblock item_actions %}
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td class="no-results" colspan="{{ _fields_visible_by_user|length + 1 }}">
+                        {{ 'search.no_results'|trans(_trans_parameters, 'EasyAdminBundle') }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            {% if _number_of_hidden_results > 0 %}
+                <tr class="datagrid-row-empty">
+                    <td class="text-center" colspan="{{ _fields_visible_by_user|length + 1 }}">
+                        <span class="datagrid-row-empty-message"><i class="fa fa-lock mr-1"></i> {{ 'security.list.hidden_results'|trans({}, 'EasyAdminBundle') }}</span>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endblock table_body %}
+        </tbody>
+    </table>
+
+    {% block delete_form %}
+        {% set referer = paginator.currentPage == paginator.nbPages and 1 != paginator.currentPage and 1 == paginator.currentPageResults|length
+            ? path('easyadmin', app.request.query|merge({ page: app.request.query.get('page') - 1 }))
+            : app.request.requestUri
+        %}
+
+        {{ include('@EasyAdmin/default/includes/_delete_form.html.twig', {
+            view: 'list',
+            referer: referer,
+            delete_form: delete_form_template,
+            _translation_domain: _entity_config.translation_domain,
+            _trans_parameters: _trans_parameters,
+            _entity_config: _entity_config,
+        }, with_context = false) }}
+    {% endblock delete_form %}
+
+
+    {% block download_form %}
+        {% set referer = paginator.currentPage == paginator.nbPages and 1 != paginator.currentPage and 1 == paginator.currentPageResults|length
+            ? path('easyadmin', app.request.query|merge({ page: app.request.query.get('page') - 1 }))
+            : app.request.requestUri
+        %}
+
+        {{ include('components/_download_form.html.twig', {
+            view: 'list',
+            referer: referer|url_encode,
+            _translation_domain: _entity_config.translation_domain,
+            _trans_parameters: _trans_parameters,
+            _entity_config: _entity_config,
+        }, with_context = false) }}
+    {% endblock download_form %}
+
+    {% block translation_form %}
+        {{ include('components/_translation_form.html.twig', {
+            view: 'list',
+            _translation_domain: _entity_config.translation_domain,
+            _trans_parameters: _trans_parameters,
+            _entity_config: _entity_config,
+        }, with_context = false) }}
+    {% endblock translation_form %}
+{% endblock main %}
+
+{% block body_javascript %}
+    {# {{ parent() }} #}
+    <script type="text/javascript">
+        $(function() {
+            const toggles = document.querySelectorAll('.checkbox-switch input[type="checkbox"]');
+            for (i = 0; i < toggles.length; i++) {
+                toggles[i].addEventListener('change', function () {
+                    const toggle = this;
+                    const newValue = this.checked;
+                    const oldValue = !newValue;
+                    const propertyName = this.closest('.checkbox-switch').dataset.propertyname;
+
+                    const toggleUrl = "{{ path('easyadmin', { action: 'edit', entity: _entity_config.name, view: 'list' })|raw }}"
+                        + "&id=" + this.closest('tr').dataset.id
+                        + "&property=" + propertyName
+                        + "&newValue=" + newValue.toString();
+
+                    let toggleRequest = $.ajax({ type: "GET", url: toggleUrl, data: {} });
+
+                    toggleRequest.done(function(result) {});
+
+                    toggleRequest.fail(function() {
+                        // in case of error, restore the original value and disable the toggle
+                        toggle.checked = oldValue;
+                        toggle.disabled = true;
+                        toggle.closest('.checkbox-switch').classList.add('disabled');
+                    });
+                });
+            }
+
+            $('.action-delete').on('click', function(e) {
+                e.preventDefault();
+                const id = $(this).parents('tr').first().data('id');
+
+                $('#modal-delete').modal({ backdrop: true, keyboard: true })
+                    .off('click', '#modal-delete-button')
+                    .on('click', '#modal-delete-button', function () {
+                        let deleteForm = $('#delete-form');
+                        deleteForm.attr('action', deleteForm.attr('action').replace('__id__', id));
+                        deleteForm.trigger('submit');
+                    });
+            });
+
+            {% if _has_filters %}
+            // HTML5 specifies that a <script> tag inserted with innerHTML should not execute
+            // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#Security_considerations
+            // That's why we can't use just 'innerHTML'. See https://stackoverflow.com/a/47614491/2804294
+            var setInnerHTML = function(element, htmlContent) {
+                element.innerHTML = htmlContent;
+                Array.from(element.querySelectorAll('script')).forEach( oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes)
+                        .forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            };
+
+            document.querySelector('.action-filters-button').addEventListener('click', function(event) {
+                let filterButton = event.currentTarget;
+                let filterModal = document.querySelector(filterButton.dataset.modal);
+                let filterModalBody = filterModal.querySelector('.modal-body');
+
+                $(filterModal).modal({ backdrop: true, keyboard: true });
+                filterModalBody.innerHTML = '<div class="fa-3x px-3 py-3 text-muted text-center"><i class="fas fa-circle-notch fa-spin"></i></div>';
+
+                $.get(filterButton.getAttribute('href'), function (response) {
+                    setInnerHTML(filterModalBody, response);
+                });
+
+                event.preventDefault();
+                event.stopPropagation();
+            });
+            {% endif %}
+
+            {% if _has_batch_actions %}
+            const titleContent = $('.content-header-title > .title').html();
+            $(document).on('click', '.deselect-batch-button', function () {
+                $(this).closest('.content').find(':checkbox.form-batch-checkbox-all').prop('checked', false).trigger('change');
+            });
+            $(document).on('change', '.form-batch-checkbox-all', function () {
+                $(this).closest('.content').find(':checkbox.form-batch-checkbox').prop('checked', $(this).prop('checked')).trigger('change');
+            });
+            $(document).on('change', '.form-batch-checkbox', function () {
+                const $content = $(this).closest('.content');
+                let $input = $content.find(':hidden#batch_form_ids');
+                let ids = $input.val() ? $input.val().split(',') : [];
+                const id = $(this).val();
+
+                if ($(this).prop('checked')) {
+                    if (-1 === ids.indexOf(id)) {
+                        ids.push(id);
+                    }
+                } else {
+                    ids = ids.filter(function(value) { return value !== id });
+                    $content.find(':checkbox.form-batch-checkbox-all').prop('checked', false);
+                }
+
+                if (0 === ids.length) {
+                    $content.find('.global-actions').show();
+                    $content.find('.batch-actions').hide();
+                    $content.find('table').removeClass('table-batch');
+                } else {
+                    $content.find('.batch-actions').show();
+                    $content.find('.global-actions').hide();
+                    $content.find('table').addClass('table-batch');
+                }
+
+                $input.val(ids.join(','));
+                // $Security_considerationsent.find('.content-header-title > .title').html(0 === ids.length ? titleContent : '');
+            });
+
+            $('button[name="batch_form[name]"].ask-confirm-batch-button').on('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                let $button = $(this);
+
+                $('#modal-batch-action').modal({ backdrop : true, keyboard : true })
+                    .off('click', '#modal-batch-action-button')
+                    .on('click', '#modal-batch-action-button', function () {
+                        $button.unbind('click');
+                        $button.trigger('click');
+                    });
+            });
+            {% endif %}
+        });
+    </script>
+
+    {% if 'search' == app.request.get('action') %}
+        <script type="text/javascript">
+            const _search_query = "{{ app.request.get('query')|default('')|e('js') }}";
+            // the original query is prepended to allow matching exact phrases in addition to single words
+            $('#main').find('table tbody td:not(.actions)').highlight($.merge([_search_query], _search_query.split(' ')));
+        </script>
+    {% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+    <script src="{{ asset('asset/js/jquery.datetimepicker.full.min.js') }}"></script>
+    <script src="{{ asset('asset/js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript">
+        $('.action-download').on('click', function(e) {
+            e.preventDefault();
+            const id = $(this).parents('tr').first().data('id');
+
+            $('#modal-download').modal({ backdrop: 'static', keyboard: false })
+                .off('click', '#modal-download-button')
+                .on('click', '#modal-download-button', function () {
+                    let deleteForm = $('#download-form');
+                    deleteForm.attr('action', deleteForm.attr('action').replace('__id__', id));
+                    deleteForm.trigger('submit');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        Dropzone.autoDiscover = false;
+        $(document).ready(function(){
+            var _actionToDropZone = $("#media-dropzone-download").attr('action');
+            var myDropzone = new Dropzone(
+                "#media-dropzone-download"
+                , { 
+                    url: _actionToDropZone,
+                    maxFiles: 10,
+                    maxFilesize: 20,
+                    timeout: 900000,
+                    // parallelUploads: 10,
+                    // uploadMultiple: false,
+                    // autoProcessQueue: true,
+                    success: function (file, response, data) {
+                        // console.log('success dropzone')
+                        // console.log(file)
+                        // console.log(response)
+                        // console.log(data)
+                        var message = 'Le téléchargement est terminé, veuillez fermer la popup.';
+                        var elem = $("#modal-download .message");
+                        if(elem.hasClass( "alert-info" )) {
+                            elem.addClass('alert-success').removeClass('alert-info');
+                        }
+                        $("#modal-download .message-text").text(message);
+                    },
+                    error: function (file, response) {
+                        // console.log('error dropzone')
+                        // console.log(file)
+                        // console.log(response)
+                        var message = 'Une erreur innatendue est survenue, veuillez recommencer.';
+                        var elem = $("#modal-download .message");
+                        if(elem.hasClass( "alert-info" )) {
+                            elem.addClass('alert-danger').removeClass('alert-info');
+                        }
+                        $("#modal-download .message-text").text(message);
+                    },
+                     //Called just before each file is sent
+                    sending: function(file, xhr, formData) {
+
+                            for (var pair of formData.entries()) {
+                                console.log(pair[0]+ ': ' + pair[1]);
+                            }
+
+
+                         //Execute on case of timeout only
+                         xhr.ontimeout = function(e) {
+                            //Output timeout error message here
+                            var message = 'Temps de téléchargement dépassé, veuillez recommencer.';
+                            var elem = $("#modal-download .message");
+                            if(elem.hasClass( "alert-info" )) {
+                                elem.addClass('alert-danger').removeClass('alert-info');
+                            }
+                            $("#modal-download .message-text").text(message);
+                         }
+                    },
+                    init: function() {
+                        this.on("processing", function(file) { 
+                            console.log("process file.");
+                            var elem = $("#modal-download .message");
+                            var message = $("#modal-download .message-text-initial").text();
+                            if(elem.hasClass( "alert-danger" )) {
+                                elem.addClass('alert-info').removeClass('alert-danger');
+                            } else if(elem.hasClass( "alert-success" )) {
+                                elem.addClass('alert-info').removeClass('alert-success');
+                            }
+                            $("#modal-download .message-text").text(message);
+                        });
+                    }
+                }
+            );
+        });
+    </script>
+    <script type="text/javascript">
+        $('.action-translate').on('click', function(e) {
+            // e.preventDefault();
+            $('#modal-translate').modal(
+                { 
+                    escapeClose: false
+                    , clickClose: false
+                    , showClose: false
+                }
+            );
+        });
+    </script>
+    <script type="text/javascript">
+        $('.action-filters-button').on('click', function(e) {
+            $('#modal-filters .modal-body').bind('DOMSubtreeModified',function(event) {
+                $('.datepicker').datetimepicker({format: 'd/m/Y'});
+                $('.datetimepicker').datetimepicker({format: 'd/m/Y H:i'});
+            });
+        });
+    </script>
+
+    {% block sorting_form %}
+        {{ include('components/_sorting_form.html.twig', {
+            _entity_config: _entity_config,
+        }, with_context = false) }}
+    {% endblock sorting_form %}
+    <script type="text/javascript">
+        $('.action-sorting-gallery').on('click', function(e) {
+            // e.preventDefault();
+            $('#modal-sorting-gallery').modal(
+                { 
+                    escapeClose: false
+                    , clickClose: false
+                    , showClose: false
+                }
+            );
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.action-save-order').on('click', function(e) {
+            e.preventDefault();
+            $('#modal-sorting-gallery').modal(
+                { 
+                    escapeClose: false
+                    , clickClose: false
+                    , showClose: false
+                }
+            );
+            var elements = $('.list-imagegallery #sortable > tr');
+            var results = []
+            elements.each(function( index,element ) {
+                var id = $(element).attr('data-id');
+                var position = parseInt($(element).find('.sorted span').html());
+                results.push({ 'id': id, 'position': position })
+            });
+
+            let url = "{{ path('easyadmin_sort', { action: 'sort', id: '_entityId', position: '_endPosition' }) }}";
+
+            $.ajax({
+                type: "POST",     
+                url: url,
+                data: { 'results' : results }
+            })
+            .done(function(res) {
+                window.location.reload();
+            })
+            .fail(function(err) {
+                console.log(err)
+                alert("An error occurred while sorting. Please refresh the page and try again.")
+            })
+        });
+    </script>
+
+    <script>
+        $( function() {
+
+            $('.list-imagegallery #sortable').sortable({
+                helper: fixWidthHelper,
+                update: function (event, ui) {
+                    var entityId = $(ui.item).attr('data-id');
+                    // var position = ui.item.index();
+                    var up = true
+                    if(ui.position.top < ui.originalPosition.top) {
+                        up = false
+                    }
+                    var itemPosition = parseInt(ui.item.find('.sorted span').html());
+                }
+            }).disableSelection();
+
+            function fixWidthHelper(e, ui) {
+                ui.children().each(function() {
+                    $(this).width($(this).width());
+                });
+
+                return ui;
+            }
+        
+        });
+    </script>
+{% endblock %}

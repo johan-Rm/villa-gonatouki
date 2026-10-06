@@ -1,0 +1,5 @@
+{% if null != value %}
+  <span class="badge badge-dark">{{ value|trans }}</span>
+{% else %}
+    <span class="label">Aucun(e)</span>
+{% endif %}

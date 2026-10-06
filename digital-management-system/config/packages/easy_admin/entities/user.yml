@@ -1,0 +1,52 @@
+easy_admin:
+    entities:
+        User:
+            class: App\Entity\User
+            controller: App\Controller\SecurityController
+            list:
+                title: '%menu.list.label.users%'
+                actions: ['-show', 'edit', 'delete']
+                fields:
+                    - { property: 'getUsername', label: '%label.username%' }
+                    - { property: 'enabled' }
+                    - { property: 'lastLogin' }
+                    # - { property: 'dateCreated' }
+                    # - { property: 'dateModified' }
+            form:
+                fields:
+                    - { type: 'group', label: '%group.label.basic.informations%', icon: 'chart-line', columns: 6 }
+                    - { property: 'username', label: '%label.username%' }
+                    - { property: 'email' }
+                    - { property: 'enabled' }
+                    - { type: 'group', label: '%group.label.secure.informations%', icon: 'chart-line', columns: 6 }
+                    -   property: 'plainPassword'
+                        type: 'repeated'
+                        type_options:
+#                            constraints: Symfony\Component\Security\Core\Validator\Constraints\UserPassword
+                            # type: Symfony\Component\Form\Extension\Core\Type\PasswordType
+                            required: false
+                            first_options: { label: '%form.label.password%' }
+                            second_options: { label: '%form.label.password_confirmation%' }
+                            invalid_message: fos_user.password.mismatch
+#                    -   property: 'roles'
+#                        type: choice
+#                        type_options:
+#                            expanded: true
+#                            multiple: true
+#                            choices:
+#                                'ROLE_ADVISOR': 'ROLE_ADVISOR'
+#                                'ROLE_ADMIN': 'ROLE_ADMIN'
+##                                'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN'
+                    # -   property: 'hasRoleAdmin'
+                    #     label: '%form.label.roles%'
+                    #     type: choice
+                    #     type_options:
+                    #         expanded: true
+                    #         multiple: false
+                    #         choices:
+                    #             'Advisor': 'ROLE_ADVISOR'
+                    #             'Administrator': 'ROLE_ADMIN'
+#                                'Super Administrateur': 'ROLE_SUPER_ADMIN'
+                            # placeholder: false
+                    - { type: 'group', label: '%group.label.personal.informations%', icon: 'chart-line', columns: 12 }
+                    - { property: 'person' }

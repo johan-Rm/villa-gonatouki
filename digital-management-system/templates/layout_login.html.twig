@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+ 			<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        {% endblock %}
+        <style>
+            :root {
+                --color-primary: {{ easyadmin_config('design.brand_color') }};
+                --color-secondary: #f4511e;
+                --color-success: #43a047;
+                --color-danger: #b0302a;
+            }
+        </style>
+        <link rel="stylesheet" href="{{ asset('build/login.css') }}">
+    </head>
+    <body class="text-center">
+        {% block body %}Immobilère Essaouira CMS{% endblock %}
+        <script src="{{ asset('build/login.js') }}"></script>
+    </body>
+</html>

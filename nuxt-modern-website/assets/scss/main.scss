@@ -1,0 +1,189 @@
+:root {
+  --color: #fff;
+  --color-black: #000;
+  --color-black-rgba-80: rgba(0,0,0,0.8);
+  --color-black-rgba-50: rgba(0,0,0,0.5);
+  --color-primary: #001429;
+  --color-primary-rgba: rgba(0, 20, 41);
+  --color-primary-rgba-10: rgba(0, 20, 41, 0.1);
+  --color-primary-rgba-30: rgba(0, 20, 41, 0.3);
+  --color-primary-rgba-50: rgba(0, 20, 41, 0.5);
+  --color-primary-rgba-80: rgba(0, 20, 41, 0.8);
+
+  // --color-secondary: #fb8c00;
+  // --color-secondary-rgba-80: rgb(251, 140, 0, 0.8);
+
+  --color-secondary: #f4511e; // #ef6c00, #ff9100, #fb8c00, #f4511e(default)
+  --color-secondary-rgba-80: rgba(244, 81, 30, 0.8);
+
+  --color-secondary-rgba-30: rgba(244, 81, 30, 0.3);
+  --color-secondary-rgba-10: rgba(244, 81, 30, 0.1);
+
+  --color-tertiary: #66bb6a;
+}
+
+.light-mode {
+
+}
+
+.inversed-mode {
+  --color: #fff;
+  --color-primary: #fb8c00;
+  --color-secondary: #001429;
+  --color-tertiary: #66bb6a;
+}
+
+.graines-digitales-mode {
+  --color: #fff;
+  --color-primary: #4caf50;
+  --color-secondary: #212121;
+  --color-tertiary: #66bb6a;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-left-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-left-leave-active {
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-left-enter, .slide-fade-left-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.slide-fade-right-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-right-leave-active {
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-right-enter, .slide-fade-right-leave-to
+/* .slide-fade-right-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-fade-top-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-top-leave-active {
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-top-enter {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.slide-fade-top-leave-to {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.slide-fade-bottom-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-bottom-leave-active {
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-bottom-enter {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.slide-fade-bottom-leave-to {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+
+
+
+.slide-fade-leftSlow-enter-active {
+  transition: all 1.5s ease;
+}
+.slide-fade-leftSlow-leave-active {
+  transition: all .10s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-leftSlow-enter, .slide-fade-leftSlow-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.page-content-container {
+  min-height: 650px;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.default-enter-active,
+.default-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 150ms;
+}
+
+.default-enter,
+.default-leave-to {
+  opacity: 0;
+}
+
+.spacer {
+  clear: both;
+}
+
+// @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+//   html {
+//     transform: rotate(-90deg);
+//     transform-origin: left top;
+//     width: 100vh;
+//     overflow-x: hidden;
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//
+//   }
+// }
+
+
+.v-tabs-item-wrapper h4 {
+  margin-bottom: 10px !important;
+}
+
+
+.v-tabs .v-tabs-bar a {
+  color: var(--color-primary) !important;
+  width: 50%;
+  text-align: center;
+}
+
+// .v-tabs .v-tabs-bar .v-tab:hover {
+//   color: #fff !important;
+// }
+
+// .v-tab::before {
+//   background-color: var(--color-primary) !important;
+// }
+
+// .v-tab::before:hover {
+//   background-color: var(--color-secondary) !important;
+// }
+
+.v-tooltip__content {
+	background: var(--color-primary) !important;
+}
+
+.v-tooltip__content.dark-tooltip {
+	background: var(--color-secondary) !important;
+}

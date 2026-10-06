@@ -1,0 +1,38 @@
+easy_admin:
+    entities:
+        Translation:
+            class: App\Entity\Translation
+            help: 'Translate your words, phrases and web pages'
+            controller: App\Controller\TranslationController
+            search:
+                fields:
+                    - 'entityId'
+            list:
+                title: '%menu.list.label.translations%'
+                max_results: 50
+                dql_filter: "entity.lang <> 'fr' AND entity.fieldName != 'slug'"
+                # actions: ['-show', 'edit', 'delete', 'translate']
+                actions: ['-show', 'edit', 'delete']
+                fields:
+                    - { property: 'entityId', label: 'ID' }
+                    - { property: 'lang' }
+                    - { property: 'translatedEntityName' }
+                    # - { property: 'translatedFieldName' }
+                    # - { property: 'key_left' }
+                    - { property: 'value_right' }
+                    - { property: 'is_locked', type: 'boolean' }
+                filters: 
+                  - property: 'entityId'
+                  - property: 'translatedEntityName'
+                  - property: 'translatedFieldName'
+            form:
+                fields:
+                    - { type: 'group', label: '%group.label.basic.texts%', columns: 8 }
+                    - { property: 'key_left', type_options: { disabled: true } }
+                    - { property: 'value_right', type: 'fos_ckeditor' }
+                    - { type: 'group', label: '%group.label.basic.informations%', columns: 4 }
+                    - { property: 'isLocked' }
+                    - { property: 'lang', type_options: { disabled: true, required: false }  }
+                    # - { property: 'entityId', type_options: { disabled: true }  }
+                    - { property: 'entityName', type_options: { disabled: true, required: false }  }
+                    - { property: 'fieldName', type_options: { disabled: true, required: false }  }

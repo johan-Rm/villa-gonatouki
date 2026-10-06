@@ -1,0 +1,227 @@
+parameters:
+
+    # ALL
+    label.invoice.date: Billing date
+    label.invoice.details: Invoice Details
+    label.lastname: Last name
+    label.firstname: First name
+    label.address: Address
+    label.city: City
+    label.country: Country
+    label.postal_code: Postal code
+    label.nature_of_the_property: Objet of the property
+    label.type_of_property: Type of property
+    label.duration_of_location: Duration of location
+    label.place: Place
+    label.amenities: Amenities
+    label.label: Label
+    label.properties: Properties
+    label.rental: Rental
+    label.rentals: Rentals
+    label.events: Events
+    label.event: Event
+    label.stays: Stays
+    label.rental.upcoming: Rental to come
+    label.rental.historical: Historical rental
+    label.rental.type: Location type
+    label.components: Components
+    label.blog: Blog
+    label.articles: Articles
+    label.comments: Comments
+    label.forms: Forms
+    label.api_url: API URL
+    label.message: Message
+    label.username: Username
+    label.paid: Paid
+    label.origin: Origin
+    label.deposit: Deposit
+    label.type: Type
+    label.form.empty_value: Aucun(e)
+    label.photo: Photo
+    label.primary_image: Primary image
+    label.secondary_image: Secondary image
+    label.image: Image
+    label.image_name: "Nom de l'image"
+    label.primary_article: Primary article
+    label.additional_text: Additional text
+    label.webpage_templates: Webpage templates
+    label.owner: Owner
+    label.document_type: Document type
+    label.geo: Geo Coordinates
+    label.person_nature: Prospect type
+    label.person_position: Function
+    label.teams: Personals
+    label.invoices_tracking: Invoices tracking
+    label.blockquote.title: Blockquote Title
+    label.blockquote: Blockquote
+    label.order: Rank
+    label.image_galleries: Images
+    label.hotel_amenity: Equipments
+    label.hotel_service: Services
+    label.hotel_typical_day: TypicalDays
+    label.hotel_activity: Activities
+    label.room_hotel_amenity: Room details
+    label.room: Room
+    label.lounge_hotel_amenity:  Lounge details
+    label.offers: Offers
+    label.seo.alt: SEO ALT Balise
+    label.elements: Elements
+    label.hotel_prices: Prices
+    label.host: Host
+    label.gallery: Gallery
+    
+    # MENU
+    menu.label.users: Users
+    menu.label.agenda: Agenda
+    menu.label.stays: Stays
+    menu.label.social_network: Social network
+    menu.label.google_analytics: Google Analytics
+    menu.label.settings: Settings
+    menu.label.informations: Informations
+    menu.label.general: General
+    menu.label.general_of_site: General of site
+    menu.label.real_estate: Real estate
+    menu.label.house: House
+    menu.label.apartment: Apartment
+    menu.label.accommodation: Accommodations
+    menu.label.all_accommodations: All accommodations
+    menu.label.appointment: Agenda (list)
+    menu.label.appointment_fullcalendar: Agenda (full calendar)
+    menu.label.appointment_google: Agenda (google)
+    menu.label.galleries: Galleries
+    menu.label.translations: Translations
+    menu.label.contact: Contact
+    menu.label.newsletter: Newsletter
+    menu.label.contact.artisan: Artisan
+    menu.label.contact.customer: Customer
+    menu.label.contact.address: Address
+    menu.label.contact.artisan_skills: Craftsmanship
+    menu.label.contact.artisan_skills.add: Add a skill
+    menu.label.contact.customer_status: Customer Status
+    menu.label.contact.quotation_status: Status Quotation
+    menu.label.tags: Tags
+    menu.label.pages: Pages
+    menu.label.menu: Menu
+    menu.label.metadata: Meta data
+    menu.label.quotation: Quotation
+    menu.label.invoice: Billing
+    menu.label.invoices: Bills
+    menu.label.people: People
+    menu.label.people_list: People list
+    menu.label.customer_card: Customer card
+    menu.label.real_estate_agents: RealEstateAgents
+    menu.label.organization: Organization
+    menu.label.invoice.add: Add an invoice
+    menu.label.dashboard: Dashboard
+    menu.label.medias: Medias
+    menu.label.documents: Documents
+    menu.label.turnover: Turnover
+    menu.label.turnover_list: Turnover
+    menu.label.turnover_list.current: Current year
+    menu.label.turnover_list.2018: 2018
+    menu.label.drive: Drive
+    menu.label.company: Partner (franchise)
+    menu.label.user: Users
+    menu.label.user.list: User list
+    menu.label.user.add: Add a user
+    menu.label.company.list: Partner list
+    menu.label.company.add: Add a partner
+    menu.label.address.list: Address list
+    menu.label.address.add: Add an address
+    menu.label.divider: Separation
+    menu.label.divider.business: Business
+    menu.label.divider.contacts: Contacts
+    menu.label.divider.contributors  : Collaborators
+    menu.label.documents_list: Documents list
+    menu.label.birthday: Birthday date
+    menu.label.status: Status
+    menu.label.component: Component
+    menu.label.villa: The villa
+    menu.label.hotel_price: The price
+    menu.label.rooms: The rooms
+    menu.label.booking: Booking
+    menu.label.price: The price
+    menu.label.details: The details
+    menu.label.building_list: Building list
+    menu.label.pdf_check_list: Pdf Check list
+    menu.label.messages: Messages
+    menu.label.person: Person
+    menu.label.amount: Amount
+
+    menu.list.label.pages: Pages list
+    menu.list.label.messages: Messages list
+    menu.list.label.articles: Articles list
+    menu.list.label.medias: Medias list
+    menu.list.label.galleries: Galleries list
+    menu.list.label.accommodations: Accommodations list
+    menu.list.label.accommodation_types: Accommodation types list
+    menu.list.label.accommodation_places: Accommodation places list
+    menu.list.label.accommodation_natures: Accommodation natures list
+    menu.list.label.accommodation_locations: Accommodation locations list
+    menu.list.label.accommodation_labels: Accommodation labels list
+    menu.list.label.accommodation_amenities: Accommodation amenities list
+    menu.list.label.rental: Rental list
+    menu.list.label.rental_types: Rental types list
+    menu.list.label.rental_historical: Rental historical list
+    menu.list.label.real_estate_agents: Real Estate Agents list
+    menu.list.label.persons: Persons list
+    menu.list.label.person_natures: Person natures list
+    menu.list.label.person_positions: Person positions list
+    menu.list.label.addresses: Addresses list
+    menu.list.label.documents: Documents list
+    menu.list.label.document_types: Document types list
+    menu.list.label.translations: Translations list
+    menu.list.label.tags: Tags list
+    menu.list.label.social_links: Social Links list
+    menu.list.label.users: Users list
+    menu.list.label.rooms: Rooms list
+    menu.list.label.rooms_prices: Rooms price list
+    menu.list.label.hotel_amenities: Hotel amenities list
+    menu.list.label.hotel_activities: Hotel activities list
+    menu.list.label.hotel_services: Hotel services list
+    menu.list.label.hotel_typicals_days: Hotel days types list
+
+    # FORM
+    form.label.password: Password
+    form.label.password_confirmation: Repeat password
+    form.label.quotation.customer: For (client)
+    form.label.quotation.artisan: Performed by (artisan)
+    form.label.with: Lodger
+    form.label.in: Accommodation
+    form.label.roles: Roles
+
+    # GROUP
+    group.label.basic.informations: 'Informations générales'
+    group.label.basic.infos: 'Informations'
+    group.label.basic.content: 'Contenus'
+    group.label.basic.document: 'Document'
+    group.label.basic.texts: 'Textes'
+    group.label.basic.seo: 'SEO (Référencement)'
+    group.label.additional.informations: 'Informations additionnelles'
+    group.label.personal.informations: 'Informations personnelles'
+    group.label.basic.videos: 'Videos'
+    group.label.basic.documents: 'Rattachemnts'
+    group.label.basic.images: 'Images'
+    group.label.basic.addresses: 'Adresses'
+    group.label.bank.informations: 'Informations bancaires'
+    group.label.secure.informations: 'Informations de sécurité'
+    group.label.supp.informations: 'Informations supplémentaires'
+    group.label.payment.informations: 'Informations sur le paiement'
+    group.label.invoice.details: 'Détails de la facture'
+    group.label.appointment.dates: 'Dates du Rendez-vous'
+    group.label.rental.dates: 'Dates de la location'
+    group.label.rental.concerning: 'Concernant'
+    group.label.further_information: Further information
+    group.label.download: Télécharger votre fichier
+    group.label.select_images: Sélectionner vos images
+    group.label.add_galleries: Add one or more galleries
+    group.label.gallery.name: Nom de la gallerie
+    group.label.basic.descriptive: Descriptif (label à changer)
+    group.label.basic.price: Tarification
+    group.label.basic.dwelling: Habitation
+    group.label.basic.characteristics: Caractéristiques
+    group.label.basic.media: Médias / Documents
+    group.label.basic.agent: Agent
+    group.label.basic.historical: Historical
+    group.label.basic.users: Users
+    group.label.accommodations.details: Details of the property

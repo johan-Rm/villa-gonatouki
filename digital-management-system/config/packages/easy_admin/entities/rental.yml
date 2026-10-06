@@ -1,0 +1,79 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Rental:
+            class: App\Entity\Event
+            controller: App\Controller\RentalController
+            help: 'Global message displayed in all views'
+            # role: ROLE_ADVISOR
+            # join: userCreated
+            # admin_filter: 'appointment.company'
+            search:
+                fields: [ 'accommodation.reference', 'accommodation.name' ]
+                # fields: ['beginAt', 'endAt', 'person.firstname', 'person.lastname']
+            list:
+                title: '%menu.list.label.rental%'
+                actions: ['-show', 'edit', '-delete']
+                # dql_filter: "entity.category != 76"
+                sort: ['beginAt', 'ASC']
+                fields:
+                  # - { property: 'rentalType', label: '%label.type%', template: 'components/default_collection.html.twig' }
+                  - { property: 'beginAt', type: 'datetime' }
+                  - { property: 'endAt', type: 'datetime' }
+                  # - { property: 'depositAmount', label: '%label.deposit%'  }
+                  - { property: 'depositStatus', label: '%label.paid%' }
+                  # - { property: 'rentalAgreement', template: 'components/vich_uploader_multi_file.html.twig' }
+                  - { property: 'person', label: '%form.label.with%' }
+                  - { property: 'accommodation', label: '%form.label.in%' }
+                  # - { property: 'accommodation.nature', label: 'Type de location', template: 'components/default_collection.html.twig' }
+#                  - { property: 'person.type', label: 'Type de contact', template: 'fields/type_collection.html.twig', label_colors: { 'artisan': 'primary', 'customer': 'secondary' } }
+                  # - { property: 'accommodation.status', label: 'Status du contact', template: 'components/default_collection.html.twig' }
+#                  - { property: 'person.status', label: 'Status du contact', template: 'fields/status_collection.html.twig', label_colors: { 'prospect': 'primary', 'devis-en-cours': 'info', 'devis-accepte': 'success', 'travaux-termine': 'success', 'travaux-en-cours': 'info' } }
+                  - { property: 'comment' }
+                filters:
+                  - property: 'beginAt'
+                    type: 'dateinterval'
+                  - property: 'endAt'
+                    type: 'dateinterval'
+                  - property: 'person'
+
+            show:
+                  actions: ['edit', 'delete']
+                  fields:
+                    - { property: 'comment' }
+                    - { property: 'person', label: '%form.label.with%' }
+                    - { property: 'accommodation', label: '%form.label.in%' }
+                    - { property: 'depositAmount' }
+                    - { property: 'depositStatus' }
+                    - { property: 'beginAt', type: 'datetime' }
+                    - { property: 'endAt', type: 'datetime' }
+                    - { property: 'rentalAgreement' }
+                    - { property: 'trackings', label : '%label.invoices_tracking%', type: 'array' }
+                    - { property: 'userCreated', type: 'string'  }
+                    - { property: 'userLastModified', type: 'string'  }
+                    - { property: 'dateModified', type: 'datetime' }
+                    - { property: 'dateCreated', type: 'datetime' }
+            form:
+               fields:
+                    - { type: 'group', label: '%group.label.rental.dates%', columns: 6 }
+                    - { property: 'beginAt', type: 'datetime', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy HH:mm', 'attr': { 'class': 'datetimepicker' } } }
+                    - { property: 'endAt', type: 'datetime', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy HH:mm', 'attr': { 'class': 'datetimepicker' } } }
+                   # - { property: 'beginAt' }
+                   # - { property: 'endAt' }
+                    - { type: 'group', label: '%group.label.rental.concerning%', columns: 6 }
+                    # - { property: 'person', label: 'Avec', css_class: 'required', type_options: { query_builder: ['App\Repository\PersonRepository', 'getPersonappointment'], required: false } }
+                    # - { property: 'rental', render: 'form'  }
+                    - { property: 'person', label: '%form.label.with%', type_options: { required: false } }
+                    - { property: 'accommodation', label: '%form.label.in%', type_options: { required: false }  }
+                    # - { property: 'status', label: '',  type_options: { query_builder: ['AppBundle\Repository\CustomerStatusRepository', 'getCustomerStatus'] } }
+                    - { type: 'group', label: '%group.label.basic.informations%', columns: 8 }
+                    - { property: 'comment', columns: 12 }
+                    # - { property: 'trackings', label : '%label.invoices_tracking%', type: 'collection', type_options: { entry_type: 'App\Form\InvoiceTrackingType', by_reference: false, attr: { class: 'collection_item', label_item: 'item' } } }
+                    - { type: 'group', label: '%group.label.additional.informations%', columns: 4 }
+                    - { property: 'depositStatus', columns: 12, label: '%label.paid%' }
+                    # - { property: 'rentalAgreement', columns: 12, type_options: { attr: { entity: 'Document' } } }
+                    # - { property: 'rentalType', columns: 12, type_options: { required: false } }
+                    # - { property: 'depositAmount', columns: 12 }
+                    # - { property: 'documentFile', columns: 12, type: 'file' }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

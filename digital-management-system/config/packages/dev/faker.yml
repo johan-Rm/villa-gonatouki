@@ -1,0 +1,139 @@
+bazinga_faker:
+    locale: fr_FR
+    orm: doctrine
+    entities:
+        # App\Entity\User: ~
+
+        # App\Entity\User:
+        #    number: 1
+        #    custom_formatters:
+        #        password:   { method: word }
+        # App\Entity\Person:
+        #    number: 5
+        #    custom_formatters:
+        #        placeOfBirth:   { method: city }
+        #        origin:   { method: randomElement, parameters: [ [ 'form - contact classic', 'form - contact fiche 248' ], 1 ] }
+        # App\Entity\Address:
+        #    number: 7
+        #    custom_formatters:
+        #        name:   { method: word }
+        #        address: { method: streetAddress }
+
+        # App\Entity\Person:
+        #     number: 5
+        #     custom_formatters:
+        #        gender:   { method: title }
+        #        familyName:   { method: lastName }
+        #        givenName:   { method: firstName }
+        #        name:   { method: null }
+        #        description:   { method: null }
+        #        url:   { method: null }
+        #        mainEntityOfPage:   { method: randomElement, parameters: [ [ 'http://schema.org/Person' ], 1 ] }
+        
+        # App\Entity\Taxonomy:
+        #     number: 2
+        #     custom_formatters:
+               # mainEntityOfPage:   { method: null }
+
+        # App\Entity\CreativeWork:
+        #     number: 2
+
+        # App\Entity\MediaObject:
+        #     number: 2
+        #     custom_formatters:
+        #        encodingFormat:   { method: mimeType }
+        #        filename:   { method: randomElement, parameters: [ [ 'default.jpg', 'image.jpg' ], 1 ] }
+        #        originalFilename:   { method: word }
+        #        dimensions:   { method: rgbColorAsArray }
+        #        name:   { method: null }
+        #        url:   { method: null }
+        #        text:   { method: null }
+
+
+        # App\Entity\DocumentObject:
+        #     number: 2
+        #     custom_formatters:
+        #        encodingFormat:   { method: mimeType }
+        #        filename:   { method: randomElement, parameters: [ [ 'default.pdf', 'document.pdf' ], 1 ] }
+        #        originalFilename:   { method: word }
+        #        dimensions:   { method: rgbColorAsArray }
+        #        name:   { method: null }
+        #        url:   { method: null }
+        #        text:   { method: null }
+
+        # App\Entity\WebPage:
+        #     number: 2
+        #     custom_formatters:
+        #        name:   { method: null }
+        #        description:   { method: null }
+        #        url:   { method: null }
+        #        headline:   { method: jobTitle }
+        #        alternativeHeadline:   { method: jobTitle }
+        #        mainEntityOfPage:   { method: randomElement, parameters: [ [ 'http://schema.org/WebPage' ], 1 ] }
+              
+        # App\Entity\Article:
+        #     number: 2
+        #     custom_formatters:
+        #        name:   { method: null }
+        #        description:   { method: null }
+        #        url:   { method: null }
+        #        headline:   { method: jobTitle }
+        #        alternativeHeadline:   { method: jobTitle }
+        #        mainEntityOfPage:   { method: randomElement, parameters: [ [ 'http://schema.org/Article' ], 1 ] }
+
+        # App\Entity\Message:
+        #     number: 5
+        # App\Entity\Invoice:
+        #     number: 3
+        #     custom_formatters:
+        #         customerFirstname:   { method: firstName }
+        #         customerLastname:   { method: lastName }
+        #         customerAddress: { method: streetAddress }
+        #         customerPostalCode: { method: postcode }
+        #         customerCity: { method: city }
+        #         customerCountry: { method: country }
+        #         paymentMethodId:   { method: creditCardNumber }
+        #         totalWithoutTaxes:   { method: null }
+        #         totalPaymentDue:   { method: null }
+        #         bankName:   { method: word }
+        #         bankCode:   { method: ean8 }
+        #         accountNumber:   { method: creditCardNumber }
+        #         ibanNumber:   { method: iban, parameters: ['FR'] }
+        #         swiftBicNumber:   { method: swiftBicNumber }
+        #         paymentModality:   { method: catchPhrase }
+        #         paymentPenalties:   { method: catchPhrase }
+        #         supplierName:   { method: firstName }
+        #         date: { method: datetimeBetween, parameters: ['- 3 years', '+ 3 years'] }
+        #         paymentDueDate: { method: datetimeBetween, parameters: ['- 3 years', '+ 3 years'] }
+        #         saleDate: { method: datetimeBetween, parameters: ['- 3 years', '+ 3 years'] }
+        #         reference:   { method: null }
+        # App\Entity\InvoiceElement:
+        #    number: 100
+        #    custom_formatters:
+        #        description:   { method: catchPhrase }
+        #        unitPrice:   { method: randomFloat, parameters: [ 2, 1, 50 ] }
+        #        quantity:   { method: randomNumber, parameters: [ 1 ] }
+        #        unit: { method: randomElement, parameters: [ [ 'h', 'pce' ], 1 ] }
+        #        totalWithoutTaxes:   { method: null }
+      
+        # App\Entity\Accommodation:
+        #    number: 10
+        #    custom_formatters:
+        #       price: { method: randomNumber, parameters: [6] }
+        #       numberOfRooms: { method: randomNumber, parameters: [1] }
+        #       floorSize: { method: randomNumber, parameters: [3] }
+        #       areaSize: { method: randomNumber, parameters: [4] }
+        #       reference:   { method: swiftBicNumber }
+        #       headline:   { method: company }
+        #       pdfUrl:   { method: url }
+        #       websiteUrl:   { method: url }
+        #       mainEntityOfPage:   { method: randomElement, parameters: [ [ 'https://schema.org/Message' ], 1 ] }
+
+        # App\Entity\Rental:
+        #    number: 7
+        # App\Entity\Event:
+        #    number: 7
+        #    custom_formatters:
+        #        beginAt: { method: datetimeBetween, parameters: ['- 30 days', '+ 120 days'] }
+        #        endAt: { method: datetimeBetween, parameters: ['+ 30 days', '+ 240 days'] }
+        #        document: { method: null }

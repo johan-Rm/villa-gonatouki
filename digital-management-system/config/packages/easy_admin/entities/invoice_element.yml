@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        InvoiceElement:
+            class: App\Entity\InvoiceElement
+            # role: ROLE_ADVISOR
+#            join: userCreated
+            # admin_filter: all
+            # embeddedList:
+            #     open_new_tab: false
+            disabled_actions: ['show', 'edit']
+            list:
+                fields:
+                    - { property: 'description' }
+                    - { property: 'quantity' }
+                    - { property: 'unitPrice', format: '%.2f €' }
+                    - { property: 'unit' }
+                    - { property: 'totalWithoutTaxes', format: '%.2f €' }
+#                    - { property: 'createdAt' }
+#                    - { property: 'updatedAt' }

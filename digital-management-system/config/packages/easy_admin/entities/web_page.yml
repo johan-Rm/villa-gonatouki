@@ -1,0 +1,91 @@
+easy_admin:
+    entities:
+        WebPage:
+            class: App\Entity\WebPage
+            controller: App\Controller\WebPageController
+            help: 'Create your pages'
+            translatable: true
+            serializable: true
+            list:
+                title: '%menu.list.label.pages%'
+                # actions: ['show', 'edit', 'delete', 'export', 'import']
+                actions: ['-show', 'edit', 'delete']
+                fields:
+                    - { property: 'headline' }
+                    - { property: 'isActive' }
+                    - { property: 'category', template: 'components/default_collection.html.twig' }
+                    # - { property: 'tags', type: 'array' }
+                    # - { property: 'article' }
+                    - { property: 'primaryImage', label: '%label.primary_image%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'secondaryImage', label: '%label.secondary_image%', template: 'components/vich_uploader_secondary_image.html.twig' }
+                    # - { property: 'webPageTemplate', label: '%label.webpage_templates%' }
+                    - { property: 'dateModified' }
+            show:
+                help: 'The form view overrides the global help message'
+                fields:
+                    # - { property: 'author' }
+                    - { property: 'isActive' }
+                    - { property: 'headline' }
+                    - { property: 'alternativeHeadline' }
+                    - { property: 'pushForward' }
+                    - { property: 'mainEntityOfPage' }
+                    - { property: 'primaryImage', type: 'entity', label: '%label.primary_image%' }
+                    - { property: 'secondaryImage', type: 'entity', label: '%label.secondary_image%' }
+                    - { property: 'gallery' }
+                    - { property: 'lastReviewed', type: 'datetime' }
+                    - { property: 'text' }
+                    - { property: 'tags' }
+                    - { property: 'datePublished' }
+                    - { property: 'expire' }
+            form:
+                form_options: { validation_groups: ['creative'] }
+                help: 'The form view overrides the global help message'
+                fields:
+                    - { type: 'group', label: '%group.label.basic.content%', columns: 8 }
+                    - { property: 'isActive' }
+                    - { property: 'headline', translatable: true }
+                    - { property: 'alternativeHeadline', translatable: true, help: 'usable for short titles, if empty, this field will be automatically edited' }
+                    - { property: 'pushForward', translatable: true }
+                    - { property: 'text', translatable: true, type: 'fos_ckeditor' }
+                    - { property: 'textResume', translatable: true }
+                    - { property: 'blockquoteTitle', translatable: true, label: '%label.blockquote.title%' }
+                    - { property: 'blockquote', translatable: true, label: '%label.blockquote%' }
+                    
+                    - { type: 'group', label: '%group.label.basic.document%', columns: 4 }
+                    - { property: 'datePublished', type_options: { disabled: false, 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'lastReviewed', type_options: { disabled: false, 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'category', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' }, required: true } }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { by_reference: true } }
+                    # - { property: 'webPageTemplate', label: '%label.webpage_templates%', type_options: { choice_translation_domain: true, multiple: false, expanded: false } }
+                    # - { property: 'article', type: 'entity', label: '%label.primary_article%', type_options: { attr: { entity: 'Article' } } }
+                    - { property: 'gallery', type: 'easyadmin_autocomplete', columns: 12 }
+                    # - { property: 'components', columns: 12 }
+                    # - { type: 'group', label: '%group.label.basic.documents%', columns: 6 }
+                    # - { property: 'mainEntityOfPage', type_options: { disabled: true } }
+                    # - { property: 'expire', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    # - { type: 'group', label: '%label.components%', columns: 6 }
+                    
+                    # - { property: 'Thing', label: '', type: 'App\Form\ThingType' }
+                    
+                    - { type: 'group', label: '%group.label.basic.media%', columns: 6 }
+                    # - { property: 'regenerateFormat', columns: 6, type_options: { data: false } }
+                    # - { property: 'hideStamp', columns: 6 }
+                    - { property: 'primaryImage', columns: 12, type: 'easyadmin_autocomplete', label: '%label.primary_image%', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+                    - { property: 'secondaryImage', columns: 12, type: 'easyadmin_autocomplete', label: '%label.secondary_image%', type_options: { attr: { entity: 'MediaObject' } } }
+                    - property: 'videos'
+                      label: 'Videos'
+                      # columns: 6
+                      type_options:  
+                        # choice_translation_domain: true
+                        multiple: true
+                        expanded: false
+                        query_builder: ['App\Repository\MediaObjectRepository', 'getVideos']
+                        # required: false
+                    
+          
+                    - { type: 'group', label: '%group.label.basic.seo%', columns: 6 }
+                    - { property: 'metaTitle', translatable: true, help: 'automatically generated field needed for SEO' }
+                    - { property: 'metaDescription', translatable: true, help: 'automatically generated field needed for SEO' }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

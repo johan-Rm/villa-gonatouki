@@ -1,0 +1,37 @@
+<div id="modal-download" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- https://www.dropzonejs.com/bootstrap.html -->
+            <div class="modal-body">
+                <div class="dropzone media-dropzone dropzone-area dz-clickable" id="media-dropzone-download" action="{{ path('ajax_media_download') }}">
+                    <div class="dz-default dz-message" data-dz-message>
+                        <span>{{ 'Drop files here to upload'|trans(_trans_parameters, 'EasyAdminBundle') }}</span>
+                        <div class="icon">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-10 message alert-info">
+                    <span class="message-text">
+                        
+                    </span>
+                    <span class="message-text-initial" style="display:none;">
+                        {{ 'Do not close while downloading files'|trans(domain = 'EasyAdminBundle') }}
+                        <br/>
+                         {{ 'Number of files limited to 10 simultaneously'|trans(domain = 'EasyAdminBundle') }}
+                    </span>
+                </div>
+                <div class="col-md-2">
+                    <div class="button-action">
+                    <a class="btn btn-primary action-list closed" href="{{ path('easyadmin', { 'action': 'list', 'entity': 'MediaObject' }) }}" target="_self">
+                        {{ 'Close'|trans(domain = 'EasyAdminBundle') }}
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

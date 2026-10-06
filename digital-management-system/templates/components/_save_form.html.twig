@@ -1,0 +1,31 @@
+{{
+    form(save_form, {
+        action: save_form.vars.action ~ ('?' in save_form.vars.action ? '&' : '?') ~ 'referer=' ~ referer,
+        method: 'POST',
+        attr: { id: 'save-form', style: 'display: none' }
+    })
+}}
+
+<div id="modal-save" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>{{ 'save_modal.title'|trans }}</h4>
+                <p>{{ 'save_modal.content'|trans }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn">
+                    {{ 'action.save'|trans(_trans_parameters, 'EasyAdminBundle') }}
+                </button>
+
+                {% if easyadmin_action_is_enabled(view, 'save', _entity_config.name) %}
+                    {% set _delete_action = easyadmin_get_action(view, 'save', _entity_config.name) %}
+                    <button type="button" data-dismiss="modal" class="btn btn-danger" id="modal-save-button" formtarget="{{ _save_action.target }}">
+                        {% if _save_action.icon %}<i class="fa fa-trash"></i>{% endif %}
+                        {{ 'save_modal.action'|trans(_trans_parameters, 'EasyAdminBundle') }}
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

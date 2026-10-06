@@ -1,0 +1,219 @@
+{% extends 'components/pdf.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="invoice-title">
+                            <h2>{{ informations.name|capitalize }}</h2>
+                            {#<h3 class="pull-right">Order # 12345</h3>#}
+                            <div class="name">
+                                <span class="name">{{ informations.address.name }}</span>
+                            </div>
+                            <address>
+                                <div class="address">{{ informations.address.address }}</div>
+                                <div class="postcode">{{ informations.address.postcode }}</div>
+                                <div class="city">{{ informations.address.city }}</div>
+                                <div class="country">{{ informations.address.country }}</div>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <!-- <img class="img-responsive" src="{{ path_to_public ~ asset('build/images/logo.png') }}"/> -->
+                      <img class="img-responsive" src="{{ asset('build/images/logo.png') }}"/>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="customer">
+                            <h3>{{ 'Recipient'|capitalize|trans }} :</h3>
+                            <div class="name">
+                                <span class="firstname">{{ invoice.customerFirstname }}</span> <span class="lastname">{{ invoice.customerLastname }}</span>
+                            </div>
+                            <address>
+                                <div class="address">{{ invoice.customerAddress }}</div>
+                                <div class="postcode">{{ invoice.customerPostalCode }}</div>
+                                <div class="city">{{ invoice.customerCity }}</div>
+                                <div class="country">{{ invoice.customerCountry }}</div>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 ">
+                        <div class="invoice_info">
+                            {% if invoice.date is defined and invoice.date is not empty %}
+                               <div class="row invoice_content invoiceDate">
+                                    <div class="item_label text-right col-xs-6">{{ 'Invoice date'|trans }}</div><div class="item_value col-xs-6">{{ invoice.date|date("m/d/Y") }}</div>
+                               </div>
+                            {%  endif %}
+
+                            {% if invoice.reference is defined and invoice.reference is not empty %}
+                                <div class="row invoice_content reference">
+                                    <div class="item_label text-right col-xs-6">{{ 'Reference'|trans }}</div><div class="item_value col-xs-6">{{ invoice.reference }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.paymentDueDate is defined and invoice.paymentDueDate is not empty %}
+                                <div class="paymentDueDate">
+                                    <div class="item_label text-right col-xs-6">{{ 'Payment due date'|trans }}</div><div class="item_value col-xs-6">{{ invoice.paymentDueDate|date("m/d/Y") }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.paymentModality is defined and invoice.paymentModality is not empty %}
+                                <div class="row invoice_content paymentModality">
+                                    <div class="item_label text-right col-xs-6">{{ 'Payment modality'|trans }}</div><div class="item_value col-xs-6">{{ invoice.paymentModality }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.supplier is defined and invoice.supplier is not empty %}
+                                <div class="row invoice_content supplier">
+                                    <div class="item_label text-right col-xs-6">{{ 'Supplier'|trans }}</div><div class="item_value col-xs-6">{{ invoice.supplier }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.customerFullName is defined and invoice.customerFullName is not empty %}
+                                <div class="row invoice_content contactClient">
+                                    <div class="item_label text-right col-xs-6">{{ 'Contact client'|trans }}</div><div class="item_value col-xs-6">{{ invoice.customerFullName }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.paymentPenalties is defined and invoice.paymentPenalties is not empty %}
+                                <div class="row invoice_content paymentPenalties">
+                                    <div class="item_label text-right col-xs-6">{{ 'Payment penalties'|trans }}</div><div class="item_value col-xs-6">{{ invoice.paymentPenalties }}</div>
+                                </div>
+                            {%  endif %}
+
+                            {% if invoice.saleDate is defined and invoice.saleDate is not empty %}
+                                <div class="row invoice_content saleDate">
+                                    <div class="item_label text-right col-xs-6">{{ 'Sale date'|trans }}</div><div class="item_value col-xs-6">{{ invoice.saleDate|date("m/d/Y") }}</div>
+                                </div>
+                            {%  endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4>{{ 'Additional info'|capitalize|trans }}</h4>
+                        <p>{{ invoice.additionalInfo }}</p>
+                    </div>
+                    <div class="col-xs-6 text-right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    {#<div class="panel-heading">#}
+                        {#<h3 class="panel-title"><strong>{{ 'Invoice details'|trans }}</strong></h3>#}
+                    {#</div>#}
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <td><strong>{{ 'Description'|trans }}</strong></td>
+                                        <td class="text-center"><strong>{{ 'Quantity'|trans }}</strong></td>
+                                        <td class="text-center"><strong>{{ 'Unit'|trans }}</strong></td>
+                                        <td class="text-right"><strong>{{ 'Unit price'|trans }}</strong></td>
+                                        <td class="text-right"><strong>{{ 'TVA'|trans }}</strong></td>
+                                        <td class="text-right"><strong>{{ 'Total HT'|trans }}</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for element in invoiceElement %}
+                                        <tr>
+                                            <td>{{ element.description }}</td>
+                                            <td class="text-center">{{ element.quantity }}</td>
+                                            <td class="text-center">{{ element.unit }}</td>
+                                            <td class="text-right" >{{ element.unitPrice|number_format(2, '.', ',') }} €</td>
+                                            <td class="text-right">{{ tva }} %</td>
+                                            <td class="text-right">{{ element.totalWithoutTaxes|number_format(2, '.', ',') }} €</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 pull-right">
+              <div class="total_invoice_content">
+                  <div class="row item total_ht">
+                      <div class="item_label col-xs-6">{{ 'Total'|trans }}</div><div class="item_value col-xs-6 text-right">{{ invoice.totalWithoutTaxes }} €</div>
+                  </div>
+                  <div class="row item tva">
+                      <div class="item_label col-xs-6">{{ 'TVA'|trans }}</div><div class="item_value col-xs-6 text-right">{{ tva }} %</div>
+                  </div>
+                  <div class="row item total_ttc">
+                      <div class="item_label col-xs-6">{{ 'Total Net'|trans }}</div><div class="item_value col-xs-6 text-right">{{ invoice.totalPaymentDue }} €</div>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="invoice-title">
+                    <h3>{{ informations.name|capitalize|trans }}</h3>
+                    {#<h3 class="pull-right">Order # 12345</h3>#}
+                    <div class="name">
+                        <span class="name">{{ informations.address.name }}</span>
+                    </div>
+                    <address>
+                        <div class="address">{{ informations.address.address }}</div>
+                        <div class="postcode">{{ informations.address.postcode }}</div>
+                        <div class="city">{{ informations.address.city }}</div>
+                        <div class="country">{{ informations.address.country }}</div>
+                    </address>
+                </div>
+            </div>
+            <!-- <div class="col-xs-3">
+                <div class="customer">
+                    <h3>{{ 'Contact'|capitalize|trans }}</h3>
+                    <div class="name">
+                        <span class="firstname">{{ invoice.customerFirstname }}</span> <span class="lastname">{{ invoice.customerLastname }}</span>
+                    </div>
+                    <address>
+                        <div class="address">{{ invoice.customerAddress }}</div>
+                        <div class="postcode">{{ invoice.customerPostalCode }}</div>
+                        <div class="city">{{ invoice.customerCity }}</div>
+                        <div class="country">{{ invoice.customerCountry }}</div>
+                    </address>
+                </div>
+            </div> -->
+            <div class="col-xs-6">
+                <div class="bank_details">
+                    <h3>{{ 'Bank details'|capitalize|trans }}</h3>
+                    <div class="bank_content">
+                        <div class="row item bank_name">
+                            <div class="item_label col-xs-6">{{ 'Bank'|trans }}</div><div class="item_value col-xs-6">{{ invoice.bankName }}</div>
+                        </div>
+                        <div class="row item bank_name">
+                            <div class="item_label col-xs-6">{{ 'Bank code'|trans }}</div><div class="item_value col-xs-6">{{ invoice.bankCode }}</div>
+                        </div>
+                        <div class="row item bank_name">
+                            <div class="item_label col-xs-6">{{ 'Account number'|trans }}</div><div class="item_value col-xs-6">{{ invoice.accountNumber }}</div>
+                        </div>
+                        <div class="row item bank_name">
+                            <div class="item_label col-xs-6">{{ 'IBAN'|trans }}</div><div class="item_value col-xs-6">{{ invoice.ibanNumber }}</div>
+                        </div>
+                        <div class="row item bank_name">
+                            <div class="item_label col-xs-6">{{ 'SWIFT/BIC'|trans }}</div><div class="item_value col-xs-6">{{ invoice.swiftBicNumber }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

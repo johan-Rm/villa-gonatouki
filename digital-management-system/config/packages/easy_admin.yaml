@@ -1,0 +1,9 @@
+parameters:
+    global_actions:
+            - download
+            - export
+            - import
+            - translate
+
+imports:
+  - { resource: easy_admin/ }

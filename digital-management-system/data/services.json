@@ -1,0 +1,327 @@
+[
+    {
+        "name": "Hygiène / propreté en conformité avec les normes du Covid-19",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Désinfection des chambres à chaque changement d’hôtes",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Isolation des tables pour les repas",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Eau filtrée potable et gratuite",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Contact médecin",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Gardien de nuit",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Parking Intérieur",
+        "moreInfo": "",
+        "category": "Pour votre sécurité"
+    },
+    {
+        "name": "Service taxi, alentours et toute destination au Maroc",
+        "moreInfo": "",
+        "category": "Pour vos déplacements"
+    },
+    {
+        "name": "Navette aéroport (payant)",
+        "moreInfo": "",
+        "category": "Pour vos déplacements"
+    },
+    {
+        "name": "Location de voiture avec ou sans chauffeur",
+        "moreInfo": "",
+        "category": "Pour vos déplacements"
+    },
+    {
+        "name": "Préparation minutieuse de votre séjour",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Check in et check out 24/24",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Pas d’horaires pour les repas",
+        "moreInfo": "nos records: dernier petit déjeuner servi à 15h30, dernier déjeuner à 18h et dernier dîner à 3h15",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Repas végétariens ou menus spécifiques à la demande",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Réservations de toutes les activités à la demande",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Paiement par carte bancaire / virement / espèces",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Puce téléphonique marocaine à la demande",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Wifi, fibre optique dans toute la villa les jardins et les piscines",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "4 savons maison totalement naturels fournis dans les chambres",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Sèche-cheveux dans chaque chambre",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Fer à repasser à la demande",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Service pressing",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Impression des billets d’avion",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+    {
+        "name": "Quelques mots en arabe à connaître",
+        "moreInfo": "",
+        "category": "Pour votre séjour de rêve"
+    },
+	{
+        "name": "Sélection des meilleurs prestataires pour les activités",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Conseils pour les restaurants",
+        "moreInfo": "en fonction de vos souhaits: type de cuisine, animation/ tranquillité/ décoration, budget",
+        "category": "Pour vos bons plans"
+    },
+    {
+        "name": "Sélection des meilleurs prestataires",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+    {
+        "name": "Conseils pour les restaurants en fonction de vos souhaits",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Partage de la culture locale",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Conseils sur les visites, les activités, les marchés, les produits locaux…",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Accueil en cuisine pour apprendre à volonté",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Un thé chez l’habitant",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Huile d’Argan pure à prix défiant toute concurrence",
+        "moreInfo": "",
+        "category": "Pour vos bons plans"
+    },
+	{
+        "name": "Nombreux espaces pour s’isoler au calme",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Linge de maison changé à la demande",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Serviettes piscine",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Piscines chauffées à 29° toute l’année",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Couloir de nage",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Solarium",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Télévision",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Netflix",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Hi-fi/bluetooth",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Fourniture d’enceintes en chambre",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Hammam dans notre spa",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Soins du corps dans notre spa",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Massage dans notre spa",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Feu préparé chaque jour dans les cheminées des chambres et des salons",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Hamacs",
+        "moreInfo": "",
+        "category": "Pour votre Confort"
+    },
+	{
+        "name": "Mise à disposition de jumelles",
+        "moreInfo": "",
+        "category": "Pour encore plus de plaisir"
+    },
+	{
+        "name": "Bibliothèque",
+        "moreInfo": "",
+        "category": "Pour encore plus de plaisir"
+    },
+	{
+        "name": "Jeux de société à disposition",
+        "moreInfo": "",
+        "category": "Pour encore plus de plaisir"
+    },
+	{
+        "name": "Organisation d’évènements",
+        "moreInfo": "",
+        "category": "Pour encore plus de plaisir"
+    },
+    {
+        "name": "+ 1 cadeau surprise",
+        "moreInfo": "",
+        "category": "Pour encore plus de plaisir"
+    },
+    {
+        "name": "Baby-Sitter à la demande",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Lit bébé",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Chauffe biberon",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Chaises enfants",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Baignoire bébé",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Poussette",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Bassin pour enfants",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Livres pour enfants",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Jeux pour enfants",
+        "moreInfo": "",
+        "category": "Pour vos Enfants"
+    },
+    {
+        "name": "Sa gentillesse à l’état pur et son envie de vous faire plaisir",
+        "moreInfo": "",
+        "category": "Une équipe à votre service pour rendre tout cela possible"
+    },
+    {
+        "name": "Sa disponibilité permanente",
+        "moreInfo": "",
+        "category": "Une équipe à votre service pour rendre tout cela possible"
+    },
+    {
+        "name": "Tour d’accueil",
+        "moreInfo": "",
+        "category": "Une équipe à votre service pour rendre tout cela possible"
+    }
+]

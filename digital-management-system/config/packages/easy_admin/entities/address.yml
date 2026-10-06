@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Address:
+            class: App\Entity\Address
+            list:
+                title: '%menu.list.label.addresses%'
+            form:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'address' }
+                    - { property: 'postcode' }
+                    - { property: 'city' }
+                    - { property: 'country' }

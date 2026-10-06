@@ -1,0 +1,26 @@
+easy_admin:
+    entities:
+        Organization:
+            class: App\Entity\Organization
+            redirect: false
+            serializable: true
+            show:
+                actions: ['-delete']
+            form:
+               fields:
+                    - { type: 'group', label: '%group.label.additional.informations%', columns: 8 }
+                    - { property: 'addresses', type_options: { class: 'App\Entity\Address', attr: { entity: 'Address' } } }
+                    - { property: 'description' }
+                    - { property: 'primaryImage', columns: 6, label: '%label.primary_image%' }
+                    - { property: 'secondaryImage', columns: 6, label: '%label.secondary_image%' }
+                    - { type: 'group', label: '%group.label.basic.informations%', columns: 4 }
+                    - { property: 'name' }
+                    - { property: 'legalName' }
+                    - { property: 'phone' }
+                    - { property: 'email' }
+                    - { property: 'url' }
+                    - { property: 'foundingDate', type: 'datetime', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy HH:mm', 'attr': { 'class': 'datetimepicker' } } }
+                    - { property: 'numberOfEmployees' }
+                    - { property: 'numberOfProjects' }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

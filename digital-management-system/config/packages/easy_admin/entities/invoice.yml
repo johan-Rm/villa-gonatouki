@@ -1,0 +1,95 @@
+easy_admin:
+    entities:
+        Invoice:
+            class: App\Entity\Invoice
+            controller: App\Controller\InvoiceController
+            # role: ROLE_ADVISOR
+            # join: userCreated
+            # admin_filter: null
+            # search:
+            #     fields: ['reference', 'customer.firstname', 'customer.lastname', 'date']
+            list:
+                actions: ['show', 'edit', 'print', '-delete', 'export']
+                sort: ['reference', 'DESC']
+                fields:
+                    - { property: 'reference', template: 'components/default_collection.html.twig' }
+                    - { property: 'customer' }
+                    - { property: 'date', label: '%label.invoice.date%' }
+                    - { property: 'totalWithoutTaxes', format: '%.2f €' }
+                    - { property: 'paymentDueDate' }
+                    - { property: 'paymentStatus', type: 'boolean' }
+                    - { property: 'dateModified', type: 'datetime' }
+            show:
+                actions: ['edit', 'delete']
+                fields:
+                    - { property: 'reference' }
+                    - { property: 'customerLastname', label: '%label.lastname%' }
+                    - { property: 'customerFirstname', label: '%label.firstname%' }
+                    - { property: 'customerAddress', label: '%label.address%' }
+                    - { property: 'customerPostalCode', label: '%label.postal_code%' }
+                    - { property: 'customerCity', label: '%label.city%' }
+                    - { property: 'customerCountry', label: '%label.country%' }
+                    - { property: 'date', label: '%label.invoice.date%' }
+                    - { property: 'paymentPenalties' }
+                    - { property: 'paymentModality' }
+                    - { property: 'paymentDueDate' }
+                    - { property: 'paymentMethod' }
+                    - { property: 'paymentMethodId' }
+                    - { property: 'paymentStatus' }
+                    - { property: 'scheduledPaymentDate' }
+                    - { property: 'totalWithoutTaxes', format: '%.2f €' }
+                    - { property: 'totalPaymentDue', format: '%.2f €' }
+                    - { property: 'additionalInfo' }
+                    - { property: 'bankName' }
+                    - { property: 'bankCode' }
+                    - { property: 'accountNumber' }
+                    - { property: 'ibanNumber' }
+                    - { property: 'swiftBicNumber' }
+                    - { property: 'supplierName' }
+                    - { property: 'elements', label: '%label.invoice.details%', type: embedded_list }
+                    - { property: 'userCreated', role: ROLE_SUPER_ADMIN, type: 'string' }
+                    - { property: 'userLastModified', role: ROLE_SUPER_ADMIN, type: 'string'  }
+                    - { property: 'userCreated.company', role: ROLE_SUPER_ADMIN, template: 'components/default_collection.html.twig' }
+                    - { property: 'dateCreated', type: 'datetime' }
+                    - { property: 'dateModified', type: 'datetime' }
+            form:
+                fields:
+                    - { type: 'group', label: '%group.label.basic.informations%', icon: 'chart-line', css_class: 'col-sm-6' }
+                    - { property: 'customerLastname', label: '%label.lastname%', css_class: 'col-xs-6' }
+                    - { property: 'customerFirstname', label: '%label.firstname%', css_class: 'col-xs-6' }
+                    - { property: 'customerAddress', label: '%label.address%' }
+                    - { property: 'customerPostalCode', label: '%label.postal_code%', css_class: 'col-xs-6' }
+                    - { property: 'customerCity', label: '%label.city%', css_class: 'col-xs-6' }
+                    - { property: 'customerCountry', label: '%label.country%', css_class: 'col-xs-6' }
+                    # - { property: 'customer', css_class: 'col-xs-6', type_options: { query_builder: ['AppBundle\Repository\PersonRepository', 'getCustomer'] } }
+                    - { property: 'additionalInfo' }
+
+                    - { type: 'group', label: '%group.label.payment.informations%', icon: 'chart-line', css_class: 'col-sm-6' }
+                    - { property: 'paymentMethod',  label: '', type_options: { required: false, query_builder: ['App\Repository\PaymentMethodRepository', 'getPaymentMethod'] } }
+                    - { property: 'date', type: 'datetime', label: '%label.invoice.date%', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'paymentDueDate', type: 'datetime', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'saleDate', type: 'datetime', css_class: 'col-xs-6', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'paymentModality', css_class: 'col-xs-12' }
+                    - { property: 'paymentPenalties' }
+                    - { property: 'paymentStatus', css_class: 'col-xs-6' }
+
+                    - { type: 'group', label: '%group.label.bank.informations%', icon: 'chart-line', css_class: 'col-sm-6' }
+                    - { property: 'bankName', css_class: 'col-xs-6' }
+                    - { property: 'bankCode', css_class: 'col-xs-6' }
+                    - { property: 'accountNumber' }
+                    - { property: 'ibanNumber', css_class: 'col-xs-6' }
+                    - { property: 'swiftBicNumber', css_class: 'col-xs-6' }
+
+                    - { type: 'group', label: '%group.label.invoice.details%', icon: 'chart-line', css_class: 'col-sm-6' }
+                    - { property: 'elements', label: ' ', type: 'collection', type_options: { entry_type: 'App\Form\InvoiceElementType', by_reference: false, attr: { class: 'collection_item', label_item: 'item' } } }
+#            new:
+#                fields:
+#                    - { type: 'group', label: '%group.label.invoice.details%', icon: 'chart-line', css_class: 'col-sm-12' }
+#                    - { type: 'section', label: 'Informations importantes', icon: 'warning', help: 'Vous pourrez détailler la facture une fois celle çi créé' }
+#                    - { property: 'elements', type: 'collection', type_options: { entry_type: 'AppBundle\Form\InvoiceElementType', by_reference: false } }
+#            edit:
+#                fields:
+#                    - { type: 'group', label: '%group.label.invoice.details%', icon: 'chart-line', css_class: 'col-sm-12' }
+#                    - { property: 'elements', type: 'collection', type_options: { entry_type: 'AppBundle\Form\InvoiceElementType', by_reference: false } }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

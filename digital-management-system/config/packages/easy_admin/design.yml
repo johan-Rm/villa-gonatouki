@@ -1,0 +1,37 @@
+easy_admin:
+
+    formats:
+        date: 'Y/m/d'
+        datetime: 'Y/m/d H:i'
+        number: '%.2f'
+    site_name: '<img width="180" src="/build/images/logo_orange.png" />'
+    design:
+        assets:
+            favicon: '%cdn.host%/graines-digitales-icon.png'
+            css:
+                # - 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        templates:
+            layout: 'layout.html.twig'
+            new:    'pages/new.html.twig'
+            edit:   'pages/edit.html.twig'
+            list:   'pages/list.html.twig'
+            menu:   'pages/menu.html.twig'
+        form_theme:
+          # - 'vertical'
+          - 'components/bootstrap_4.html.twig'
+          - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+        brand_color: '#212121'
+        # brand_color: rgba(96,125,139, 1)
+    list:
+        batch_actions: [{ name: 'delete', ask_confirm: true }]
+    #     actions: ['show']
+    edit:
+        actions:
+            delete:
+                name: delete
+                icon: trash
+    show:
+        actions:
+            delete:
+                name: delete
+                icon: trash

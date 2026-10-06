@@ -1,0 +1,160 @@
+:root {
+--vh: 100vh;
+}
+
+body {
+padding: 0;
+margin: 0;
+min-height: 100vh;
+min-height: calc(var(--vh, 1vh) * 100);
+}
+
+// html {
+// 	height: -webkit-fill-available;
+//   }
+//   body {
+// 	padding: 0;
+// 	margin: 0;
+// 	min-height: 100vh;
+//   }
+  
+//   /* Avoid Chrome to see Safari hack */
+//   @supports (-webkit-touch-callout: none) {
+// 	body {
+// 	  /* The hack for Safari */
+// 	  min-height: -webkit-fill-available;
+// 	}
+//   }
+  
+body .theme--light.v-application {
+	background: inherit !important;
+}
+
+body .v-application {
+	font-family: inherit !important;
+	line-height: inherit !important ;
+    display: inherit !important ;
+}
+
+body .v-application p {
+	margin-bottom: inherit !important ;
+}
+
+body .v-application--wrap {
+	flex: inherit !important ;
+	-webkit-backface-visibility: inherit !important ;
+	backface-visibility: inherit !important ;
+	display: inherit !important ;
+	flex-direction: inherit !important ;
+	min-height: inherit !important ;
+	max-width: inherit !important ;
+	position: inherit !important ;
+}
+
+body .v-application .align-center {
+	align-items: inherit !important;
+}
+
+body .v-tabs-slider {
+	background-color: var(--color-primary) !important ;
+}
+
+body .v-application .primary--text {
+  color: var(--color-primary) !important;
+  caret-color: var(--color-primary) !important;
+}
+
+body .v-application .v-icon.primary--text {
+	color: var(--color-secondary) !important;
+	caret-color: var(--color-secondary) !important;
+  }
+
+body .v-application .v-label.primary--text {
+  color: #fff !important;
+  caret-color: #fff !important;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+	border: 0 !important;
+	background: none !important;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
+	background: none !important ;
+    color: #fff !important ;
+}
+
+.theme--light.v-input input, .theme--light.v-input textarea {
+	color: #fff !important ;
+    font-size: 1.1rem !important ;
+}
+
+.theme--light.v-text-field:not(.v-input--has-state):hover > .v-input__control > .v-input__slot::before {
+	border-color: #000 !important ;
+}
+
+.v-text-field > .v-input__control > .v-input__slot::after {
+	border-color: var(--color-secondary) !important ;
+}
+
+.theme--light.v-text-field > .v-input__control > .v-input__slot::before {
+	border-color: #fff !important ;
+}
+
+.v-text-field {
+	padding-top: 8px !important ;
+	margin-top: 4px !important ;
+}
+
+body .v-application .v-text-field .v-label--active {
+        color: var(--color-secondary) !important ;
+        transform: translateY(-12px) scale(0.60) !important ;
+}
+
+body .v-window__prev, body .v-window__next {
+	position: absolute !important ;
+	margin: 0 !important ;
+	top: 0px !important ;
+	z-index: 1 !important ;
+	bottom: inherit !important ;
+}
+
+
+body .v-application--is-ltr .v-window__prev {
+    right: 60px !important ;
+    left: inherit !important ;
+}
+
+body .v-application--is-ltr .v-window__next {
+    right: 15px !important ;
+    left: inherit !important ;
+}
+
+body .v-text-field {
+	padding-top: 0px !important ;
+	margin-top: 0px !important ;
+}
+
+body .v-btn--outlined .v-btn__content .v-icon
+, body .v-btn--round .v-btn__content .v-icon {
+	color: var(--color-secondary) !important ;
+}
+
+body .v-input--selection-controls .v-input--selection-controls__input:hover .v-input--selection-controls__ripple::before {
+	background: inherit !important ;
+
+}
+
+body .v-application .orange--text {
+	color: var(--color-secondary) !important;
+	caret-color: var(--color-secondary) !important;
+}
+
+.v-icon.v-icon::after {
+	border: 0 !important;
+}
+
+.swiper-container {
+	height: inherit; /* Fallback for browsers that do not support Custom Properties */
+	// height: calc(var(--vh, 1vh) * 100) !important;
+}

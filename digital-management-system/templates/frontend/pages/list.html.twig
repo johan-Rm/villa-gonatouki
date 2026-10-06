@@ -1,0 +1,45 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block title %}webPage list{% endblock %}
+
+{% block body %}
+    <h1>webPage list</h1>
+
+    <img src="{{ vich_uploader_asset(media, 'file')
+        | imagine_filter('squared_thumbnail') }}"
+        alt="{{ media.filename }}"
+    />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Headline</th>
+                <th>PrimaryImage</th>
+                <th>Url</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for webPage in webPages %}
+            <tr>
+                <td>{{ webPage.id }}</td>
+                <td>{{ webPage.headline }}</td>
+                <td>
+                    {% if null != webPage.primaryImage %}
+                        <img src="{{ vich_uploader_asset(webPage.primaryImage, 'file')
+                            | imagine_filter('squared_thumbnail') }}"
+                            alt="{{ webPage.primaryImage.filename }}"
+                        />
+                    {% endif %}
+                </td>
+                <td><a href="{{ path('webPage_show', { 'tag': 'test', 'slug': webPage.slug }) }}">show this page</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+easy_admin:
+    entities:
+        HotelTypicalDay:
+            class: App\Entity\HotelTypicalDay
+            serializable: true
+            translatable: true
+            list:
+                title: '%menu.list.label.hotel_typicals_days%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'name' }
+                    - { property: 'category', template: 'components/default_collection.html.twig' }
+                    - { property: 'tags', type: 'array' }
+                    - { property: 'isActive' }
+                    - { property: 'elements', label: '%label.elements%' }
+            form:
+                form_options: { validation_groups: ['thing'] }
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'isActive' }
+                    - { property: 'category', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' }, required: true } }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { by_reference: true } }
+                    - { property: 'elements', label: '%label.elements%', type: 'collection', type_options: { entry_type: 'App\Form\HotelTypicalDayElementType', by_reference: false } }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }

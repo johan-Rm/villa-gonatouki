@@ -1,0 +1,43 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Person:
+            class: App\Entity\Person
+            translatable: true
+            list:
+                title: '%menu.list.label.persons%'
+                fields:
+                    # - { property: 'prospect', label: '%menu.label.status%', template: 'components/person_status_collection.html.twig' }
+                    - { property: 'firstname' }
+                    - { property: 'lastname' }
+                    - { property: 'email' }
+                    # - { property: 'position', template: 'components/default_collection.html.twig' }
+                    - { property: 'informations' }
+                    - { property: 'events', label: '%label.stays%', type_options: { disabled: true } }
+                    # - { property: 'accommodations', label: '%label.properties%', type_options: { disabled: true } }
+                    # - { property: 'origin', type_options: { disabled: true } }
+            form:
+                fields:
+                    - { type: 'group', label: '%group.label.basic.informations%', columns: 8 }
+                    # - { property: 'prospect', label: '%menu.label.status%', columns: 6 }
+                    - { property: 'gender', columns: 6 }
+                    - { property: 'firstname', columns: 6 }
+                    - { property: 'lastname', columns: 6 }
+                    - { property: 'birthday', label: '%menu.label.birthday%', columns: 6, type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'placeOfBirth', columns: 6 }
+                    - { property: 'email', columns: 6, type: text }
+                    - { property: 'phone', columns: 6 }
+                    # - { property: 'position', translatable: true, columns: 6 }
+                    - { property: 'informations', help: 'Salary or other...' }
+
+                    - { type: 'group', label: '%group.label.additional.informations%', columns: 4 }
+                    # - property: 'pdfs'
+                    #   label: '%group.label.basic.documents%'
+                    #   type: 'collection'
+                    #   type_options: { entry_type: 'App\Form\DocumentType', by_reference: false }
+                    # - { property: 'addresses', type_options: { class: 'App\Entity\Address', attr: { entity: 'Address' } } }
+                    - { property: 'events', label: 'Rentals', type_options: { disabled: true } }
+                    # - { property: 'accommodations', type_options: { disabled: true } }
+                    - { property: 'origin', type_options: { disabled: true } }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

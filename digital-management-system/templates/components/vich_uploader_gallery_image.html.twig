@@ -1,0 +1,13 @@
+{% if item.image is not null %}
+	<a href="#" class="easyadmin-thumbnail" data-featherlight="#easyadmin-lightbox-{{ item.image.id }}" data-featherlight-close-on-click="anywhere">
+	    {# the second parameter is the name of the property with the UploadableField annotation #}
+	    <img src="{{ asset(item.image.filename, 'medias') }}">
+	</a>
+
+	<div id="easyadmin-lightbox-{{ item.image.id }}" class="easyadmin-lightbox">
+	    {# the second parameter is the name of the property with the UploadableField annotation #}
+	    <img src="{{ asset(item.image.filename, 'medias') }}">
+	</div>
+{% else %}
+    <span class="label">Aucun(e)</span>
+{% endif %}

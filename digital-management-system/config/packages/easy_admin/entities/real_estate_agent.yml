@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+        RealEstateAgent:
+            class: App\Entity\RealEstateAgent
+            translatable: true
+            list:
+                title: '%menu.list.label.real_estate_agents%'
+                fields:
+                    - { property: 'primaryImage', label: '%label.photo%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'person' }
+                    - { property: 'description' }
+                    - { property: 'dateCreated' }
+                    - { property: 'dateModified' }
+            form:
+                help: 'The form view overrides the global help message'
+                fields:
+                    - { type: 'group', label: '%group.label.basic.agent%', columns: 8 }
+                    - { property: 'person' }
+                    - { property: 'description', translatable: true }
+                    - { property: 'primaryImage', type: 'easyadmin_autocomplete', label: '%label.photo%', type_options: { attr: { entity: 'MediaObject' } } }
+                    - { type: 'group', label: '%group.label.basic.infos%', columns: 4 }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

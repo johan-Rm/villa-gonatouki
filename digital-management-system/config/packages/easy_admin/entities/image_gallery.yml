@@ -1,0 +1,24 @@
+easy_admin:
+    entities:
+        ImageGallery:
+            class: App\Entity\ImageGallery
+            controller: App\Controller\ImageGalleryController
+            list:
+                title: '%%entity_label%%'
+                actions: ['-show', '-edit', '-delete', '-download', '-new', '-search', '-reorder', 'saveOrder']
+                # if the sort order is not specified, 'DESC' is used
+                sort: [ 'position', 'ASC' ]
+                batch_actions: [ '-delete' ]
+                max_results: 500
+                fields:
+                - { property: 'position', label: '%label.order%', format: '%01s', sortable: false, template: 'components/default_collection.html.twig'  }
+                - { property: 'gallery.id', label: '%label.gallery%' }
+                - { property: 'image.name', label: '%label.image_name%', sortable: false  }
+                - { property: 'inSlider', sortable: false }
+                # - { property: 'ID', label: 'ID', sortable: false  }
+                - { property: 'image', label: '%label.image%', template: 'components/vich_uploader_gallery_image.html.twig', sortable: false }
+                - { property: 'image.originalStampedImage', type: 'toggle', sortable: false }
+                # - { property: 'gallery', sortable: false  }
+            form:
+                fields:
+                - { property: 'position', label: '%label.order%' }

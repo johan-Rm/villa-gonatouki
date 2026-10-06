@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Message:
+            class: App\Entity\Message
+            # controller: App\Controller\ComponentController
+            help: 'View your visitors messages'
+            list:
+                title: '%menu.list.label.messages%'
+                actions: ['-new', 'show', '-edit', '-delete']
+                fields:
+                    - { property: 'dateSent' }
+                    # - { property: 'recipient' }
+                    - { property: 'origin', label: '%label.origin%' }
+                    - { property: 'sender' }
+                    - { property: 'event' }
+                    # - { property: 'sender.customer_traffic' }
+                    - { property: 'text', label: '%label.message%' }
+            show:
+                actions: [ '-edit', '-delete' ]
+                fields:
+                    - { property: 'dateSent', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    # - { property: 'recipient' }
+                    - { property: 'sender' }
+                    - { property: 'event' }
+                    - { property: 'origin', label: '%label.origin%' }
+                    - { property: 'text', label: '%label.message%' }

@@ -1,0 +1,10 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block title %}webPage contact{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="language" content="fr">
+	</head>
+	<body style="margin: 0;">
+		<header style="background-color: #6D8764; color: #fff; text-align: center;">
+			<nav style="padding: 10px 20px; margin: 0 auto;">
+				<div style="padding: 0.5rem; min-height: inherit; margin: 0 auto; text-transform: uppercase;">
+                	{{ data.headline }}
+            	</div>
+			</nav>
+		</header>
+		{% block body %}{% endblock %}
+		<footer style="background-color: #6D8764; width:100%; text-align: center;">
+			<div style="padding: 10px 20px;">
+				<div style="color:#fff;">
+					<span class="main-logo-wrap">
+						<img 
+							src="cid:logo" 
+							class="ui tiny centered image"
+						>
+					</span>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

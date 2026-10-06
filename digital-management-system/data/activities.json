@@ -1,0 +1,298 @@
+[
+    {
+        "name": "Golf",
+        "category": "Sportives",
+        "pushForward": "Extraordinaire!",
+        "description": "A quelques longueurs de drive de Gonatouki, un somptueux golf parfaitement entretenu,dessiné par le prestigieux Gary Player, surplombe la mer. Il vient dʼêtre classé parmi les 10 plus beaux golfs du monde par une équipe de semi-pros. Profitez du climat exceptionnel pour découvrir ce 18 trous au parcours enchanteur. Par 72 de 6608 mètres qui convient tant aux joueurs expérimentés quʼaux amateurs, jeunes et moins jeunes. Le club est ouvert aux visiteurs toute lʼannée.",
+        "primaryImage": "demo-5-nuits-en-riad-a-essaouira.jpg"
+    },
+    {
+        "name": "SPORTS NAUTIQUES",
+        "category": "Sportives",
+        "pushForward": "Fantastique!",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak de mer et contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": null
+    },
+    {
+        "name": "Equitation et MÉHARÉE",
+        "category": "Sportives",
+        "pushForward": "Topissime!",
+        "description": "Vous pensiez que galoper sur une plage déserte au coucher du soleil nʼétait possible quʼau cinéma ? Détrompez-vous et tentez cette expérience unique lors de votre séjour ! Que vous soyez cavalier expert, confirmé ou débutant, Jawad vous emmènera faire dʼinoubliables balades en bord de mer ou en forêt. Vous voulez encore plus de dépaysement ? Jouez les Lawrence dʼArabie à lʼoccasion dʼune balade en dromadaire dans les dunes.",
+        "primaryImage": null
+    },
+    {
+        "name": "Equitation",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Quad",
+        "category": "Sportives",
+        "pushForward": "De prodigieuses sensations!",
+        "description": "Mettez une pointe de frissons dans votre séjour et partez en quad pour un circuit inoubliable, à la beauté époustouflante ! Vous sillonnerez le bord de mer, en passant par les dunes et la lisière de la forêt lors dʼune sortie de 1 à 3 heures selon votre choix. Amateurs de sensations, vous apprécierez la pointe de vitesse sur la plage ou la descente dʼune dune à pic !",
+        "primaryImage": "demo-desert-1979000-1920.jpg"
+    },
+    {
+        "name": "Buggy",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Surf",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Planche à voile",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Kitesurf",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": "activities-img-nautique.jpeg"
+    },
+    {
+        "name": "Paddle",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Running",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Natation",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Stack",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Gymnastique / fitness avec ou sans coach",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Yoga",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Pêche",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Vélo / mountain bike",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Pétanque",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Slack line",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Frisbee",
+        "category": "Sportives",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Balades avec ou sans guides",
+        "category": "Balades",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Pique niques",
+        "category": "Balades",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Piscine",
+        "category": "Sport et Extérieur",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak, contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": "day-type-img-pool.jpg"
+    },
+    {
+        "name": "Visites",
+        "category": "Balades",
+        "pushForward": "Epoustouflant, dépaysant!",
+        "description": "Déambulez dans la célèbre médina grouillante d'artisans et de commerçants pour découvrir bijoux berbères, épices ou poteries en tous genres. A l’occasion de la visite d’une coopérative, dénichez la célèbre huile d'argan, véritable élixir de beauté pour la peau et les cheveux. Profitez des randonnées pédestres en forêt, flânez le long des plages de sable fin (grandiose), visitez les cascades, admirez les panoramas du littoral ou furetez dans les marchés locaux (retour au XIX siècle garanti). Essaouira et ses environs vous offrent un choix considérable de balades relaxantes et dépaysantes.",
+        "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg"
+    },
+    {
+        "name": "Visites de la médina",
+        "category": "Balades",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Les marchés",
+        "category": "Balades",
+        "description": "Had’dra, un marché gigantesque. Retour direct au 19ème siècle. Une expérience inoubliable.",
+        "primaryImage": null
+    },
+    {
+        "name": "Visites de marchés",
+        "category": "Balades",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Le marché aux épices",
+        "category": "Balades",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Pêche et bateau",
+        "category": "Balades",
+        "description": "Mieux que taquiner le goujon, revenez avec une pêche miraculeuse. Faites vous plaisir en mer ou du bord de la plage et Layla cuisinera vos prises. Tournez autour des îles de Mogador à bord d'un voilier de 12,50 m, observez les faucons Eléonors et les pêcheurs de sardines et regardez la medina avec un autre point de vue.",
+        "primaryImage": null
+    },
+    {
+        "name": "Hammam",
+        "category": "Spa",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Spa",
+        "category": "Détente",
+        "pushForward": "Le bien être absolu!",
+        "description": "Depuis quand nʼavez-vous pas pris un moment de pure détente, rien que pour vous ? Laissez-vous aller et expérimentez le traditionnel hammam avec gommage au savon noir, enveloppement au ghazoul et masque capillaire. Faites confiance aux mains expertes d’Hafssa et de Malika pour un massage tonique ou relaxant à lʼhuile dʼarganet avec le coeur. Vous pouvez également opter pour un soin beauté du visage, une manucure, une pédicure ou une épilation.",
+        "primaryImage": "demo-spa-3184610-1920.jpg"
+    },
+    {
+        "name": "Massage",
+        "category": "Spa",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Soins du corps",
+        "category": "Spa",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Epilation",
+        "category": "Spa",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Soins du visage",
+        "category": "Spa",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Atelier de cuisine",
+        "pushForward": "Un savoir-faire ancestral à partager",
+        "description": "Ramenez plus que vos souvenirs de vacances, prolongez lʼexpérience en apprenant les secrets de la cuisine locale avec notre chef Layla. Elle cuisine avec son cœur et adore partager ! Couscous, tajines, safa, soupes, pâtisseries... La cuisine marocaine est riche en saveurs issues du mélange des traditions culinaires berbère, arabe et même andalouse. Avec Layla, découvrez des recettes typiques et savoureuses, simples à refaire à la maison.",
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de cuisine",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de danse marocaine",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de peinture",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de massage",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de photos",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "category": "Les cours",
+        "name": "Cours de marchandage",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Lecture",
+        "category": "Cérébrales et émotionnelles",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Télévision",
+        "category": "Cérébrales et émotionnelles",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Jeux",
+        "category": "Cérébrales et émotionnelles",
+        "pushForward": "Passionnant!",
+        "description": "Découvrez et pratiquez des jeux passionnants qui donnent lieu à des parties acharnées. Il y en a pour tous les goûts et tous les âges, en solitaire, à deux, en famille ou en groupe. Voici quelquesexemples: jeux de cartes classiques, tarot, jeux de dés, dés de poker menteur, échecs, dames, majong, abalone, quarto, go, dominos, rubikubes, ballons de foot, balles, stack line, doodle…",
+        "primaryImage": "demo-spa-3184610-1920.jpg"
+    },
+    {
+        "name": "Bains de soleil",
+        "category": "Cérébrales et émotionnelles",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Rencontres",
+        "category": "Cérébrales et émotionnelles",
+        "description": null,
+        "primaryImage": null
+    },
+    {
+        "name": "Ne rien faire et en profiter",
+        "category": "Cérébrales et émotionnelles",
+        "description": null,
+        "primaryImage": null
+    }
+]

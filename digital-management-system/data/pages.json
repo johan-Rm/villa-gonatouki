@@ -1,0 +1,82 @@
+[
+	{
+		"headline": "Accueil",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "",
+		"category": "accueil",
+		"tags": [
+			"accueil"
+		],
+		"blockquote": "Lorem ipsum dolor sit amet, no duo aliquid feugiat phaedrum. Liber ceteros scaevola ei eam, alterum docendi usu id."
+	},
+	{
+		"headline": "La villa Gonatouki",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "Essaouira, Maroc",
+		"text": "Éveillez vos sens aux richesses culturelles et culinaires dʼEssaouira, <strong>dans le cadre envoûtant de la Villa Gonatouki</strong>. Son architecture traditionnelle et sa décoration raffinée dʼartisanat local vous plongent instantanément dans l'ambiance marocaine. Vivez le luxe oriental en séjournant dans l'une de <strong>nos 7 chambres ou 3 suites au confort moderne</strong> et au charme oriental.|#|Posée sur la colline et offrant un magnifique panorama sur lʼocéan et la montagne, la Villa Gonatouki est un havre de paix, situé à quelques kilomètres du centre historique de la ville et moins de 15 minutes de lʼaéroport (Essaouira).|#|Profitez de la grande piscine chauffée (29°) et son solarium, du couloir de nage chauffée (29°) de 22m, du hammam, du spa et des nombreux salons aux ambiances conviviales ou intimes. Laissez-vous séduire par les saveurs locales concoctées par notre chef Layla. Attentive à vos moindres souhaits, notre équipe fera de votre séjour un moment inoubliable.|#|Une nuit, un événement à fêter ou des vacances en famille... Profitez de toutes nos installations et des nombreuses animations à proximité (Médina dʼEssaouira, plage, excursions, golf...). Passez du rêve à la réalité ! Nous vous attendons avec plaisir.",
+		"category": "accueil",
+		"tags": [
+			"accueil"
+		],
+		"blockquote": "Lorem ipsum dolor sit amet, no duo aliquid feugiat phaedrum."
+	},
+	{
+		"headline": "Les chambres",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "Essaouira, Maroc",
+		"category": "accueil",
+		"tags": [
+			"accueil"
+		],
+		"text": "Chacune des chambres de la villa Gonatouki offre un <strong>charme particulier par sa décoration unique</strong>. Ainsi, après une journée bien remplie, vous plongerez dans une atmosphère magique et reposante. Toutes nos chambres disposent du même confort moderne : literie double en 160/200, salle de bains privative en tadelakt (véritable art décoratif au Maroc), produits de bain, linge de toilette et chaussons, sèche-cheveux, toilettes, placard de rangement, terrasse, serviettes de piscine, accès au WiFi.",
+		"blockquote": "une expérience de noir absolu et de silence profond",
+		"primaryImage": "charme-deco-img-38411-vertical.jpg"
+	},
+	{
+		"headline": "Les activités",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "Essaouira, Maroc",
+		"category": "accueil",
+		"tags": [
+			"accueil"
+		],
+		"text": "Un large éventail d'activités vous attend : sports nautiques, golf, quad, équitation, promenades, atelier cuisine, pêche ou bateau. Notre équipe est à votre disposition pour <strong>rendre votre séjour inoubliable</strong>.",
+		"blockquote": "Des conditions exceptionnelles pour des expériences inoubliables",
+		"primaryImage": "demo-trip-1422608-1920.jpg"
+	},
+	{
+		"headline": "Privatization",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "Essaouira, Maroc",
+		"category": "privatization",
+		"tags": [
+			"privatization"
+		],
+		"text": "Superficie de : 1000 m². Rassemblez-vous ou isolez-vous en fonction du moment et de votre humeur dans les nombreux espaces disponibles. Une construction écologique (cumulus solaire, fosse septique écologique, isolation thermique…).",
+		"blockquote": "",
+		"primaryImage": "exterieur-jardin-img-38521-vertical.jpg"
+	},
+	{
+		"headline": "Les services",
+		"pushForward": "Ce que Je veux, où Je veux, quand Je veux, comme Je veux",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, no duo aliquid feugiat phaedrum",
+		"category": "les-services",
+		"tags": [
+			"accueil",
+			"les-services"
+		],
+		"text": "Attentive à vos besoins, toute l’équipe vous offre son cœur. Votre séjour à la villa Gonatouki devient synonyme de détente et de plaisir. Nous sommes constamment à votre écoute pour répondre à vos demandes spécifiques avant ou pendant votre séjour. Demandez et vivez cette sensation merveilleuse de toujours vous entendre dire «oui».",
+		"blockquote": "VIVEZ UNE EXPERIENCE OU TOUT EST POSSIBLE",
+		"primaryImage": "charme-deco-img-38381-vertical.jpg"
+	},
+	{
+		"headline": "Contact",
+		"pushForward": "Liber ceteros scaevola ei eam",
+		"alternativeHeadline": "",
+		"category": "accueil",
+		"tags": [
+			"accueil"
+		],
+		"blockquote": ""
+	}
+]

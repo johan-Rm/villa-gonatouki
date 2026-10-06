@@ -1,0 +1,4 @@
+easy_admin:
+    entities:
+        PdfCheck:
+            class: App\Entity\MediaObject

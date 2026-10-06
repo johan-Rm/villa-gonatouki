@@ -1,0 +1,9 @@
+api_platform_prod:
+    resource: .
+    type: api_platform
+    prefix: /api
+
+api_login_check:
+    path: /api/login_check
+    methods: ['POST']
+    # prefix: /api

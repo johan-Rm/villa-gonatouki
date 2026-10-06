@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        WebPageTemplate:
+            class: App\Entity\WebPageTemplate
+            help: 'delete metadata can disrupt the operation of the application'
+            form:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'slug', type_options: { disabled: true } }

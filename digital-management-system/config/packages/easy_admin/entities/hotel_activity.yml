@@ -1,0 +1,33 @@
+easy_admin:
+    entities:
+        HotelActivity:
+            class: App\Entity\HotelActivity
+            serializable: true
+            translatable: true
+            list:
+                title: '%menu.list.label.hotel_activities%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'name' }
+                    - { property: 'primaryImage', label: '%label.primary_image%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'category', template: 'components/default_collection.html.twig' }
+                    # - { property: 'tags', type: 'array' }
+                    - { property: 'description' }
+                    - { property: 'isActive' }
+                    # - { property: 'withPicto', type: 'boolean' }
+                    # - { property: 'withPicto', type: 'boolean' }
+                    # - { property: 'slugPicto' }
+                    # - { property: 'slug' }
+            form:
+                form_options: { validation_groups: ['thing'] }
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'description', translatable: true }
+                    - { property: 'pushForward', translatable: true }
+                    - { property: 'category', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' }, required: true } }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { by_reference: true } }
+                    - { property: 'isActive' }
+                    # - { property: 'withPicto' }
+                    # - { property: 'withPicto', type_options: { disabled: true } }
+                    # - { property: 'slugPicto' }
+                    # - { property: 'slug', translatable: true, type_options: { disabled: true } }

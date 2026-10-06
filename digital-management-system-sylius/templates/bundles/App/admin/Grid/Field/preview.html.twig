@@ -1,0 +1,32 @@
+
+{% if data.encodingFormat is defined 
+    and data.encodingFormat in configuration_project.media_encoding_formats.image 
+%}
+    <img 
+        class="ui tiny bordered image" 
+        data-slug="{{ data.slug }}"
+        src="{{ data|imagine_filter('mini_webp') }}"
+    />
+    <div class="ui modal image_modal" data-slug="{{ data.slug }}">
+        <i class="close icon"></i>
+        <div class="image content">
+            <div class="ui centered big image">
+            {# <img 
+                class="ui bordered image" 
+                src="{{ data.filename|imagine_filter('full_webp') }}"
+            /> #}
+            <img 
+                class="ui bordered image" 
+                src="{{ asset('media/image/' ~ data.filename) }}"
+            />
+            </div>
+        </div>
+    </div>
+{% else %}
+    <img 
+        class="ui tiny bordered image" 
+        src="{{ asset('build/app/images/image-not-found.jpg') }}" 
+        alt="Image not found"
+    >
+
+{% endif %}

@@ -1,0 +1,111 @@
+.photo-caption  {
+	/*display: none;*/
+	position: absolute;
+	bottom: 30px;
+}
+
+#navigation-menu {
+	border-radius: 0px 15px 0px 0px;
+	background-color: #f4511e;
+/*background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");*/
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+
+.button_content_overlay {
+	position: absolute;
+	top: 30px;
+	right:30px;
+	z-index: 50;
+	border: 2px solid #f4511e;
+	 height:40px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:40px;
+    padding: 4px 0;
+    text-align:center;
+    color: #f4511e;
+    cursor: pointer;
+}
+
+.content_overlay {
+	position: absolute;
+	top: 0;
+	right:0;
+	width: 50%;
+	height: 100%;
+	z-index: 40;
+	background-color: #001429;
+	/*background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");*/
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	border-radius: 15px 0 0 15px;
+	opacity: 95%;
+	display: none;
+}
+
+.tabs-style-bottomline {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #f4511e;
+
+	/*background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");*/
+	border-radius: 15px 0 0 0px;
+}
+
+.tabs-style-bottomline .content-wrap {
+	display: none;
+}
+
+#multiscroll-nav {
+
+	top: 30%;
+
+}
+
+.tabs nav {
+	text-align: left;
+}
+.tabs nav ul {
+	position: relative;
+
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+.tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2.5;
+	font-weight: 700;
+}
+
+.tabs nav li {
+	border-bottom: 1px solid #001429;
+	border-right: 5px solid #001429;
+	padding: 5px 15px;
+	margin: 0;
+}
+
+.dark-colors
+/*, body.dark-theme:not(.logo-dark)*/
+, body.light-theme.logo-light:not(.menu-open) {
+	background: var(--color-primary);
+}
+

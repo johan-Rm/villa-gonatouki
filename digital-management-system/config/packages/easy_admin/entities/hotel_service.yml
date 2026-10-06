@@ -1,0 +1,29 @@
+easy_admin:
+    entities:
+        HotelService:
+            class: App\Entity\HotelService
+            serializable: true
+            translatable: true
+            list:
+                title: '%menu.list.label.hotel_services%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'name' }
+                    - { property: 'category', template: 'components/default_collection.html.twig' }
+                    - { property: 'tags', type: 'array' }
+                    - { property: 'isActive' }
+                    # - { property: 'withPicto', type: 'boolean' }
+                    # - { property: 'withPicto', type: 'boolean' }
+                    # - { property: 'slugPicto' }
+                    # - { property: 'slug' }
+            form:
+                form_options: { validation_groups: ['sluggable-name'] }
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'category', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' }, required: true } }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { by_reference: true } }
+                    - { property: 'isActive' }
+                    # - { property: 'withPicto' }
+                    # - { property: 'withPicto', type_options: { disabled: true } }
+                    # - { property: 'slugPicto' }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }

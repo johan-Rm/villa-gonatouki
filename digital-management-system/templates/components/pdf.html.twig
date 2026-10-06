@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')|first|default('en') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="generator" content="EasyAdmin" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="953423502628-mlj0q31mf082asvpka7fja1crcj8ebcl.apps.googleusercontent.com">
+
+    <link rel="stylesheet" href="{{ asset('asset/css/bootstrap.3.3.2.min.css') }}">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+<style>
+
+    h1, h2, h3, h4
+    {
+        font-weight: bold;
+    }
+
+    .container {
+        padding-top:1.5em;
+        padding-bottom:1.5em;
+    }
+
+    .invoice-title h2, .invoice-title h3 {
+        display: inline-block;
+    }
+
+    .table > tbody > tr > .no-line {
+        border-top: none;
+    }
+
+    .table > thead > tr > .no-line {
+        border-bottom: none;
+    }
+
+    .table > tbody > tr > .thick-line {
+        border-top: 2px solid;
+    }
+
+    .divider {
+        margin-bottom:25px;
+    }
+
+    .item_label {
+        color:#4D4C4C;
+        font-weight:700;
+    }
+
+    .invoice_info .item_label {
+        color:#ecf0f5 !important;
+        font-weight:700 !important;
+    }
+
+    .invoice_info .item_value {
+        color:#ecf0f5 !important;
+
+    }
+    .invoice_info
+    {
+        background-color: #4D4C4C !important;
+        padding: 10px !important;
+        border-radius: 5px !important;
+        border: #000 1px solid !important;
+        color: #fff !important;
+    }
+
+    .img-responsive {
+      float:right !important;
+    }
+
+</style>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

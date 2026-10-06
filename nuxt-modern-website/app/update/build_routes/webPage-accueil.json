@@ -1,0 +1,9 @@
+{
+    "pathFile": "/app",
+    "slug": "accueil",
+    "entity": "webPage",
+    "route": "web_pages",
+    "path": "/web_pages?slug=accueil",
+    "filename": "webPage-accueil",
+    "baseUrl": "/"
+}

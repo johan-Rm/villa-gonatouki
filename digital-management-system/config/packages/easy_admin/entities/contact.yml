@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Contact:
+            class: App\Entity\Message
+            list:
+                title: '%menu.list.label.messages%'
+            form:
+                fields:
+                    - { property: 'gender' }
+                    - { property: 'familyName' }
+                    - { property: 'givenName' }
+                    - { property: 'email' }
+                    - { property: 'thing' }

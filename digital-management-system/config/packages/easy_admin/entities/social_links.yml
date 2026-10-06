@@ -1,0 +1,18 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        SocialLinks:
+            class: App\Entity\Organization
+            controller: App\Controller\ComponentController
+            list:
+                title: '%menu.list.label.social_links%'
+                dql_filter: 'entity.type = 2'
+                actions: ['-show', 'edit', 'delete']
+                fields:
+                    - { property: 'name' }
+                    - { property: 'url' }
+            form:
+                actions: ['-show', 'edit', 'delete']
+                fields:
+                    - { property: 'name' }
+                    - { property: 'url' }

@@ -1,0 +1,84 @@
+@import "../imports";
+@import "./components/form.scss";
+@import "./components/semantic-ui-alt";
+
+$sylius-brand-color: #1abb9c !default;
+$segment-spacing: 1.8em !default;
+$segment-title-spacing: 1.2em 1.8em !default;
+$accordion-title-spacing: 1.2em 1.8em !default;
+
+// General
+body.centered {
+	background-color: $bo-background-color;
+}
+
+.ui[class*="center aligned"].grid {
+
+	background: $bo-background-color;
+}
+
+.ui.primary.button {
+	background-color: $color-primary;
+}
+
+.ui.primary.button:hover, .ui.primary.button:focus {
+	background-color: $bo-background-color;
+}
+
+// To sort
+.ui.segment  div.preview_icon {
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.ui.inverted.menu {
+	background: $bo-menu-background-color;
+}
+
+#sidebar.ui.sidebar.vertical.menu .item.active {
+	background: $color-primary !important;
+}
+
+.ui.header .circular.icon {
+	color: $bo-color-primary;
+	background: rgba(26, 187, 156, 0.1);
+}
+
+a {
+	color: $bo-color-primary;
+}
+.ui.negative.message {
+	color: $color-primary;
+}
+.ui.info.message {
+	color: $color-category-actu-darked;
+}
+
+.select2-container .select2-selection--single {
+	height: auto !important;
+}
+
+img.ui.tiny.image {
+	cursor: pointer;
+}
+.ui.basic.table td {
+	text-align: center;
+}
+
+.hidden.transition {
+
+	visibility: visible !important;
+}
+
+.ui.form .hidden {
+	display: none;
+}
+
+.ui.content .button.js-uie-add {
+	display: none;
+}
+
+.ui.role-dev .content .button.js-uie-add {
+	display: block;
+}

@@ -1,0 +1,27 @@
+# Ignorer les fichiers d'upload (non nécessaires au build, montés en volume)
+public/uploads
+public/media/files
+
+# Ignorer les fichiers Symfony générés
+var/*
+!var/.gitkeep
+
+# Ignorer les dépendances locales
+node_modules
+vendor
+
+# Ignorer les fichiers de config de dev ou d’IDE
+*.log
+*.lock
+*.env.local
+.env.*
+!.env
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Cache ou fichiers inutiles
+npm-debug.log
+yarn-error.log

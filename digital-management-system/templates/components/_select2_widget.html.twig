@@ -1,0 +1,71 @@
+{% set _select2_locales = ['ar', 'az', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'eu', 'fa', 'fi', 'fr', 'gl', 'he', 'hi', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'km', 'ko', 'lt', 'lv', 'mk', 'ms', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sr-Cyrl', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'] %}
+{% set _app_language = app.request.locale|split('-')|first|split('_')|first %}
+{% set _select2_locale = app.request.locale in _select2_locales
+    ? app.request.locale
+    : _app_language in _select2_locales ? _app_language : 'en'
+%}
+
+<script src="{{ asset('bundles/easyadmin/select2/i18n/' ~ _select2_locale ~ '.js') }}"></script>
+<script type="text/javascript">
+
+  $(function() {
+    // Select2 widget is only enabled for the <select> elements which
+    // explicitly ask for it
+
+    function formatState (state) 
+    {
+      if (!state.id) {
+        return state.text;
+      }
+
+      var $state = $(
+        '<span>' + state.text + '</span>'
+      );
+
+      return $state;
+    }
+
+    function init() 
+    {
+      $('form select[data-widget="select2"]').select2(
+        {
+          theme: 'bootstrap',
+          language: '{{ _select2_locale }}',
+          closeOnSelect: false,
+          templateResult: formatState
+        }
+      )
+      .on( 'select2:select', function (evt) {
+        var element = evt.params.data.element;
+        var $element = $(element);
+        $element.detach();
+        $(this).append($element);
+        $(this).trigger("change");
+
+      })
+      ;
+
+
+      // $("ul.select2-selection__rendered").sortable({
+      //   containment: 'parent'
+      // });
+
+      // .on('select2:selecting', function(e) {
+        
+      //   var cur = e.params.args.data.id;
+      //   var old = (e.target.value == '') ? [cur] : $(e.target).val().concat([cur]);
+      //   $(e.target).val(old).trigger('change');
+      //   $(e.params.args.originalEvent.currentTarget).attr('aria-selected', 'true');
+
+      //   return false;
+      // })
+      ;
+    }
+
+    $(document).on('easyadmin.collection.item-added', init);
+      init();
+
+        
+    });
+
+</script>

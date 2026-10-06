@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        RentalType:
+            class: App\Entity\RentalType
+            # controller: App\Controller\ComponentController
+            list:
+                title: '%menu.list.label.rental_types%'

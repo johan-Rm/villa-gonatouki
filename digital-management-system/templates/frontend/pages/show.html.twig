@@ -1,0 +1,25 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block title %}webPage show{% endblock %}
+
+{% block body %}
+    <h1>webPage show</h1>
+
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ webPage.id }}</td>
+            </tr>
+            <tr>
+                <th>Headline</th>
+                <td>{{ webPage.headline }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('webPage_list', { 'tag': 'test' }) }}">back to list</a>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+# Local configuration and credentials
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.prod
+**/.env.prod.local
+*.pem
+*.key
+# Private backups and database exports
+.local-backups/
+*.sql
+*.zip
+*.bundle
+# OS / editor / Python artifacts
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+# Dependencies and generated output
+node_modules/
+vendor/
+.nuxt/
+dist/
+dist_tmp/

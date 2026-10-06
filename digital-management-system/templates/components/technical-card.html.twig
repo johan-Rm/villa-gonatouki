@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="generator" content="EasyAdmin" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="953423502628-mlj0q31mf082asvpka7fja1crcj8ebcl.apps.googleusercontent.com">
+
+    <!-- remove "path_to_public ~ " for test into defaultController  -->
+    <link rel="stylesheet" type="text/css" href="{{ path_to_public ~ asset('asset/css/bootstrap.3.3.2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ path_to_public ~ asset('asset/css/font-awesome.min-5.9.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ path_to_public ~ asset('asset/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ path_to_public ~ asset('asset/css/frontend_style.css') }}">
+ 
+  <style>
+      body {
+        background-color: #3e2723;
+      }
+      .container {
+        background-color: #fff;
+      }
+      .grid-post li {
+        float: left;
+        width: 50%;
+        border-right: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        list-style: none;
+      }
+      .wt-post-title.post-title a{
+         letter-spacing: 2px;
+      }
+      .wt-box p{
+         font-size: 2rem;
+         line-height: 1.3;
+         font-weight: 400;
+         color: #3e2723;
+      }
+      .wt-box span.reference{
+         font-weight: bold;
+         text-transform: uppercase;
+         color: #92acbe;
+      }
+      .fa-map-marker {
+         font-size: 20px;
+         color: #92acbe;
+      }
+      .details-produit .amenities{
+         font-weight: 600;
+      }
+      .wt-box p.text-italic{
+         font-style: italic;
+         font-size: 1.2em;
+      }
+      .prix{
+         font-weight: bold;
+         color: black;
+      }
+      .wt-box .prix{
+         font-size: 3.9rem;
+         line-height: 6;
+         font-family: Arial;
+         color: #3e2723;
+      }
+      .properties-amenities ul li i {
+         color: #79a3b1;
+      }
+      ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+      .table {
+         background-color: transparent;
+         width: 100%;
+      }
+      .table {
+         width: 100%;
+         max-width: 100%;
+         margin-bottom: 20px;
+      }
+      table.amenities td.value{
+         color: #79a3b1;
+         font-weight: 600;
+      }
+      table.amenities td{
+         padding: 5px 20px;
+         border-top: 0;
+      }
+      .row-amenities {
+          padding: 0 15px;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .logo .logo-content {
+        
+        background: #3e2723;
+        padding: 20px;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="page-wraper">
+      <div class="page-content">
+          <div class="section-full p-tb90">
+              <div class="container">
+                  <div class="project-detail-outer bg-top-left bg-parallax bg-center" data-stellar-background-ratio="0.5" style="background:#000">
+                      <div class="row">
+                          
+                          <div class="col-md-12 col-sm-12 project-detail-containt bg-black square_shape3">
+
+                              <div class="p-lr20 p-tb80">
+                                  <div class="bg-white p-lr30 p-tb50 text-black">
+                                    <div class="logo p-t0 m-b20">
+                                      <div class="logo-content">
+                                          <img src="{{ logo }}">
+                                        </div>
+                                      </div>
+                                      <h2 class="m-t0"><span class="font-24 text-uppercase">{{ accommodation.headline|trans({}, 'accommodations', locale) }}</span></h2>
+                                      
+                                      <div class="product-block">
+                                          <div class="row">
+                                            <div class="col-md-6 col-sm-6 m-b30">
+                                              <h5 class="text-uppercase">{{ 'Réf. agence'|trans({}, 'accommodations', locale) }}</h5>
+                                              <p><span data-v-166f9318="" class="reference">{{ accommodation.reference|trans({}, 'accommodations', locale) }}</span></p>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 m-b30">
+                                              <h5 class="text-uppercase">{{ 'Lieu'|trans({}, 'accommodations', locale) }}</h5>
+                                              <p>{{ accommodation.place.name|trans({}, 'accommodations', locale) }}</p>
+                                             </div>
+                                            <div class="col-md-6 col-sm-6 m-b30">
+                                              <h5 class="text-uppercase">{{ 'Détails'|trans({}, 'accommodations', locale) }}</h5>
+                                              <p>{{ accommodation.numberOfRooms }} {{ 'chambres'|trans({}, 'accommodations', locale) }} - {{ accommodation.floorSize|trans({}, 'accommodations', locale) }} M2</p>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 m-b30">
+                                              <h5 class="text-uppercase">{{ 'Prix'|trans({}, 'accommodations', locale) }}</h5>
+                                              <p>{{ accommodation.price|trans({}, 'accommodations', locale) }}&nbsp;€</p>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                          <div data-v-0505ec60="" class="blog-post blog-lg date-style-1 text-black">
+                               <div data-v-0505ec60="" class="wt-post-media"></div>
+                          </div>
+                          <div class="wt-post-info p-t30 bg-white ">
+                              <div class="wt-post-title ">
+                                  <h2 class="post-title ">
+                                      <a href="javascript:void(0);" class="text-black font-20 letter-spacing-2 font-weight-600 ">
+                                     {{ accommodation.place.name|trans({}, 'accommodations', locale) }}
+                                      </a>
+                                  </h2>
+                              </div>
+
+                              <div class="wt-post-text">
+                                  <p>{{ accommodation.place.description|striptags|trans({}, 'accommodations', locale) }}</p>
+                              </div>
+                          </div>
+                          <div class="wt-divider bg-black"><i class="icon-dot c-square"></i></div>
+                          <div class="wt-post-info p-t30 bg-white ">
+                              <div class="wt-post-title ">
+                                  <h2 class="post-title ">
+                                      <a href="javascript:void(0);" class="text-black font-20 letter-spacing-2 font-weight-600 ">{{ 'la description'|trans({}, 'accommodations', locale) }}</a>
+                                  </h2>
+                              </div>
+                              <div class="wt-post-text">
+                                  {% set _key = locale ~ '.description.accommodation.' ~ accommodation.slug %}
+                                  <p> {{ _key|trans({}, 'accommodations', locale)|raw }} </p>
+                              </div>
+                          </div>
+                          {% if  accommodation.details|length > 0 %}
+                          <div class="wt-divider bg-black"><i class="icon-dot c-square"></i></div>
+                          <div data-v-6f48de35="" class="properties-amenities mb-40">
+                              <div data-v-6f48de35="" class="wt-post-title ">
+                                  <h2 data-v-6f48de35="" class="post-title "><a data-v-6f48de35="" href="javascript:void(0);" class="text-black font-20 letter-spacing-2 font-weight-600 ">
+                                     {{ 'détails'|trans({}, 'accommodations', locale) }}
+                                  </h2>
+                              </div>
+                              <div data-v-6f48de35="" class="row p-lr30">
+                                  <table data-v-6f48de35="" class="amenities table">
+                                     <tbody data-v-6f48de35="">
+                                      {% for detail in accommodation.details %}
+                                        <tr data-v-6f48de35="">
+                                           <td data-v-6f48de35=""><strong data-v-6f48de35="">{{ detail.label|trans({}, 'accommodations', locale) }} : </strong></td>
+                                           <td data-v-6f48de35="" class="value">{{ detail.value|trans({}, 'accommodations', locale) }}</td>
+                                        </tr>
+                                      {% endfor %}
+                                     </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                          {% endif %}
+                          <div class="wt-divider bg-black"><i class="icon-dot c-square"></i></div>
+                          <div class="properties-amenities mb-40">
+                              <div class="wt-post-title ">
+                                  <h2 class="post-title "><a href="javascript:void(0);" class="text-black font-20 letter-spacing-2 font-weight-600 ">
+                                     {{ 'fonctionnalités'|trans({}, 'accommodations', locale) }}
+                                     </a>
+                                  </h2>
+                              </div>
+                              <div class="row row-amenities">
+                                  <ul class="amenities">
+                                      {% for amenity in accommodation.amenities %}
+                                        <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><i class="fa fa-check-square"></i>  {{ amenity.name|trans({}, 'accommodations', locale) }}
+                                        </li>
+                                      {% endfor %}
+                                  </ul>
+                              </div>
+                          </div>
+
+                          {% if plan != false %}
+                          <div class="wt-divider bg-black"><i class="icon-dot c-square"></i></div>
+                          <div class="floor-plans mb-50">
+                              <div class="wt-post-title ">
+                                  <h2 class="post-title "><a href="javascript:void(0);" class="text-black font-20 letter-spacing-2 font-weight-600 ">
+                                     {{ 'plan d\'étage'|trans({}, 'accommodations', locale) }}
+                                  </h2>
+                              </div>
+
+                              <img class="img-responsive" src="{{ plan }}" class="img-fluid">
+                          </div>
+                          {% endif %}
+
+                          <div class="wt-divider bg-black"><i class="icon-dot c-square"></i></div>
+                      </div>
+                      <ul class="grid-post">
+                        {% if accommodation.gallery is not empty %}
+                        {% if accommodation.gallery.imageGalleries is not empty %}
+                          {% for image in accommodation.gallery.imageGalleries %}
+                           <li>
+                                <div class="portfolio-item wt-img-effect">
+                                    <img 
+                                    class="img-responsive" 
+                                    src="{{ host }}{{ image.image.filename }}" 
+                                    alt=""
+                                    >
+                                </div>
+                            </li>
+                          {% endfor %}
+                        {% endif %}  
+                        {% endif %}  
+                      </ul>
+                  </div>
+                  <div class="row">
+                      <div class="footer col-lg-12 col-md-12 col-sm-12">
+                            <span class="copyrights-text">© {{ "now"|date("Y") }} L'immobilière d'Essaouira.   
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

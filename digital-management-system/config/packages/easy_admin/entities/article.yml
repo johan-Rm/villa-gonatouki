@@ -1,0 +1,99 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Article:
+            class: App\Entity\Article
+            controller: App\Controller\ComponentController
+            help: 'Create your articles'
+            translatable: true
+            serializable: true
+            list:
+                title: '%menu.list.label.articles%'
+                sort: [ 'datePublished', 'DESC' ]
+                batch_actions: [{ name: 'delete', ask_confirm: true }]
+                fields:
+                    - { property: 'headline' }
+                    - { property: 'isActive' }
+                    # - { property: 'author' }
+                    - { property: 'category', template: 'components/default_collection.html.twig' }
+                    # - { property: 'tags', type: 'array' }
+                    # - { property: 'webPages', type: 'array' }
+                    - { property: 'primaryImage', label: '%label.primary_image%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'secondaryImage', label: '%label.secondary_image%', template: 'components/vich_uploader_secondary_image.html.twig' }
+                    - { property: 'datePublished' }
+            show:
+                help: 'The form view overrides the global help message'
+                fields:
+                    - { property: 'lastReviewed' }
+                    - { property: 'isActive' }
+                    # - { property: 'author' }
+                    - { property: 'headline' }
+                    - { property: 'alternativeHeadline' }
+                    - { property: 'pushForward' }
+                    - { property: 'articleBody' }
+                    - { property: 'primaryImage', type: 'entity', label: '%label.primary_image%' }
+                    - { property: 'secondaryImage', type: 'entity', label: '%label.secondary_image%' }
+                    - { property: 'text', type: 'fos_ckeditor' }
+                    - { property: 'comments' }
+                    - { property: 'tags' }
+                    - { property: 'datePublished' }
+                    - { property: 'expire' }
+            form:
+                form_options: { validation_groups: ['creative'] }
+                help: 'The form view overrides the global help message'
+                fields:
+                    - { type: 'group', label: '%group.label.basic.content%', columns: 8 }
+                    - { property: 'isActive' }
+                    - { property: 'headline', translatable: true }
+                    - { property: 'alternativeHeadline', translatable: true, help: 'usable for short titles, if empty, this field will be automatically edited' }
+                    - { property: 'pushForward', translatable: true }
+                    - { property: 'articleResume', translatable: true, help: 'if empty the beginning of the body of the article will be automatically edited' }
+                    - { property: 'articleBody', translatable: true, type: 'fos_ckeditor' }
+                    - { property: 'text', translatable: true, label: '%label.additional_text%' }
+                    - { property: 'blockquoteTitle', translatable: true, label: '%label.blockquote.title%' }
+                    - { property: 'blockquote', translatable: true, label: '%label.blockquote%' }
+                    - { type: 'group', label: '%group.label.basic.document%', columns: 4 }
+                    - { property: 'datePublished', type_options: { disabled: false, 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'lastReviewed', type_options: { disabled: false, 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    - { property: 'category', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' }, required: true } }
+                    - { property: 'tags', type: 'easyadmin_autocomplete', type_options: { class: 'App\Entity\Tag', attr: { entity: 'Tag' } } } 
+
+            
+                        # required: false
+                    # - property: 'videos'
+                    #   label: '%group.label.basic.videos%'
+                    #   type: 'collection'
+                    #   type_options: { entry_type: 'App\Form\VideoObjectType', by_reference: false }
+                    # - { property: 'components' }
+                    # - { property: 'webPages', type_options: { choice_translation_domain: true, multiple: true, expanded: false } }
+                    # - { property: 'expire', type_options: { 'widget': 'single_text', 'format': 'dd/MM/yyyy', 'attr': { 'class': 'datepicker' } } }
+                    
+                    # - { property: 'components' }
+                    # - { property: 'Thing', label: '', type: 'App\Form\ThingType' }
+                    
+                    - { type: 'group', label: '%group.label.basic.media%', columns: 6 }
+                    # - { property: 'regenerateFormat', columns: 6, type_options: { data: false } }
+                    # - { property: 'hideStamp', columns: 6 }
+                    - { property: 'primaryImage', type: 'easyadmin_autocomplete', label: '%label.primary_image%', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+                    - { property: 'secondaryImage', type: 'easyadmin_autocomplete', label: '%label.secondary_image%', type_options: { attr: { entity: 'MediaObject' } } }
+                    - { property: 'gallery', type: 'easyadmin_autocomplete' }
+                    - { property: 'galleryVertical', type: 'easyadmin_autocomplete' }
+                    - property: 'videos'
+                      label: 'Videos'
+                      columns: 12
+                      type_options:  
+                        # choice_translation_domain: true
+                        multiple: true
+                        expanded: false
+                        query_builder: ['App\Repository\MediaObjectRepository', 'getVideos']
+                        required: false
+                        attr: { entity: 'MediaObject' }
+                    # - { property: 'media', type: 'easyadmin_autocomplete', columns: 12, label: 'MediaObject', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+                    
+                    - { type: 'group', label: '%group.label.basic.seo%', columns: 6 }
+                    - { property: 'metaTitle', translatable: true, help: 'automatically generated field needed for SEO' }
+                    - { property: 'metaDescription', translatable: true, help: 'automatically generated field needed for SEO' }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }
+                    # - { property: 'url', type_options: { disabled: true } }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

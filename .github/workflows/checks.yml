@@ -1,0 +1,22 @@
+name: Repository checks
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  build-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check shell syntax
+        run: |
+          sh -n nuxt-modern-website/deployment/build.sh
+          bash -n site-sync.sh
+      - name: Test deployment script in isolation
+        run: python3 nuxt-modern-website/deployment/tests/test_build.py
+      - name: Check repository hygiene and sync configuration
+        run: python3 tests/test_repository.py

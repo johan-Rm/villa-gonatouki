@@ -1,0 +1,7 @@
+types:
+    Thing: ~
+    Place: ~
+    Accommodation: ~
+    Room: ~
+    HotelRoom: ~
+    AggregateOffer: ~

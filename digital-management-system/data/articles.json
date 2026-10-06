@@ -1,0 +1,73 @@
+[
+
+	{
+		"headline": "Séminaire",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"category": "privatization",
+		"tags": [
+			"privatization"
+		]
+	},
+	{
+		"headline": "Mariage",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"category": "privatization",
+		"tags": [
+			"privatization"
+		]
+	},
+	{
+		"headline": "Shooting",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"category": "privatization",
+		"tags": [
+			"privatization"
+		]
+	},
+	{
+		"headline": "Évenements familliaux",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"category": "privatization",
+		"tags": [
+			"privatization"
+		]
+	},
+	{
+		"headline": "Vidéos",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"category": "la-villa",
+		"tags": [
+			"la-villa"
+		],
+		"videos": [
+			{
+				"name": "Villa Gonatouki, Essaouira",
+				"url": "https://www.youtube.com/watch?v=P-i5MEnwXAQ"
+			},
+			{
+				"name": "Gonatouki Villa",
+				"url": "https://www.youtube.com/watch?v=SGP9pT0oxOw"
+			}
+		]
+	},
+	{
+		"headline": "Galerie",
+		"pushForward": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"alternativeHeadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"text": "Commencez vos vacances! Visitez la Villa, ses salons, sa cuisine, ses chambres, ses piscines, son spa, ses jardins. Rencontrez son équipe. Voyez les expériences des uns et des autres à Gonatouki et lors d’activités extérieures. Prenez des idées d’activités que vous pourrez pratiquer. Observez avec les yeux des hôtes qui vous ont précédés. Faites-vous plaisir avant même de partir!",
+		"category": "la-villa",
+		"tags": [
+			"la-villa"
+		]
+	}
+]

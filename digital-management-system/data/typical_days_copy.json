@@ -1,0 +1,213 @@
+[
+	{
+	    "name": "Une journée cool",
+	    "category": "Cool",
+	    "elements": [
+	    	{
+	    		"label": "REVEIL EN DOUCEUR",
+	            "value": "Sur ma terrasse à mon rythme",
+	            "hours": "10h",
+	            "description": "Sur ma terrasse à mon rythme",
+	            "primaryImage": "day-type-img-ftour.jpg",
+				"category": "petit déjeuner"
+	    	},
+	    	{
+	    		"label": "FARNIENTE",
+	            "value": "Baignades, lecture, musique, discussions …",
+	            "hours": "11h",
+	            "description": "Baignades, lecture, musique, discussions …",
+	            "primaryImage": "day-type-img-pool.jpg",
+				"category": "piscine"
+	    	},
+			{
+	    		"label": "VUE SUR LA MER",
+	            "value": "Trop bon avec en plus le sourire d’Hafssa",
+	            "hours": "14h",
+	            "description": "Trop bon avec en plus le sourire d’Hafssa",
+	            "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg",
+				"category": "déjeuner"
+	    	},
+			{
+	    		"label": "UNE MERVEILLE",
+	            "value": "Ouah! Le petit galop sur la plage",
+	            "hours": "15h30",
+	            "description": "Ouah! Le petit galop sur la plage",
+	            "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg",
+				"category": "équitation"
+	    	},
+	    	{
+	    		"label": "L'après midi",
+	            "value": "découvrer le rallye des gazelles du 21/03/2021 au 24/03/2021",
+	            "hours": "16h",
+	            "description": "découvrer le rallye des gazelles du 21/03/2021 au 24/03/2021",
+	            "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg",
+				"category": "sortie",
+				"event": "Le Rallye Aïcha des Gazelles"
+	    	},
+			{
+	    		"label": "RELAX",
+	            "value": "En sirotant un cocktail de fruits",
+	            "hours": "17h30",
+	            "description": "En sirotant un cocktail de fruits",
+	            "primaryImage": "piscines-img-33321.jpg",
+				"category": "piscine"
+	    	},
+			{
+	    		"label": "DU CHARME",
+	            "value": "Bonne douche et coucher de soleil sur ma terrasse",
+	            "hours": "19h30",
+	            "description": "Bonne douche et coucher de soleil sur ma terrasse",
+	            "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg",
+				"category": "la chambre"
+	    	},
+			{
+	    		"label": "QUEL PLAISIR",
+	            "value": "Les mignardises maison et les histoires de Bruno",
+	            "hours": "20h",
+	            "description": "Les mignardises maison et les histoires de Bruno",
+	            "primaryImage": "activities-rag180331-essaouira-chr-020072.jpeg",
+				"category": "apéritif"
+	    	},
+	    	{
+	    		"label": "UN DELICE",
+	            "value": "Aux chandelles en amoureux à Gonatouki",
+	            "hours": "20h30",
+	            "description": "Aux chandelles en amoureux à Gonatouki",
+	            "primaryImage": "piscines-img-33321.jpg",
+				"category": "diner"
+	    	}
+	    ]
+	},
+	{
+	    "name": "Une journée tonique",
+	    "category": "Tonique",
+	    "elements": [
+	    	{
+	    		"label": "MERCI!!!",
+	            "value": "jus frais, Fruits, pain maison, crêpe, pancake, beignet, œufs, café et thé…",
+	            "hours": "8h30",
+	            "description": "jus frais, Fruits, pain maison, crêpe, pancake, beignet, œufs, café et thé…",
+	            "primaryImage": "day-type-img-ftour.jpg",
+				"category": "petit déjeuner"
+	    	},
+	    	{
+	    		"label": "QUEL PLAISIR!",
+	            "value": "Avec Gona et Touki",
+	            "hours": "9h",
+	            "description": "Avec Gona et Touki",
+	            "primaryImage": "day-type-img-pool.jpg",
+				"category": "promenade"
+	    	},
+	    	{
+	    		"label": "EN PLEINE FORME!",
+	            "value": "50 longueurs dans le couloir de nage",
+	            "hours": "10h30",
+	            "description": "50 longueurs dans le couloir de nage",
+	            "primaryImage": "activities-img-nautique-inversed.jpeg",
+				"category": "natation"
+	    	},
+	    	{
+	    		"label": "JE M’ÉCLATE!",
+	            "value": "Matériel top et conditions parfaites. Merci pour les conseils.",
+	            "hours": "12h",
+	            "description": "Matériel top et conditions parfaites. Merci pour les conseils.",
+	            "primaryImage": "activities-accueil-hotel-tasgua-yan-01.jpg",
+				"category": "Kitesurf"
+	    	},
+			{
+	    		"label": "QUEL SPECTACLE!",
+	            "value": "En bordure de mer: diététique et très bon",
+	            "hours": "14h30",
+	            "description": "En bordure de mer: diététique et très bon",
+	            "primaryImage": "demo-essaouira-1139708-1920.jpg",
+				"category": "déjeuner"
+	    	},
+			{
+	    		"label": "PASSIONNANT",
+	            "value": "La négo: une sacrée expérience",
+	            "hours": "16h",
+	            "description": "La négo: une sacrée expérience",
+	            "primaryImage": "demo-essaouira-1139708-1920.jpg",
+				"category": "médina"
+	    	},
+	    	{
+	    		"label": "SUPER SYMPA",
+	            "value": "Echanges avec d’autres hôtes sur nos expériences du jour",
+	            "hours": "20h30",
+	            "description": "Echanges avec d’autres hôtes sur nos expériences du jour",
+	            "primaryImage": "demo-casablanca-4620328-1920.jpg",
+				"category": "apéritif"
+	    	},
+			{
+	    		"label": "TROP BON!",
+	            "value": "Devant la cheminée. La pastilla de poisson quelle saveur!",
+	            "hours": "21h15",
+	            "description": "Devant la cheminée. La pastilla de poisson quelle saveur!",
+	            "primaryImage": "demo-casablanca-4620328-1920.jpg",
+				"category": "diner"
+	    	}
+	    ]
+	},
+	{
+	    "name": "Une journée visite",
+	    "category": "Visite",
+	    "elements": [
+	    	{
+	    		"label": "DEPAYSANT",
+	            "value": "Retour direct au 19ème siècle",
+	            "hours": "9h30",
+	            "description": "Retour direct au 19ème siècle",
+	            "primaryImage": "day-type-img-ftour.jpg",
+				"category": "Le marché d’Had’Dra"
+	    	},
+	    	{
+	    		"label": "ETONNANT",
+	            "value": "Le port et son marché aux poissons",
+	            "hours": "11h30",
+	            "description": "Le port et son marché aux poissons",
+	            "primaryImage": "day-type-img-pool.jpg",
+				"category": "Le port"
+	    	},
+	    	{
+	    		"label": "SURPRENANT",
+	            "value": "A la découverte de l’objet improbable",
+	            "hours": "13h30",
+	            "description": "A la découverte de l’objet improbable",
+	            "primaryImage": "activities-img-nautique-inversed.jpeg",
+				"category": "Le marché aux puces"
+	    	},
+	    	{
+	    		"label": "A COUPER LE SOUFFLE!",
+	            "value": "Seul au monde",
+	            "hours": "14h30",
+	            "description": "Seul au monde",
+	            "primaryImage": "activities-accueil-hotel-tasgua-yan-01.jpg",
+				"category": "Les plages sauvages"
+	    	},
+			{
+	    		"label": "AUTHENTIQUE",
+	            "value": "Les ruelles, les artisans, le marché aux épices…",
+	            "hours": "17h",
+	            "description": "Les ruelles, les artisans, le marché aux épices…",
+	            "primaryImage": "demo-essaouira-1139708-1920.jpg",
+				"category": "La médina"
+	    	},
+			{
+	    		"label": "INCONTOURNABLE",
+	            "value": "Quelle détente! j’en veux un tous les jours",
+	            "hours": "19h",
+	            "description": "Quelle détente! j’en veux un tous les jours",
+	            "primaryImage": "demo-essaouira-1139708-1920.jpg",
+				"category": "Massage"
+	    	},
+			{
+	    		"label": "ENCORE!",
+	            "value": "Avec le sourire d’Hafssa de l’apéritif au dessert",
+	            "hours": "21h",
+	            "description": "Avec le sourire d’Hafssa de l’apéritif au dessert",
+	            "primaryImage": "demo-casablanca-4620328-1920.jpg",
+				"category": "Diner"
+	    	}
+	    ]
+	}
+]

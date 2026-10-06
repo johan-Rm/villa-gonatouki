@@ -1,0 +1,4 @@
+easy_admin:
+    entities:
+        BuildRoute:
+            class: App\Entity\BuildRoute

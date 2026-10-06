@@ -1,0 +1,167 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Accommodation:
+            class: App\Entity\Accommodation
+            controller: App\Controller\AccommodationController
+            translatable: true
+            # serializable: false
+            search:
+                fields:
+                    - 'reference'
+            list:
+                title: '%menu.list.label.accommodations%'
+                reports: ['vente', 'location']
+                collapse_actions: true
+                actions: 
+                    - '-show'
+                    - 'edit'
+                    # - { name: 'viewFr', label: 'Voir PDF (fr)', target: '_blank' }
+                    - { name: 'printFr', label: 'Générer PDF (fr)', target: '_blank' }
+                    # - { name: 'viewEn', label: 'Voir PDF (en)', target: '_blank' }
+                    - { name: 'printEn', label: 'Générer PDF (en)', target: '_blank' }
+                    - 'delete'
+                    - 'export'
+                batch_actions: [{ name: 'delete', ask_confirm: true }]
+                fields:
+                    - { property: 'reference' }
+                    - { property: 'primaryImage', label: '%label.primary_image%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'secondaryImage', label: '%label.secondary_image%', template: 'components/vich_uploader_secondary_image.html.twig' }
+                    - { property: 'price' }
+                    - { property: 'nature', type: 'string', template: 'components/nature_collection.html.twig' }
+                    # - { property: 'type', type: 'string' }
+                    - { property: 'place', type: 'string' }
+                    # - { property: 'tags' }
+                    # - { property: 'amenities' }
+                    - { property: 'isActive' }
+                    # - { property: 'pdfs' }
+                    # - { property: 'images' }
+                    # - { property: 'videos' }
+                    - { property: 'dateModified' }
+            form:
+                fields:
+                    - { property: 'slug',  translatable: true }
+                    - { type: 'group', label: '%group.label.basic.content%', columns: 8 }
+                    - { property: 'isActive', label: 'Published', columns: 6 }
+                    - { property: 'label', label: 'Label (on inset list)', columns: 6, type_options: { choice_translation_domain: true, multiple: false, expanded: false } }
+                    - { property: 'headline', translatable: true, type_options: { required: false }, help: 'if empty, this field will be automatically edited' }
+                    - { property: 'pushForward', translatable: true }
+                    
+                    - { property: 'description', type: 'fos_ckeditor', translatable: true }
+                    - { property: 'ourOpinion', type: 'fos_ckeditor', translatable: true }
+                    - { property: 'informations', translatable: true }
+
+                    - { type: 'group', label: '%group.label.basic.infos%', columns: 4 }
+                    
+                    - { property: 'oldReference', type_options: { disabled: true } }
+                    - { property: 'reference', help: 'The reference will be generated automatically', type_options: { disabled: true } }
+                    - { property: 'regenerateReference', type_options: { data: false } }
+                    - { property: 'name', label: 'Name of the property', translatable: true }
+                    - { property: 'nature', label: ' ', type_options: { choice_translation_domain: true, multiple: false, expanded: true, query_builder: ['App\Repository\AccommodationNatureRepository', 'getMain'], required: false } }
+                    - { property: 'person', label: '%label.owner%', type_options: { required: false } }
+                    - { property: 'realEstateAgent' }
+                    - { property: 'persons', label: '%label.teams%', type: 'easyadmin_autocomplete' }    
+                    # - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    
+ 
+                    - { type: 'group', label: '%group.label.basic.dwelling%', columns: 8 }
+                    - { property: 'type', label: '%label.type_of_property%', type_options: { choice_translation_domain: true, multiple: false, expanded: false, required: false } }
+                    - { property: 'maximumOccupants', columns: 6 }
+                    - { property: 'numberOfRooms', columns: 6 }
+                    - { property: 'floorSize', columns: 4 }
+                    - { property: 'areaSize', columns: 4 }
+                    - { property: 'areaTerrace', columns: 4 }
+
+                    # - { type: 'group', label: '%group.label.basic.characteristics%', columns: 8 }
+                    - { property: 'place', columns: 12, type_options: { choice_translation_domain: true, multiple: false, expanded: false, required: false } }
+                    - { property: 'geo', columns: 12, label: '%label.geo%', help: 'enter the 2 values separated by a comma - lat, lon - ex => 40.761293, -73.982294'  }
+                    
+                    - { property: 'amenities', type_options: { choice_translation_domain: true, multiple: true, expanded: false } }
+                    - { property: 'tags', type_options: { choice_translation_domain: true, multiple: true, expanded: false } }
+
+                    # - { type: 'group', label: '%group.label.accommodations.details%', columns: 3 }
+                    - { property: 'details', type: 'collection', type_options: { entry_type: 'App\Form\AccommodationDetailType', by_reference: false, attr: { class: 'collection_item', label_item: 'item' } }, help: 'the details are simply a series of keywords / value to grab in a free way' }
+                     
+
+                    - { type: 'group', label: '%group.label.basic.price%', columns: 4 }
+                    - { property: 'price' }
+                    - { property: 'labelPrice' }
+                    - { property: 'duration', type_options: { choice_translation_domain: true, multiple: false, expanded: false } }
+                    - { property: 'rentalPriceType', type_options: { choice_translation_domain: true, multiple: false, expanded: false } }
+                    - { property: 'urbanTaxes' }
+                    - { property: 'unionCharges' }
+                    - { property: 'turnover' }
+                    
+                    - { type: 'group', label: '%group.label.basic.media%', columns: 6 }
+                    - { property: 'regenerateFormat', columns: 6, type_options: { data: false } }
+                    - { property: 'hideStamp', columns: 6 }
+                    - { property: 'primaryImage', type: 'easyadmin_autocomplete', label: '%label.primary_image%', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+                    - { property: 'secondaryImage', type: 'easyadmin_autocomplete', label: '%label.secondary_image%', type_options: { attr: { entity: 'MediaObject' } }, help: 'allows to define an image in vertical mode for example' }
+                    - { property: 'gallery', type: 'easyadmin_autocomplete' }
+                    - { property: 'pdfs', label: '%group.label.basic.documents%', type_options: { attr: { entity: 'Document' }, required: false } }
+                    # - property: 'pdfs'
+                    #   label: '%group.label.basic.documents%'
+                    #   type: 'collection'
+                    #   type_options: { entry_type: 'App\Form\DocumentType', by_reference: false }
+                    - property: 'videos'
+                      label: '%group.label.basic.videos%'
+                      type: 'collection'
+                      type_options: { entry_type: 'App\Form\VideoObjectType', by_reference: false }
+                              
+
+                    - { type: 'group', label: '%group.label.basic.seo%', columns: 6 }
+                    - { property: 'metaTitle', translatable: true, help: 'automatically generated field needed for SEO' }
+                    - { property: 'metaDescription', translatable: true, help: 'automatically generated field needed for SEO' }
+                    # - { property: 'slug', translatable: true, type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }
+
+            # form:
+            #     fields:
+            #         - { type: 'group', label: '%group.label.basic.informations%', columns: 4 }
+            #         - { property: 'isActive' }
+            #         - { property: 'primaryImage', type: 'entity', label: '%label.primary_image%', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+            #         - { property: 'secondaryImage', type: 'entity', label: '%label.secondary_image%', type_options: { attr: { entity: 'MediaObject' } }, help: 'allows to define an image in vertical mode for example' }
+            #         - { property: 'person', label: '%label.owner%', type_options: { required: false } }
+            #         - { property: 'realEstateAgent' }
+            #         - { property: 'nature', label: ' ', type_options: { choice_translation_domain: true, multiple: false, expanded: true, query_builder: ['App\Repository\AccommodationNatureRepository', 'getMain'], required: false } }
+            #         - { property: 'type', label: '%label.type_of_property%', type_options: { choice_translation_domain: true, multiple: false, expanded: false, required: false } }
+            #         - { property: 'duration', , type_options: { choice_translation_domain: true, multiple: false, expanded: true } }
+            #         - { property: 'rentalPriceType', type_options: { choice_translation_domain: true, multiple: false, expanded: true } }
+            #         - { property: 'price' }
+            #         - { property: 'labelPrice' }
+            #         - { property: 'maximumOccupants', columns: 6 }
+            #         - { property: 'numberOfRooms', columns: 6 }
+            #         - { property: 'floorSize' }
+            #         - { property: 'areaSize' }
+            #         - { property: 'areaTerrace' }
+            #         - { property: 'urbanTaxes' }
+            #         - { property: 'unionCharges' }
+            #         - { property: 'turnover' }
+            #         - { property: 'persons', label: '%label.teams%' }
+            #         - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+            #         - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }
+            #         - { type: 'group', label: '%group.label.basic.informations%', columns: 8 }
+            #         - { property: 'metaTitle', translatable: true, help: 'automatically generated field needed for SEO' }
+            #         - { property: 'metaDescription', translatable: true, help: 'automatically generated field needed for SEO' }
+            #         - { property: 'slug', translatable: true, type_options: { disabled: true } }
+            #         - { property: 'reference', help: 'The reference will be generated automatically', type_options: { disabled: true } }
+            #         - { property: 'headline', translatable: true, type_options: { required: true }, help: 'if empty, this field will be automatically edited' }
+            #         - { property: 'name', translatable: true }
+            #         - { property: 'pushForward', translatable: true }
+            #         - { property: 'description', translatable: true }
+            #         - { property: 'gallery' }
+            #         - { property: 'geo', label: '%label.geo%', help: 'enter the 2 values separated by a comma - lat, lon - ex => 40.761293, -73.982294'  }
+            #         - { property: 'place', columns: 6, type_options: { choice_translation_domain: true, multiple: false, expanded: false, required: false } }
+            #         - { property: 'label', columns: 6, label: '%label.label%', type_options: { choice_translation_domain: true, multiple: false, expanded: true } }
+            #         - { property: 'amenities', columns: 6, type_options: { choice_translation_domain: true, multiple: true, expanded: false } }
+            #         - { property: 'tags', columns: 6, type_options: { choice_translation_domain: true, multiple: true, expanded: false } }
+            #         - { property: 'details', type: 'collection', type_options: { entry_type: 'App\Form\AccommodationDetailType', by_reference: false, attr: { class: 'collection_item', label_item: 'item' } } }
+            #         - property: 'pdfs'
+            #           label: '%group.label.basic.documents%'
+            #           type: 'collection'
+            #           type_options: { entry_type: 'App\Form\DocumentType', by_reference: false }
+            #         - property: 'videos'
+            #           label: '%group.label.basic.videos%'
+            #           type: 'collection'
+            #           type_options: { entry_type: 'App\Form\VideoObjectType', by_reference: false }
+            #         - { property: 'informations' }

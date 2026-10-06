@@ -1,0 +1,30 @@
+easy_admin:
+    entities:
+        Room:
+            class: App\Entity\Room
+            serializable: true
+            translatable: true
+            list:
+                title: '%menu.list.label.rooms%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'name' }
+                    - { property: 'maximumOccupants' }
+                    - { property: 'primaryImage', label: '%label.primary_image%', template: 'components/vich_uploader_image.html.twig' }
+                    - { property: 'secondaryImage', label: '%label.secondary_image%', template: 'components/vich_uploader_secondary_image.html.twig' }
+                    - { property: 'description' }
+                    - { property: 'amenities' }
+                    # - { property: 'offers.addOn' }
+            form:
+                form_options: { validation_groups: ['thing'] }
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'description', translatable: true }
+                    - { property: 'descriptionResume', translatable: true }
+                    - { property: 'labelBgTransparent' }
+                    - { property: 'maximumOccupants' }
+                    - { property: 'primaryImage', type: 'easyadmin_autocomplete', label: '%label.primary_image%', type_options: { attr: { entity: 'MediaObject' }, required: false } }
+                    - { property: 'secondaryImage', type: 'easyadmin_autocomplete', label: '%label.secondary_image%', type_options: { attr: { entity: 'MediaObject' } }, help: 'allows to define an image in vertical mode for example' }
+                    - { property: 'gallery', type: 'easyadmin_autocomplete' }
+                    - { property: 'amenities', label: '%label.room_hotel_amenity%', type: 'easyadmin_autocomplete' }
+                    - { property: 'loungeAmenities', label: '%label.lounge_hotel_amenity%', type: 'easyadmin_autocomplete' }

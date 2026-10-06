@@ -1,0 +1,410 @@
+# MENU
+Comments: Commentaires
+Visitors: Visiteurs
+Galleries: Galeries
+Dashboard: Tableau de bord
+Medias: Médias
+Translations: Traduction des textes
+Customers: Clients
+RealEstateAgents: Agents immobiliers
+General: Général
+General of site: Général du site
+Social links: Liens sociaux
+Social network: Réseaux sociaux
+Users: Utilisateurs
+Components: Composants
+Invoices: Factures
+Settings: Paramètres
+Real Estate: Biens Immobiliers
+Real estate: Biens immobiliers
+House: Maison
+Apartment: Appartement
+Person: Personne
+Gallery: Galerie d'images
+SocialLinks: Liens Social
+Rental: Location
+Forms: Formulaires
+Agenda (list): Agenda (liste)
+Agenda (full calendar): Agenda (calendrier complet)
+Craftsmanship: Compétence Artisan
+Add a skill: Ajouter une compétence
+Customer Status: Statut Client
+Status Quotation: Statut Devis
+Meta data: Meta données
+Billing: Facturation
+Add an invoice: Ajouter une facture
+Postal code: Code postal
+First name: Prénom
+Invoice Details: Détails de la facture
+Billing date: Date de facturation
+Turnover: Chiffre d'affaires
+Current year: Année en cours
+Partner (franchise): Partenaire (franchise)
+User list: Liste utilisateurs
+Add a user: Ajouter un utilisateur
+Partner list: Liste partenaires
+Add a partner: Ajouter un partenaire
+Address list: Liste adresses
+Add an address: Ajouter une adresse
+Separation: Séparation
+Collaborators: Collaborateurs
+For (client): Pour (client)
+Performed by (artisan): Effectué par (artisan)
+Further information: "Plus d'informations"
+Rental to come: Location à venir
+Historical rental: Historique
+AccommodationType: Type de bien
+AccommodationNature: Nature du bien
+AccommodationPlace: Lieu
+AccommodationAmenity: Commodité
+Is location: Location uniquement
+With picto: Avec picto
+AccommodationLocation: Durée de location
+AccommodationLabel: Label
+Accommodations: Logements
+Is conform: Conforme
+Bills: Factures
+People: Personnes
+Organization: Organisme
+Webpage templates: Modèles de page
+Push forward: Mise en avant (slogan)
+Secondary image: Photo vertical
+Category: Catégorie
+Customer card: Fiche client
+Owner: Propriétaire
+Duration: Durée
+Rattachemnts: Rattachements
+Author: Auteur
+Prospect: Prospect
+Prospect type: Type
+Function: Fonction
+People list: Liste
+Union charges: Charges syndicales
+Urban taxes: Taxes urbaines
+Personals: Personnels
+Invoices tracking: Suivi de factures
+Amount: Montant
+Blockquote: Citation
+Blockquote Title: Titre de la citation
+Old reference: Ancienne référence
+Lodger: Locataire
+Location type: Type de location
+Duration of location: Durée de location
+ImageGallery: Gallery
+Rank: Position
+Sort images: Trier les images
+Regenerate reference: Régénérer la référence
+Regenerate pdf: Régénérer le PDF
+Regenerate stamp: Régénérer les tampons
+Clear stamp: Effacer les tampons
+In slider: Dans le slider
+Gallery vertical: Gallerie vertical
+Hide stamp: Ne pas utiliser le tampon
+Regenerate format: Régénérer les formats
+save_modal.title: Mise à jour avec regénération des formats d'images
+save_modal.content: Voulez-vous vraiment regénérer les images ?
+HotelTypicalDay: Journée type
+HotelActivity: Activité
+Room: Chambre
+
+
+# ADMIN:
+
+# BDD fields
+Title: Titre
+Begin at: Début
+End at: Fin
+User created: Créé par
+User last modified: Modifié par
+User created.company: Partenaire
+Created at: Créé à
+Updated at: Modifié à
+Firstname: Prénom
+Lastname: Nom
+Gender: Civilité
+Birthday: Naissance
+Place of birth: Lieu de Naissance
+Phone: Téléphone
+Email: Email
+Addresses: Adresses
+Skills: Compétences
+ArtisanSkills: Compétence Artisan
+Status: Statut
+Customer: Client
+customer: client
+Comment: Commentaire
+Quotation: Devis
+QuotationStatus: Statut Devis
+CustomerStatus: Statut Client
+Name: Nom
+Payment method: Méthode de paiment
+Payment due date: Date de paiement
+Payment method id: Numéro de paiement
+Payment status: Payé
+References order: Ordre de références
+Scheduled payment date: Date de paiement prévue
+Appointment: Rendez-vous
+Total payment due: Total paiement due
+Company: Partenaire
+Username: Login
+Enabled: Actif
+Last login: Dernière connexion
+User: Utilisateur
+Address: Adresse
+Postcode: Code postal
+Customer full name: Client
+Reference: Référence
+Total without taxes: Total HT
+Payment penalties: Pénalités de paiement
+Payment modality: Modalité de paiement
+Additional info: Infos additionnelles
+Bank name: Nom de la banque
+Bank: Banque
+Bank code: Code de la banque
+Bank details: Détails bancaires
+Account number: Numéro de compte
+Iban number: IBAN
+Swift bic number: SWIFT/BIC
+Supplier name: Nom du fournisseur
+Quantity: Quantité
+Unit: Unité
+Unit price: Prix unitaire
+Invoice: Facture
+Invoice date: Date de la facture
+Recipient: Destinataire
+Sale date: Date de vente
+Upcoming customer appointment: Rendez-vous client à venir
+Upcoming craftsman appointment: Rendez-vous artisan à venir
+In: Dans
+In what property: Dans quel bien ?
+With: Avec
+With whom: Avec qui ?
+Next meeting: Prochain rendez-vous
+Origin: Provenance
+Deposit: Arrhes
+Rentals: Locations
+RealEstateAgent: Agent Immobilier
+Real estate agent: Agent
+Rental price type: Type de prix
+# Area size: Surface
+Founding date: Date de fondation
+Legal name: Nom légal
+Number of employees: Nombre d'employés
+Area terrace: Surface terrasse
+Documents list: Liste des documents
+Position: Fonction
+Birthday date: Date de naissance
+Properties: Propriétés
+Historical: Historique
+Our opinion: Votre Avis
+DocumentObjectType: Type de Document
+PersonNature: Statut
+PersonPosition: Fonction
+alternativeHeadline: titre alternatif
+articleBody: corps de l'article
+articleResume: résumé de l'article
+blockquote: citation
+blockquoteTitle: titre de la citation
+headline: titre
+name: nom
+ourOpinion: votre avis
+pushForward: mise en avant
+text: texte
+Link: Lien
+Download: Télécharger
+Number of projects: Nombre de projets
+RentalHistorical: Historique des Locations
+RentalType: Type de location
+Translated entity name: Nom de l'entité
+Translated field name: Nom du champ
+Entity id: Id de l'entité
+Equipments: Équipements
+Services: Services
+TypicalDays: Journées types
+Activities: Activités
+The rooms: Chambres
+
+
+# Customers: Clients
+Turnover of the current year: Chiffres d'affaires de l'année en cours
+Cash: Encaisser
+To cash: À encaisser
+Quotation status: Statut des devis
+Artisan skills: Compétences des artisans
+Customer status: Statut des clients
+Turnover by month: Chiffres d'affaires du mois
+Pdfs: Documents
+File: Fichier
+file: fichier
+Filename: Nom du fichier
+Pdf: Document
+Pdf file: Choisir un fichier
+City: Ville
+Country: Pays
+Password: Mot de passe
+Repeat password: Répéter le mot de passe
+Advisor: Conseiller
+Administrator: Administrateur
+The reference will be generated automatically: La référence sera généré automatiquement
+Pdf url: PDF URL
+Website url: Website URL
+Number of rooms: Nombre de chambres
+Price: Prix
+Floor size: Surface habitable
+Area size: Surface du terrain
+Place: Lieu
+Amenities: Équipements
+Tags: Tags
+Nature of the property: Nature du bien
+Objet of the property: Objet
+Type of property: Type de bien
+Videos: Vidéos
+Accommodation: Logement
+All accommodations: Tous les logements
+WebPage: Page
+WebPages: Pages
+Main entity of page: Entité principale de la page
+Web pages: Pages web
+Date created: Date de création
+Date modified: Date de modification
+Global message displayed in all views: Message global affiché dans toutes les vues
+The form view overrides the global help message: La vue formulaire remplace le message d'aide global
+Coming soon: Prochainement
+Headline: Titre
+Keywords: Mots-clé
+Date published: Date de publication
+Last reviewed: Dernière revue
+Alternative headline: Titre alternatif
+Expire: Expirer
+Text: Texte
+Sender: Expéditeur
+Date sent: Date d'envoi
+Width: Largeur
+Height: Hauteur
+Rental type: Location type
+Paid: Payé
+Deposit amount: Montant des arrhes
+Rental agreement: Contrat de Location
+delete metadata can disrupt the operation of the application: supprimer des métadonnées peut perturber le fonctionnement de l''application
+Primary image: Photo horizontal
+Primary article: Article principale
+Additional text: Texte additionnel
+Article body: Corps de l'article
+usable for short titles: utilisable pour les titres courts
+usable for short titles, if empty, this field will be automatically edited: utilisable pour les titres courts, si vide, ce champ sera automatiquement édité
+if empty the beginning of the body of the article will be automatically edited: si vide, le début du corps de l'article sera automatiquement édité
+allows to define an image in vertical mode for example: permet de définir une image en mode vertical par exemple
+Translate all channels: Traduire toutes les chaînes
+Upload your images, enter your Youtube links: Télécharger vos images, enregistrer vos liens Youtube
+Create your pages: Créer vos pages
+Create your keywords: Créer vos mots-clés
+Create your articles: Créer vos articles
+View your visitors messages: Visualiser les messages de vos visiteurs
+View your subscriptions: Visualiser vos abonnements
+Create your galleries and attach them to your pages, articles and properties: Créer vos galeries et joignez les à vos pages, articles et biens immobiliers
+Translate your words, phrases and web pages: Traduiser vos mots, vos expressions et vos pages web
+enter the 2 values separated by a comma - lat, lon - ex => 40.761293, -73.982294: saisir les 2 valeurs séparés par une virgule - lat,lon - exemple => 40.761293, -73.982294
+Geo Coordinates: Coordonnées GPS
+if empty, this field will be automatically edited: si vide, ce champ sera automatiquement édité
+automatically generated field needed for SEO: champ automatiquement généré nécessaire au SEO
+Enter the youtube url of your video: Entrez l'URL youtube de votre vidéo
+Salary or other...: Salaire ou autre...
+The file name will automatically be saved by default: Le nom du fichier sera automatiquement enregistré par défaut
+Your message has been sent: Votre message à bien été envoyé
+We have taken your message into consideration and we will answer you as soon as possible: Nous avons bien pris en compte votre message et nous vous répondrons dans les meilleurs délais
+Your message: Votre message
+Push foward: Mise en avant
+Name of the property: Nom du bien
+Published: Publié
+Label price: Prix (label)
+Label (on inset list): Label (sur encart liste)
+Document file: Rattachement
+WebPageTemplate: Template de page
+Translation: Traduction
+Is locked: Verrouillé
+Key left: Texte à traduire
+Value right: Texte traduit
+Entity name: Nom de l'entité
+Field name: Nom du champ
+Lang: Langue
+Images accommodations: Logements
+Videos accommodations: Vidéos
+Original name: Nom du fichier original
+Encoding format: Format d'encodage
+Content size: Taille du fichier
+Please wait...: Veuillez patienter...
+We update your translations: Nous mettons à jour vos traductions
+the details are simply a series of keywords / value to grab in a free way: les détails sont simplement une série de mots clés / valeur à saisir de façon libre
+Details of the property: Détails du bien
+Is active: Actif
+Please enter 1 or more characters: Veuillez saisir 1 ou plusieurs caractères
+Close: Fermer
+Drop files here to upload: Déposer des fichiers ici pour télécharger
+Do not close while downloading files: Ne pas fermer pendant le téléchargement des fichiers
+Number of files limited to 10 simultaneously: Nombre de fichiers limité à 10 simultanément
+The villa: La villa
+Saving current positions: Enregistrement des positions en cours
+Construction of current pages: Construction des pages en cours
+Save position: Sauvegarder les positions
+Reset position: Ré-initialise position
+Original stamped image: Original logo
+Image.original stamped image: Original logo
+Building list: Construction des pages
+Building list pages: Liste des pages à construire
+Pdf Check list: Vérification des PDF
+Pdf Size Check List: Liste des PDF à vérifier
+The price: Tarifs
+Booking: Réservation
+Room details: Détails de la chambre
+Lounge details: Détails du salon
+SEO ALT Balise: SEO Balise ALT
+Pages list: Liste des pages
+Medias list: Liste des médias
+Articles list: Liste des articles
+Galleries list: Liste des galeries d'images
+Building Website: Construction des Pages
+Messages list: Liste des messages
+Accommodations list: Liste des logements
+Accommodation types list: Liste des types de bien
+Accommodation places list: Liste des lieux
+Accommodation natures list: Liste ?
+Accommodation locations list: Liste des locations
+Accommodation labels list: Liste des labels
+Accommodation amenities list: Liste des équipements
+Rental list: Liste des locations
+Rental types list: Liste des types de location
+Rental historical list: Historique des locations
+Real Estate Agents list: Liste des agents immobiliers
+Persons list: Liste des personnes
+Person natures list: Liste des types de personne
+Person positions list: Liste des fonctions
+Addresses list: Liste des adresses
+Document list: Liste des documents
+Document types list: Liste des types de document
+Translations list: Liste des traductions
+Tags list: Liste des tags
+Social Links list: Liste des liens réseaux sociaux
+Users list: Liste des utilisateurs
+Rooms list: Liste des chambres
+Rooms price list: Liste des tarifs
+Rooms: Chambres
+Details: Détails
+Respond at: Répondu à
+Host: Hôte
+Hotel services list: Liste des services
+Hotel activities list: Liste des activités
+Hotel amenities list: Liste des équipements
+Hotel days types list: Liste des journées types
+HotelAmenity: Équipement
+HotelService: Service
+HotelPrice: Tarif
+Elements: Élements
+Offers: Les tarifs
+Prices: Tarifs
+Start: Début
+End: Fin
+Guest list: Liste des hôtes
+Guest: Hôtes
+Stays: Séjours
+Events: Évènements
+Event: Évènement

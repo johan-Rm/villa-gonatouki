@@ -1,0 +1,23 @@
+{% extends '@EasyAdmin/default/edit.html.twig' %}
+
+
+
+
+
+{% block main %}
+    {% block entity_form %}
+        {{ form(form, { 'attr': { 'novalidate': 'novalidate' } }) }}
+    {% endblock entity_form %}
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.edit-form .form-group.field-collection-action').remove();
+            $('.edit-form .field-collection-item-action').remove();
+            $('.edit-form .form-widget-compound legend').remove();
+            $('#edit-information-form .form-widget-compound, #edit-googleanalytics-form .form-widget-compound').show();
+        });
+    </script>
+{% endblock %}

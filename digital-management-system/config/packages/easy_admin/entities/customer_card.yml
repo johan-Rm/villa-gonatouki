@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        CustomerCard:
+            class: App\Entity\CustomerCard
+            list:
+                fields:
+                    - { property: 'person' }
+                    - { property: 'description' }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }
+            form:
+                fields:
+                    - { property: 'person' }
+                    - { property: 'description' }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

@@ -1,0 +1,24 @@
+nelmio_cors:
+    defaults:
+        allow_credentials: false
+        allow_origin: [ 'http://127.0.0.1:3000', 'https://www.villa-gonatouki.com', 'https://villa-gonatouki.com', 'https://villa-gonatouki.graines-digitales.online', 'http://villa-gonatouki-dev.graines-digitales.online' ]
+        allow_headers: []
+        allow_methods: []
+        expose_headers: []
+        max_age: 0
+        hosts: []
+        origin_regex: false
+        forced_allow_origin_value: ~
+    paths:
+        '^/api/':
+            allow_origin: [ 'http://127.0.0.1:3000', 'https://www.villa-gonatouki.com', 'https://villa-gonatouki.com', 'https://villa-gonatouki.graines-digitales.online', 'http://villa-gonatouki-dev.graines-digitales.online' ]
+            allow_headers: ['Content-Type', 'Authorization']
+            allow_methods: ['POST', 'PUT', 'GET', 'OPTION']
+            max_age: 3600
+        '^/':
+            origin_regex: true
+            allow_origin: [ 'http://127.0.0.1:3000', 'https://www.villa-gonatouki.com', 'https://villa-gonatouki.com', 'https://villa-gonatouki.graines-digitales.online', 'http://villa-gonatouki-dev.graines-digitales.online' ]
+            allow_headers: ['X-Custom-Auth', 'Content-Type', 'Authorization']
+            allow_methods: ['POST', 'PUT', 'GET', 'OPTION']
+            max_age: 3600
+            # hosts: ['^api\.']

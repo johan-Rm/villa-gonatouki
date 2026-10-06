@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+        Tag:
+            class: App\Entity\Tag
+            help: 'Create your keywords'
+            translatable: true
+            list:
+                title: '%menu.list.label.tags%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'slug' }
+                    - { property: 'name' }
+                    - { property: 'isActive' }
+            form:
+                help: 'The form view overrides the global help message'
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }
+                    - { property: 'isActive' }
+                    # - { property: 'dateCreated', type_options: { disabled: true } }
+                    # - { property: 'dateModified', type_options: { disabled: true } }
+                    # - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    # - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }

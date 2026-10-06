@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        AccommodationType:
+            class: App\Entity\AccommodationType
+            # controller: App\Controller\ComponentController
+            help: 'delete metadata can disrupt the operation of the application'
+            translatable: true
+            # serializable: false
+            list:
+                title: '%menu.list.label.accommodation_types%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'slug' }
+                    - { property: 'name' }
+                    - { property: 'isActive' }
+                    - { property: 'isLocation' }
+            form:
+                fields:
+                    - { property: 'name', translatable: true }
+                    - { property: 'slug', translatable: true, type_options: { disabled: true } }
+                    - { property: 'isActive' }
+                    - { property: 'isLocation' }

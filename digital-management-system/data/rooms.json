@@ -1,0 +1,436 @@
+[
+   {
+      "name":"Chambre Confort",
+      "minimumOccupants":2,
+      "maximumOccupants":2,
+      "numberOfRooms":3,
+      "price":72,
+      "category": "room",
+      "description":"de 15m à 20m², située au bas de la Villa. Lʼambiance cosy et intime de cette chambre est accentuée par ses plafonds bas. Vous pourrez admirer le coucher de soleil depuis la terrasse.",
+      "primaryImage":"chambre-confort-img-37801.jpg",
+      "amenities":[
+         {
+            "name" : "Lit double 160/200"
+         },
+         {
+            "name": "Salle de bains, douche ou baignoire/douche",
+            "moreInfo": ""
+         },
+         {
+            "name": "Terrasse sur jardin orientée ouest",
+            "moreInfo": "commune aux 4 chambres face au jardin"
+        },
+        {
+            "name": "Toilettes"
+        }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 72,
+            "start": "2021-01-01",
+            "end": "2021-06-30"
+         },
+         {
+            "name": "Haute saison",
+            "price": 72,
+            "start": "2021-07-01",
+            "end": "2021-12-31"
+         }
+      ]
+   },
+   {
+      "name":"Chambre Supérieure",
+      "minimumOccupants":2,
+      "maximumOccupants":2,
+      "numberOfRooms":3,
+      "price":86,
+      "category": "room",
+      "description":" Lit Supplémentaire  15 EUR, Environ 25m², au premier étage de la Villa. Plongez dans lʼambiance marocaine en vous installant devant un feu de cheminée ou profitez du soleil en toute intimité depuis la terrasse orientée au sud.",
+      "primaryImage":"chambre-superieure-img-34511.jpg",
+      "amenities":[
+         {
+            "name": "Lit double 160/200",
+            "moreInfo": "ou 2 lits d'une personne 90/200"
+         },
+         {
+            "name": "salle de bains 2 vasques, baignoire/douche ou douche",
+            "moreInfo": ""
+         },
+         {
+            "name": "Cheminée"
+         },
+         {
+            "name": "Terrasse orientée sud"
+        },
+        {
+            "name": "Toilettes séparées"
+        },
+        {
+            "name": "lit supplémentaire à la demande",
+            "moreInfo": "15€/jour petit déjeuner compris"
+        }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 86,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 86,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   },
+   {
+      "name":"Chambre Prestige",
+      "minimumOccupants":2,
+      "maximumOccupants":2,
+      "numberOfRooms":2,
+      "price":107,
+      "category": "room",
+      "description":" Lit Supplémentaire  15 EUR, Environ 30m², au premier étage de la Villa. Spacieuse et lumineuse, la chambre offre une vue imprenable sur lʼocéan. Profitez dʼune très grande terrasse privative pour un séjour intime.",
+      "primaryImage":"chambre-prestige-img-34141.jpg",
+      "amenities":[
+          {
+             "name": "Vue sur mer"
+          },
+         {
+            "name": "Lit double 160/200"
+         },
+         {
+            "name": "Salle de bains 2 vasques, douche",
+            "moreInfo": "toilettes séparées"
+         },
+         {
+            "name": "Cheminée"
+         },
+         {
+            "name": "Grande terrasse privative",
+            "moreInfo": "de 100m2 avec vue sur l’océan"
+        },
+        {
+            "name": "Toilettes séparées"
+        },
+        {
+            "name": "lit supplémentaire à la demande",
+            "moreInfo": "15€/jour petit déjeuner compris"
+        },
+        {
+            "name": "Grande terrasse privative (100m2)"
+        }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 107,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 107,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   },
+   {
+      "name":"Petite Suite",
+      "minimumOccupants":2,
+      "maximumOccupants":4,
+      "numberOfRooms":1,
+      "price":107,
+      "category": "suite",
+      "description":"Environ 25m², au bas de la Villa. Parfaite pour un séjour en famille, la Petite Suite est spacieuse et raffinée, le petit salon, pouvant être transformé en deux lits simples supplémentaires pour les enfants (15€/enfant/nuit avec petit déjeuner). Vous pourrez admirer le coucher de soleil depuis sa terrasse. Précision : Hauteur sous plafond de 1,75m sur une partie de la chambre",
+      "primaryImage":"petite-suite-img-35871.jpg",
+      "amenities":[
+         {
+            "name": "Lit double 160/200"
+         },
+         {
+            "name": "Salle de bains, douche, toilettes"
+         },
+         {
+            "name": "Salon",
+            "moreInfo": "canapés pouvant être transformés en 2 lits simples supplémentaires pour les enfants (supplément pour occupation)"
+         },
+         {
+                "name": "Terrasse sur jardin orientée ouest",
+                "moreInfo": "commune avec les chambres Confort"
+         }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 107,
+            "start": "2021-01-01",
+            "end": "2021-06-30"
+         },
+         {
+            "name": "Haute saison",
+            "price": 107,
+            "start": "2021-07-01",
+            "end": "2021-12-31"
+         }
+      ]
+   },
+      {
+      "name":"Suite Moyenne",
+      "minimumOccupants":2,
+      "maximumOccupants":4,
+      "numberOfRooms":1,
+      "price":152,
+      "category": "suite",
+      "description":"D'environ 50m2 avec cheminée, située au premier étage de la Villa, elle est orientée nord et est (vue mer). Elle dispose de deux chambres séparées par une porte, d'une salle de bains en tadelaekt avec toilettes séparées et d'une grande terrasse privative de 100m2.",
+      "primaryImage":"petite-suite-img-35871.jpg",
+      "amenities":[
+          {
+             "name": "Lit double 160/200",
+             "category": "Chambre 30m2"
+          },
+          {
+             "name": "Salle de bains 2 vasques, douche",
+             "moreInfo": "",
+             "category": "Chambre 30m2"
+          },
+          {
+             "name": "Toilettes séparées",
+             "category": "Chambre 30m2"
+          },
+          {
+             "name": "Cheminée",
+             "category": "Chambre 30m2"
+          },
+          {
+             "name": "Grande terrasse privative",
+             "moreInfo": "de 100 m2 orientée nord avec vue sur l’océan",
+             "category": "Chambre 30m2"
+          },
+          {
+             "name": "Entrée indépendante",
+             "moreInfo": "ou par la porte communicante avec la chambre",
+             "category": "Salon/Chambre 20m2"
+          },
+          {
+             "name": "2 lits simples 90/200 ou 3 banquettes salon",
+             "moreInfo": "possibilité d’ajouter un lit supplémentaire (15€)",
+             "category": "Salon/Chambre 20m2"
+          }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 152,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 152,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   },
+   {
+      "name":"Grande Suite",
+      "minimumOccupants":2,
+      "maximumOccupants":4,
+      "numberOfRooms":1,
+      "price":205,
+      "category": "suite",
+      "description":"située au rez-de-chaussée de la Villa. Offrez-vous une expérience unique et royale ! La Grande Suite vous plonge dans lʼambiance des palais marocains. Luxe, insouciance et détente garantis !",
+      "primaryImage":"grande-suite-img-38031.jpg",
+      "amenities":[
+          {
+             "name": "Vue sur mer",
+             "category": "Chambre 30m2"
+          },
+         {
+            "name": "Lit double 160/200",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Cheminée",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Salle de bains 2 vasques",
+            "moreInfo": "",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Baignoire et douche séparées",
+            "moreInfo": "",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Toilettes séparées",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "2 terrasses nord et sud",
+            "moreInfo": "",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Dressing 10m2",
+            "category": "Chambre 30m2"
+         },
+         {
+            "name": "Vue sur mer",
+            "category": "Salon/Chambre 45m2"
+         },
+         {
+            "name": "Canapé convertible",
+            "moreInfo": "",
+            "category": "Salon/Chambre 45m2"
+         },
+         {
+            "name": "Cheminée",
+            "category": "Salon/Chambre 45m2"
+         },
+         {
+            "name": "Double Terrasse",
+            "category": "Salon/Chambre 45m2"
+         }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 205,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 205,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   },
+   {
+      "name":"Villa hors grande Suite",
+      "minimumOccupants":20,
+      "maximumOccupants":20,
+      "numberOfRooms":1,
+      "price":939,
+      "category": "villa",
+      "description":"Superficie de : 1000 m². Rassemblez-vous ou isolez-vous en fonction du moment et de votre humeur dans les nombreux espaces disponibles. Une construction écologique (cumulus solaire, fosse septique écologique, isolation thermique…).",
+      "primaryImage":"grande-suite-img-38031.jpg",
+      "amenities":[
+         {
+            "name": "Cinq salons aux ambiances différentes."
+         },
+         {
+            "name": "La Grande Suite avec son salon et sa vue magnifique et un patio."
+         },
+         {
+            "name": "Nombreuses terrasses",
+            "moreInfo": "et un toit plat pour admirer la vue ou contempler le ciel étoilé."
+         },
+         {
+            "name": "Une salle à manger",
+            "moreInfo": "pour réunir tout le monde et d'autres lieux pour manger de manière plus intime."
+         },
+         {
+            "name": "Une grande cuisine entièrement équipée",
+            "moreInfo": "(lave vaisselle, robots, machine à laver, sèche linge …)."
+         },
+         {
+            "name": "Une piscine (15m*5) et un couloir de nage (22m*3.5)."
+         },
+         {
+            "name": "Différents jardins et un parking privé."
+         },
+         {
+            "name": "Un hammam et deux salons de massage."
+         }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 939,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 939,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   },
+   {
+      "name":"Villa complète",
+      "minimumOccupants":29,
+      "maximumOccupants":29,
+      "numberOfRooms":1,
+      "price":1145,
+      "category": "villa",
+      "description":"Superficie de : 1000 m². Rassemblez-vous ou isolez-vous en fonction du moment et de votre humeur dans les nombreux espaces disponibles. Une construction écologique (cumulus solaire, fosse septique écologique, isolation thermique…).",
+      "primaryImage":"grande-suite-img-38031.jpg",
+      "amenities":[
+         {
+            "name": "Cinq salons aux ambiances différentes."
+         },
+         {
+            "name": "La Grande Suite avec son salon et sa vue magnifique et un patio."
+         },
+         {
+            "name": "Nombreuses terrasses",
+            "moreInfo": "et un toit plat pour admirer la vue ou contempler le ciel étoilé."
+         },
+         {
+            "name": "Une salle à manger",
+            "moreInfo": "pour réunir tout le monde et d'autres lieux pour manger de manière plus intime."
+         },
+         {
+            "name": "Une grande cuisine entièrement équipée",
+            "moreInfo": "(lave vaisselle, robots, machine à laver, sèche linge …)."
+         },
+         {
+            "name": "Une piscine (15m*5) et un couloir de nage (22m*3.5)."
+         },
+         {
+            "name": "Différents jardins et un parking privé."
+         },
+         {
+            "name": "Un hammam et deux salons de massage."
+         }
+      ],
+      "offers": [
+         {
+            "name": "Basse saison",
+            "price": 1145,
+            "start": "2021-01-01",
+            "end": "2021-06-30",
+            "addOn":15
+         },
+         {
+            "name": "Haute saison",
+            "price": 1145,
+            "start": "2021-07-01",
+            "end": "2021-12-31",
+            "addOn":15
+         }
+      ]
+   }
+]

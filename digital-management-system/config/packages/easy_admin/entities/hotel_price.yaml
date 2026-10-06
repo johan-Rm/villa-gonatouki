@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+        HotelPrice:
+            class: App\Entity\Room
+            translatable: true
+            list:
+                actions:
+                    - '-new'
+                    - 'edit'
+                title: '%menu.list.label.rooms_prices%'
+                fields:
+                    - { property: 'id' }
+                    - { property: 'name' }
+                    # - { property: 'offers', label: '%label.hotel_prices%' }
+            form:
+                form_options: { validation_groups: ['thing'] }
+                fields:
+                    - { property: 'name', translatable: true, type_options: { disabled: true } }
+                    - property: 'offers'
+                      label: '%label.offers%'
+                      type: 'collection'
+                      type_options: { entry_type: 'App\Form\AggregateOfferType', by_reference: false }

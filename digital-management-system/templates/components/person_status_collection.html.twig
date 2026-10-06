@@ -1,0 +1,9 @@
+{% if null != value %}
+    {% if 'Locataire' == value %}
+        <span class="badge badge-primary">{{ value|trans }}</span>
+    {% else %}
+        <span class="badge badge-dark">{{ value|trans }}</span>
+    {% endif %}
+{% else %}
+    <span class="label">Aucun(e)</span>
+{% endif %}

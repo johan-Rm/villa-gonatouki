@@ -1,0 +1,128 @@
+# The list of types and properties we want to use
+types:
+    # Parent class of Person
+    Thing:
+        properties:
+            name: ~
+            description: ~
+            mainEntityOfPage: ~
+            url: ~
+    CreativeWork:
+        properties:
+            about: ~
+            headline: ~
+            alternativeHeadline: ~
+            text: ~
+            keywords: ~
+            dateCreated: ~
+            dateModified: ~
+            datePublished: ~
+            expires: ~
+            # recordedAt: ~
+            # publisher: ~
+            author: ~
+            comment: ~
+            # commentCount: ~
+            # aggregateRating: ~
+            # audience: ~
+            # contributor: ~
+            # creator: ~
+            # isBasedOn: ~
+            # editor: ~
+    WebPage:
+        # Disable the generation of the class hierarchy for this type
+        # parent: false
+        properties:
+            breadcrumb: ~
+            lastReviewed: ~
+            # mainContentOfPage: ~
+            primaryImage: ~
+    # WebPageElement:
+    #     properties:
+    #         breadcrumb: ~
+    #         lastReviewed: ~
+    #         mainContentOfPage: ~
+    ImageObject:
+        properties:
+            caption: ~
+            thumbnail: ~
+            representativeOfPage: ~
+    MediaObject:
+        # parent: true
+        properties:
+            contentSize: ~
+            width: { range: "Integer" }
+            height: { range: "Integer" }
+            encodingFormat: ~
+            filename: { range: "Text" }
+            file: { range: "Text" }
+    # ImageGallery:
+    #     medias: { range: "Text" }
+    Organization:
+        properties:
+            email: ~
+    PropertyValue:
+        properties:
+            propertyID: ~
+            value: ~
+            valueReference: ~
+    Person:
+        properties:
+            gender: ~
+            familyName: ~
+            givenName: ~
+            email: ~
+    Article:
+        properties:
+            articleBody: ~
+    # Keywords: ~
+    Message:
+        properties:
+            dateSent: ~
+            messageAttachment: ~
+            recipient:~
+            sender: ~
+    Comment:
+        properties:
+            downvoteCount: ~
+            upvoteCount: ~
+    Rating:
+        properties:
+            author: ~
+            bestRating: ~
+            ratingValue: ~
+            # reviewAspect: ~
+            worstRating: ~
+    Review:
+        properties:
+            itemReviewed: ~
+            # reviewAspect: ~
+            reviewBody: ~
+            reviewRating: ~
+    # PaymentMethod:
+    #     properties:
+    #         supersededBy: ~
+    Accommodation:
+        properties:
+            numberOfRooms: ~
+    Event:
+        properties:
+            endDate: ~
+    Invoice:
+        properties:
+            referencesOrder: ~
+    Order:
+        properties:
+            confirmationNumber: ~
+    House:
+        properties:
+            numberOfRooms: ~
+    Apartment:
+        properties:
+            numberOfRooms: ~
+    RealEstateAgent:
+        properties:
+            priceRange: ~
+    Place:
+        properties:
+            address: ~

@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+       # List the entity class name you want to manage
+        Component:
+            class: App\Entity\Component
+            list:
+                dql_filter: entity.type = 'bloc'
+                fields:
+                    - { property: 'service' }
+                    - { property: 'type' }
+                    - { property: 'name' }
+                    - { property: 'slugPath' }
+                    - { property: 'description' }
+            form:
+                fields:
+                    - { property: 'service' }
+                    - { property: 'type' }
+                    - { property: 'name' }
+                    - { property: 'slugPath' }
+                    - { property: 'description' }
+                    - { property: 'userCreated', type_options: { disabled: true }  }
+                    - { property: 'userLastModified', type_options: { disabled: true }   }

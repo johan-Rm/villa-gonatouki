@@ -1,0 +1,41 @@
+easy_admin:
+    entities:
+        Document:
+            class: App\Entity\DocumentObject
+            help: 'Global message displayed in all views'
+            list:
+                title: '%menu.list.label.documents%'
+                actions: ['-show', 'edit', 'delete', '-download']
+                batch_actions: [{ name: 'delete', ask_confirm: true }]
+                fields:
+                    - { property: 'file', template: 'components/vich_uploader_document_file.html.twig' }
+                    - { property: 'name' }
+                    - { property: 'type', template: 'components/default_collection.html.twig' }
+                    - { property: 'encodingFormat' }
+                    - { property: 'dateCreated' }
+            show:
+                fields:
+                    - { property: 'caption' }
+                    - { property: 'name' }
+                    - { property: 'filename' }
+                    - { property: 'originalFilename' }
+                    - { property: 'encodingFormat' }
+                    - { property: 'contentSize' }
+                    - { property: 'dimensions' }
+                    - { property: 'description' }
+                    - { property: 'file', template: 'components/vich_uploader_document_file.html.twig' }
+                    - { property: 'dateCreated' }
+            form:
+                fields:
+                    - { type: 'group', label: '%group.label.download%', columns: 8 }
+                    - { property: 'type' }
+                    - { property: 'file', type: 'vich_file' }
+                    - { property: 'name', translatable: true, help: 'if empty, this field will be automatically edited' }
+                    # - { property: 'caption' }
+                    # - { property: 'url', type_options: { disabled: true } }
+                    - { property: 'description', translatable: true }
+                    - { type: 'group', label: '%group.label.basic.document%', columns: 4 }
+                    - { property: 'userCreated', type: 'text', type_options: { disabled: true } }
+                    - { property: 'userLastModified', type: 'text', type_options: { disabled: true } }
+                    # - { type: 'group', label: '%group.label.add_galleries%', columns: 6 }
+                    # - { property: 'galleries', type: 'entity',  type_options: { by_reference: false} }

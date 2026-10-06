@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Les nuits photographiques",
+        "category": "event",
+        "tag": "Art",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "primaryImage": "activities-img-golf.jpeg",
+        "beginAt": "2021/09/28",
+        "endAt": "2021/10/03"
+    },
+    {
+        "name": "Festival des Andalousies Atlantiques",
+        "category": "event",
+        "tag": "Musique",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "primaryImage": "activities-img-golf.jpeg",
+        "beginAt": "2021/10/28",
+        "endAt": "2021/11/03"
+    },
+    {
+        "name": "Le Rallye Aïcha des Gazelles",
+        "category": "event",
+        "tag": "Sportive",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "primaryImage": "activities-img-golf.jpeg",
+        "beginAt": "2021/03/28",
+        "endAt": "2021/04/07"
+    },
+    {
+        "name": "Festival Ganoua",
+        "category": "event",
+        "tag": "Musique",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "primaryImage": "activities-img-golf.jpeg",
+        "beginAt": "2021/06/28",
+        "endAt": "2021/07/01"
+    }
+]

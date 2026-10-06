@@ -1,0 +1,12 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        uploads_media_files:
+            uri_prefix:         '%assets.uploads.media.folder%'
+            upload_destination: '%resources_dir%/%assets.uploads.media.folder%'
+            namer:
+                service: Vich\UploaderBundle\Naming\PropertyNamer
+                options: { property: 'slug' } # supposing that the object contains a "slug" attribute or a "getSlug" method
+        uploads_document_files:
+            uri_prefix:         '%assets.uploads.document.folder%'
+            upload_destination: '%resources_dir%/%assets.uploads.document.folder%'

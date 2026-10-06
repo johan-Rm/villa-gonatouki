@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Quad",
+        "category": "Sport et Extérieur",
+        "description": "Mettez une pointe de frissons dans votre séjour et partez en quad pour un circuit extraordinaire, à la beauté époustouflante ! Vous sillonnerez le bord de mer, en passant par les dunes et la lisière de la forêt lors dʼune sortie de 1 à 3 heures selon votre choix. Amateurs de sensations, vous apprécierez la pointe de vitesse sur la plage ou la descente dʼune dune à pic !",
+        "primaryImage": "activities-img-quad.jpeg"
+    },
+    {
+        "name": "KiteSurf",
+        "category": "Sport et Extérieur",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak, contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": "activities-img-nautique.jpeg"
+    },
+    {
+        "name": "Piscine",
+        "category": "Sport et Extérieur",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak, contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": "activities-img-pool.jpeg"
+    },
+    {
+        "name": "Golf",
+        "category": "Sport et Extérieur",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak, contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": "activities-img-golf.jpeg"
+    },
+    {
+        "name": "SPA",
+        "category": "Détente et massage",
+        "description": "Essaouira, Sidi Kaouki, Moulay… La côte atlantique marocaine offre elle aussi des spots réputés ! Equipez-vous dʼun kite, une planche à voile, un surf ou un bodyboard et partez à lʼassaut des vagues ! Pétole ? Profitez-en pour faire du kayak, contourner lʼîle de Mogador. Les nombreux clubs bordant le littoral proposent des stages dʼinitiation ou de perfectionnement et du matériel de qualité en location.",
+        "primaryImage": "activities-img-spa.jpeg"
+    }
+]
